@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://b54n13fqlduvn"]
+
+[ext_resource type="FontFile" uid="uid://qjdi0fewg221" path="res://art/ShareTech-Regular.ttf" id="1_470mv"]
+
+[resource]
+default_font = ExtResource("1_470mv")
+default_font_size = 11
