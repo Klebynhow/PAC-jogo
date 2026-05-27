@@ -2,10 +2,16 @@
 
 [ext_resource type="Texture2D" uid="uid://bw3vauq7nukr0" path="res://art/ph_background.png" id="1_7gynk"]
 [ext_resource type="PackedScene" uid="uid://b1pqngerxhasy" path="res://scenes/card_ui/card_ui.tscn" id="2_ffvsa"]
+[ext_resource type="Texture2D" uid="uid://256vx8cjekao" path="res://art/ph_enemy.png" id="2_fh7rg"]
 [ext_resource type="Script" uid="uid://c0tixvy4138s6" path="res://scenes/ui/hand.gd" id="2_xd4uy"]
+[ext_resource type="PackedScene" uid="uid://dcv6tiu1x4tf0" path="res://scenes/card_target_selector/card_target_selector.tscn" id="3_pll4o"]
+[ext_resource type="Resource" uid="uid://wigqdmjm73gp" path="res://characters/vanessa/cards/attack.tres" id="4_h0kxc"]
+[ext_resource type="Resource" uid="uid://dguv03k56565p" path="res://characters/vanessa/cards/block.tres" id="5_fh7rg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7gynk"]
 size = Vector2(256, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pll4o"]
 
 [node name="Battle" type="Node2D" unique_id=923618650]
 metadata/_edit_lock_ = true
@@ -22,6 +28,19 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cardDropArea" unique_id=706359478]
 position = Vector2(128, 50)
 shape = SubResource("RectangleShape2D_7gynk")
+debug_color = Color(0, 0.6, 0.69803923, 0.2)
+
+[node name="Enemy" type="Area2D" parent="." unique_id=1872423485]
+position = Vector2(210, 76)
+collision_layer = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy" unique_id=1445083102]
+texture = ExtResource("2_fh7rg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy" unique_id=769258221]
+shape = SubResource("RectangleShape2D_pll4o")
+
+[node name="CardTargetSelector" parent="." unique_id=741348768 instance=ExtResource("3_pll4o")]
 
 [node name="battleUI" type="CanvasLayer" parent="." unique_id=1674564968 groups=["ui_layer"]]
 
@@ -41,9 +60,12 @@ script = ExtResource("2_xd4uy")
 
 [node name="CardUI" parent="battleUI/hand" unique_id=968843973 instance=ExtResource("2_ffvsa")]
 layout_mode = 2
+card = ExtResource("4_h0kxc")
 
 [node name="CardUI2" parent="battleUI/hand" unique_id=363271703 instance=ExtResource("2_ffvsa")]
 layout_mode = 2
+card = ExtResource("4_h0kxc")
 
 [node name="CardUI3" parent="battleUI/hand" unique_id=432282811 instance=ExtResource("2_ffvsa")]
 layout_mode = 2
+card = ExtResource("5_fh7rg")
