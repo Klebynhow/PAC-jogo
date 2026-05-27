@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bw3vauq7nukr0" path="res://art/ph_background.png" id="1_7gynk"]
 [ext_resource type="PackedScene" uid="uid://b1pqngerxhasy" path="res://scenes/card_ui/card_ui.tscn" id="2_ffvsa"]
+[ext_resource type="Script" uid="uid://c0tixvy4138s6" path="res://scenes/ui/hand.gd" id="2_xd4uy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7gynk"]
 size = Vector2(256, 100)
@@ -36,6 +37,7 @@ offset_right = 75.0
 grow_horizontal = 2
 grow_vertical = 0
 alignment = 1
+script = ExtResource("2_xd4uy")
 
 [node name="CardUI" parent="battleUI/hand" unique_id=968843973 instance=ExtResource("2_ffvsa")]
 layout_mode = 2
