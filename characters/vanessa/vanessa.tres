@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CharacterStats" format=3 uid="uid://dqrsooet0sy4o"]
+
+[ext_resource type="Script" uid="uid://cqn3tcvl4br7j" path="res://custom_resources/character_stats.gd" id="1_eypgi"]
+[ext_resource type="Texture2D" uid="uid://d0qdyprcywto2" path="res://art/ph_vanessa.png" id="1_ial8b"]
+[ext_resource type="Resource" uid="uid://c5lemmsq38eff" path="res://characters/vanessa/vanessa_starting_deck.tres" id="3_gt26e"]
+
+[resource]
+script = ExtResource("1_eypgi")
+starting_deck = ExtResource("3_gt26e")
+cards_per_turn = 4
+max_mana = 3
+max_health = 35
+art = ExtResource("1_ial8b")
+metadata/_custom_type_script = "uid://cqn3tcvl4br7j"

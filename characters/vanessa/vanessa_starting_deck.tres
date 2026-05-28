@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardPile" format=3 uid="uid://c5lemmsq38eff"]
+
+[ext_resource type="Script" uid="uid://ctg5l1ui52cf8" path="res://custom_resources/card.gd" id="1_0d7d6"]
+[ext_resource type="Resource" uid="uid://wigqdmjm73gp" path="res://characters/vanessa/cards/attack.tres" id="2_rp85b"]
+[ext_resource type="Script" uid="uid://bfkn877vk77ww" path="res://custom_resources/card_pile.gd" id="2_w5xgv"]
+[ext_resource type="Resource" uid="uid://dguv03k56565p" path="res://characters/vanessa/cards/block.tres" id="3_6lieh"]
+
+[resource]
+script = ExtResource("2_w5xgv")
+cards = Array[ExtResource("1_0d7d6")]([ExtResource("2_rp85b"), ExtResource("2_rp85b"), ExtResource("2_rp85b"), ExtResource("2_rp85b"), ExtResource("2_rp85b"), ExtResource("3_6lieh"), ExtResource("3_6lieh"), ExtResource("3_6lieh"), ExtResource("3_6lieh"), ExtResource("3_6lieh")])
+metadata/_custom_type_script = "uid://bfkn877vk77ww"
