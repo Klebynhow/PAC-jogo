@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://dhikfqwioqyff" path="res://scenes/enemy/enemy.tscn" id="2_oiw7q"]
 [ext_resource type="Script" uid="uid://c0tixvy4138s6" path="res://scenes/ui/hand.gd" id="2_xd4uy"]
 [ext_resource type="PackedScene" uid="uid://cywaqnb86paf3" path="res://scenes/player/player.tscn" id="3_agsc7"]
-[ext_resource type="Resource" uid="uid://bwpwp3cj5hos" path="res://enemies/worm/test_enemy.tres" id="3_fisqk"]
 [ext_resource type="PackedScene" uid="uid://dcv6tiu1x4tf0" path="res://scenes/card_target_selector/card_target_selector.tscn" id="3_pll4o"]
 [ext_resource type="Resource" uid="uid://dqrsooet0sy4o" path="res://characters/vanessa/vanessa.tres" id="4_oiw7q"]
+[ext_resource type="Resource" uid="uid://b462tm8t23bo7" path="res://enemies/worm/worm_enemy.tres" id="5_icoan"]
 [ext_resource type="Script" uid="uid://cv0fqxetm0fbe" path="res://scenes/ui/battle_ui.gd" id="7_icoan"]
 [ext_resource type="Script" uid="uid://c26fychtlo6sq" path="res://scenes/player/player_handler.gd" id="8_mxe8n"]
 [ext_resource type="PackedScene" uid="uid://bl03dvkwalay0" path="res://scenes/ui/mana_ui.tscn" id="11_fisqk"]
@@ -38,7 +38,7 @@ debug_color = Color(0, 0.6, 0.69803923, 0.2)
 
 [node name="Enemy" parent="." unique_id=816305621 instance=ExtResource("2_oiw7q")]
 position = Vector2(210, 76)
-stats = ExtResource("3_fisqk")
+stats = ExtResource("5_icoan")
 
 [node name="Player" parent="." unique_id=987277480 instance=ExtResource("3_agsc7")]
 position = Vector2(55, 73)

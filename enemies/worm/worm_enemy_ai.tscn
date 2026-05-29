@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://7gr8qudc12fl"]
+
+[ext_resource type="Script" uid="uid://cc1vyw63xwprt" path="res://scenes/enemy/enemy_action_picker.gd" id="1_kic1x"]
+[ext_resource type="Script" uid="uid://cx5l2edh8t4lf" path="res://enemies/worm/worm_attack_action.gd" id="2_j8376"]
+[ext_resource type="Script" uid="uid://o0bdkfbregux" path="res://enemies/worm/worm_block_action.gd" id="3_0pcc1"]
+[ext_resource type="Script" uid="uid://b556lki4rdxv0" path="res://enemies/worm/worm_mega_block_action.gd" id="4_qirf3"]
+
+[node name="WormEnemyAI" type="Node" unique_id=1654064960]
+script = ExtResource("1_kic1x")
+
+[node name="AttackAction" type="Node" parent="." unique_id=92230433]
+script = ExtResource("2_j8376")
+
+[node name="BlockAction" type="Node" parent="." unique_id=1231305097]
+script = ExtResource("3_0pcc1")
+
+[node name="MegaBlockAction" type="Node" parent="." unique_id=1658770917]
+script = ExtResource("4_qirf3")
