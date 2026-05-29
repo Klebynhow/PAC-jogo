@@ -8,6 +8,8 @@ func enter() -> void:
 	if ui_layer:
 		card_ui.reparent(ui_layer)
 	
+	card_ui.panel.set("theme_override_styles/panel", card_ui.DRAG_STYLEBOX)
+	
 	minimum_drag_time_elapsed = false
 	var threshhold_timer := get_tree().create_timer(DRAG_MINIMUM_THRESHOLD, false)
 	threshhold_timer.timeout.connect(func(): minimum_drag_time_elapsed = true)

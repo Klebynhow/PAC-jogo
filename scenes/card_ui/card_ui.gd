@@ -3,9 +3,10 @@ extends Control
 
 signal reparent_requested(which_card_ui: CardUI)
 
-const BASE_STYLEBOX := 
-const DRAG_STYLEBOX := 
-const HOVER_STYLEBOX :=
+const BASE_STYLEBOX := preload("uid://cee8utnorhmja")
+const DRAG_STYLEBOX := preload("uid://k3hl67qdpsmt")
+const HOVER_STYLEBOX := preload("uid://dr40ty31ai72d")
+
 @export var card: Card : set = _set_card
 
 @onready var panel: Panel = $Panel

@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://wigqdmjm73gp" path="res://characters/vanessa/cards/attack.tres" id="4_h0kxc"]
 [ext_resource type="Resource" uid="uid://dqrsooet0sy4o" path="res://characters/vanessa/vanessa.tres" id="4_oiw7q"]
 [ext_resource type="Resource" uid="uid://dguv03k56565p" path="res://characters/vanessa/cards/block.tres" id="5_fh7rg"]
+[ext_resource type="PackedScene" uid="uid://bl03dvkwalay0" path="res://scenes/ui/mana_ui.tscn" id="11_fisqk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7gynk"]
 size = Vector2(256, 100)
@@ -68,3 +69,6 @@ card = ExtResource("4_h0kxc")
 [node name="CardUI3" parent="battleUI/hand" unique_id=432282811 instance=ExtResource("2_ffvsa")]
 layout_mode = 2
 card = ExtResource("5_fh7rg")
+
+[node name="ManaUI" parent="battleUI" unique_id=698544404 instance=ExtResource("11_fisqk")]
+char_stats = ExtResource("4_oiw7q")
