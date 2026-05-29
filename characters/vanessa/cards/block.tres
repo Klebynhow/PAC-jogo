@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="Card" format=3 uid="uid://dguv03k56565p"]
+[gd_resource type="Resource" format=3 uid="uid://dguv03k56565p"]
 
-[ext_resource type="Script" uid="uid://ctg5l1ui52cf8" path="res://custom_resources/card.gd" id="1_tfi2f"]
 [ext_resource type="Texture2D" uid="uid://iuiqo1rdt6gs" path="res://art/ph_shieldIcon.png" id="1_vf21o"]
+[ext_resource type="Script" uid="uid://drnlo3lvxnsfu" path="res://characters/vanessa/cards/vanessa_block.gd" id="2_vf21o"]
 
 [resource]
-script = ExtResource("1_tfi2f")
+script = ExtResource("2_vf21o")
 id = "normal_block"
 type = 1
 cost = 1
