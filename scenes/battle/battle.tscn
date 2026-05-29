@@ -11,10 +11,12 @@
 [ext_resource type="Script" uid="uid://byveacbqe27rk" path="res://scenes/enemy/enemy_handler.gd" id="6_kd6yx"]
 [ext_resource type="Script" uid="uid://cv0fqxetm0fbe" path="res://scenes/ui/battle_ui.gd" id="7_icoan"]
 [ext_resource type="Script" uid="uid://c26fychtlo6sq" path="res://scenes/player/player_handler.gd" id="8_mxe8n"]
+[ext_resource type="Resource" uid="uid://2glplr0mxptd" path="res://enemies/worm2/worm2_enemy.tres" id="9_6ofp8"]
 [ext_resource type="PackedScene" uid="uid://bl03dvkwalay0" path="res://scenes/ui/mana_ui.tscn" id="11_fisqk"]
 [ext_resource type="PackedScene" uid="uid://cxdle4b5q5o3n" path="res://scenes/ui/tooltip.tscn" id="12_mxe8n"]
 [ext_resource type="Theme" uid="uid://b54n13fqlduvn" path="res://main_theme.tres" id="13_icoan"]
 [ext_resource type="Script" uid="uid://kt2n36dv1og3" path="res://scenes/ui/red_flash.gd" id="15_t1kk3"]
+[ext_resource type="PackedScene" uid="uid://c3ip0admbd2tq" path="res://scenes/ui/battle_over_panel.tscn" id="16_n6gaa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7gynk"]
 size = Vector2(256, 100)
@@ -47,9 +49,17 @@ stats = ExtResource("4_oiw7q")
 [node name="EnemyHandler" type="Node2D" parent="." unique_id=2039906803]
 script = ExtResource("6_kd6yx")
 
-[node name="Enemy" parent="EnemyHandler" unique_id=816305621 instance=ExtResource("2_oiw7q")]
-position = Vector2(210, 76)
+[node name="Worm2Enemy" parent="EnemyHandler" unique_id=545644945 instance=ExtResource("2_oiw7q")]
+position = Vector2(163, 54)
+stats = ExtResource("9_6ofp8")
+
+[node name="WormEnemy" parent="EnemyHandler" unique_id=816305621 instance=ExtResource("2_oiw7q")]
+position = Vector2(194, 76)
 stats = ExtResource("5_icoan")
+
+[node name="Worm2Enemy2" parent="EnemyHandler" unique_id=1895156961 instance=ExtResource("2_oiw7q")]
+position = Vector2(231, 61)
+stats = ExtResource("9_6ofp8")
 
 [node name="PlayerHandler" type="Node" parent="." unique_id=699850422 node_paths=PackedStringArray("hand")]
 script = ExtResource("8_mxe8n")
@@ -111,3 +121,9 @@ color = Color(0.7921569, 0.25882354, 0.41568628, 0)
 [node name="Timer" type="Timer" parent="RedFlash" unique_id=1189040397]
 wait_time = 0.1
 one_shot = true
+
+[node name="BattleOverLayer" type="CanvasLayer" parent="." unique_id=899738746]
+layer = 2
+
+[node name="BattleOverPanel" parent="BattleOverLayer" unique_id=713613839 instance=ExtResource("16_n6gaa")]
+visible = false

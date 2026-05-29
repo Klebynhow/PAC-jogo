@@ -22,16 +22,17 @@ func _ready() -> void:
 	start_battle(new_stats)
 
 func start_battle(stats: CharacterStats) -> void:
+	get_tree().paused = false
 	enemy_handler.reset_enemy_actions()
 	player_handler.start_battle(stats)
 
 func _on_enemies_child_order_changed() -> void:
 	if enemy_handler.get_child_count() == 0:
-		print("Vitoria yayyyy")
+		Events.battle_over_screen_requested.emit("Vitoria!", BattleOverPanel.Type.WIN)
 
 func _on_enemy_turn_ended() -> void:
 	player_handler.start_turn()
 	enemy_handler.reset_enemy_actions()
 
 func _on_player_died() -> void:
-	print("noob kkkkk")
+	Events.battle_over_screen_requested.emit("Fim de Jogo...", BattleOverPanel.Type.LOSE) 
