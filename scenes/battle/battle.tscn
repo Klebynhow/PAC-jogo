@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://cftnpkte0ovg6"]
 
 [ext_resource type="Texture2D" uid="uid://bw3vauq7nukr0" path="res://art/ph_background.png" id="1_7gynk"]
-[ext_resource type="PackedScene" uid="uid://b1pqngerxhasy" path="res://scenes/card_ui/card_ui.tscn" id="2_ffvsa"]
+[ext_resource type="Script" uid="uid://yexfjmdrpcdd" path="res://scenes/battle/battle.gd" id="1_kd6yx"]
 [ext_resource type="PackedScene" uid="uid://dhikfqwioqyff" path="res://scenes/enemy/enemy.tscn" id="2_oiw7q"]
 [ext_resource type="Script" uid="uid://c0tixvy4138s6" path="res://scenes/ui/hand.gd" id="2_xd4uy"]
 [ext_resource type="PackedScene" uid="uid://cywaqnb86paf3" path="res://scenes/player/player.tscn" id="3_agsc7"]
 [ext_resource type="Resource" uid="uid://bwpwp3cj5hos" path="res://enemies/worm/test_enemy.tres" id="3_fisqk"]
 [ext_resource type="PackedScene" uid="uid://dcv6tiu1x4tf0" path="res://scenes/card_target_selector/card_target_selector.tscn" id="3_pll4o"]
-[ext_resource type="Resource" uid="uid://wigqdmjm73gp" path="res://characters/vanessa/cards/attack.tres" id="4_h0kxc"]
 [ext_resource type="Resource" uid="uid://dqrsooet0sy4o" path="res://characters/vanessa/vanessa.tres" id="4_oiw7q"]
-[ext_resource type="Resource" uid="uid://dguv03k56565p" path="res://characters/vanessa/cards/block.tres" id="5_fh7rg"]
+[ext_resource type="Script" uid="uid://cv0fqxetm0fbe" path="res://scenes/ui/battle_ui.gd" id="7_icoan"]
+[ext_resource type="Script" uid="uid://c26fychtlo6sq" path="res://scenes/player/player_handler.gd" id="8_mxe8n"]
 [ext_resource type="PackedScene" uid="uid://bl03dvkwalay0" path="res://scenes/ui/mana_ui.tscn" id="11_fisqk"]
 [ext_resource type="PackedScene" uid="uid://cxdle4b5q5o3n" path="res://scenes/ui/tooltip.tscn" id="12_mxe8n"]
 
@@ -17,6 +17,8 @@
 size = Vector2(256, 100)
 
 [node name="Battle" type="Node2D" unique_id=923618650]
+script = ExtResource("1_kd6yx")
+char_stats = ExtResource("4_oiw7q")
 metadata/_edit_lock_ = true
 
 [node name="background" type="Sprite2D" parent="." unique_id=2103301706]
@@ -43,7 +45,12 @@ stats = ExtResource("4_oiw7q")
 
 [node name="CardTargetSelector" parent="." unique_id=741348768 instance=ExtResource("3_pll4o")]
 
+[node name="PlayerHandler" type="Node" parent="." unique_id=699850422 node_paths=PackedStringArray("hand")]
+script = ExtResource("8_mxe8n")
+hand = NodePath("../battleUI/hand")
+
 [node name="battleUI" type="CanvasLayer" parent="." unique_id=1674564968 groups=["ui_layer"]]
+script = ExtResource("7_icoan")
 
 [node name="hand" type="HBoxContainer" parent="battleUI" unique_id=747028500]
 anchors_preset = 7
@@ -58,21 +65,6 @@ grow_horizontal = 2
 grow_vertical = 0
 alignment = 1
 script = ExtResource("2_xd4uy")
-
-[node name="CardUI" parent="battleUI/hand" unique_id=968843973 instance=ExtResource("2_ffvsa")]
-layout_mode = 2
-card = ExtResource("4_h0kxc")
-char_stats = ExtResource("4_oiw7q")
-
-[node name="CardUI2" parent="battleUI/hand" unique_id=363271703 instance=ExtResource("2_ffvsa")]
-layout_mode = 2
-card = ExtResource("4_h0kxc")
-char_stats = ExtResource("4_oiw7q")
-
-[node name="CardUI3" parent="battleUI/hand" unique_id=432282811 instance=ExtResource("2_ffvsa")]
-layout_mode = 2
-card = ExtResource("5_fh7rg")
-char_stats = ExtResource("4_oiw7q")
 
 [node name="ManaUI" parent="battleUI" unique_id=698544404 instance=ExtResource("11_fisqk")]
 char_stats = ExtResource("4_oiw7q")
