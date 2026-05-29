@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bl03dvkwalay0" path="res://scenes/ui/mana_ui.tscn" id="11_fisqk"]
 [ext_resource type="PackedScene" uid="uid://cxdle4b5q5o3n" path="res://scenes/ui/tooltip.tscn" id="12_mxe8n"]
 [ext_resource type="Theme" uid="uid://b54n13fqlduvn" path="res://main_theme.tres" id="13_icoan"]
+[ext_resource type="Script" uid="uid://kt2n36dv1og3" path="res://scenes/ui/red_flash.gd" id="15_t1kk3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7gynk"]
 size = Vector2(256, 100)
@@ -93,3 +94,20 @@ grow_horizontal = 0
 grow_vertical = 0
 theme = ExtResource("13_icoan")
 text = "Finalizar Turno"
+
+[node name="RedFlash" type="CanvasLayer" parent="." unique_id=1843940997]
+layer = 2
+script = ExtResource("15_t1kk3")
+
+[node name="ColorRect" type="ColorRect" parent="RedFlash" unique_id=1407585567]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.7921569, 0.25882354, 0.41568628, 0)
+
+[node name="Timer" type="Timer" parent="RedFlash" unique_id=1189040397]
+wait_time = 0.1
+one_shot = true

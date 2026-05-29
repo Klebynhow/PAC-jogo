@@ -2,21 +2,44 @@
 
 [ext_resource type="Script" uid="uid://cc1vyw63xwprt" path="res://scenes/enemy/enemy_action_picker.gd" id="1_kic1x"]
 [ext_resource type="Script" uid="uid://cx5l2edh8t4lf" path="res://enemies/worm/worm_attack_action.gd" id="2_j8376"]
+[ext_resource type="Texture2D" uid="uid://iyyg6dstlwoo" path="res://art/ph_bite_attack.png" id="3_0kp20"]
 [ext_resource type="Script" uid="uid://o0bdkfbregux" path="res://enemies/worm/worm_block_action.gd" id="3_0pcc1"]
+[ext_resource type="Script" uid="uid://chopbebvi1op0" path="res://custom_resources/intent.gd" id="4_kf0wf"]
 [ext_resource type="Script" uid="uid://b556lki4rdxv0" path="res://enemies/worm/worm_mega_block_action.gd" id="4_qirf3"]
+[ext_resource type="Texture2D" uid="uid://iuiqo1rdt6gs" path="res://art/ph_shieldIcon.png" id="6_dwcwc"]
+[ext_resource type="Texture2D" uid="uid://dsyud7mx08wn8" path="res://art/ph_mega_block_action.png" id="8_p4jei"]
+
+[sub_resource type="Resource" id="Resource_urmxx"]
+script = ExtResource("4_kf0wf")
+number = "7"
+icon = ExtResource("3_0kp20")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[sub_resource type="Resource" id="Resource_cyoi1"]
+script = ExtResource("4_kf0wf")
+icon = ExtResource("6_dwcwc")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[sub_resource type="Resource" id="Resource_amkgu"]
+script = ExtResource("4_kf0wf")
+icon = ExtResource("8_p4jei")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
 
 [node name="WormEnemyAI" type="Node" unique_id=1654064960]
 script = ExtResource("1_kic1x")
 
 [node name="AttackAction" type="Node" parent="." unique_id=92230433]
 script = ExtResource("2_j8376")
+intent = SubResource("Resource_urmxx")
 type = 1
 chance_weight = 1.0
 
 [node name="BlockAction" type="Node" parent="." unique_id=1231305097]
 script = ExtResource("3_0pcc1")
+intent = SubResource("Resource_cyoi1")
 type = 1
 chance_weight = 1.0
 
 [node name="MegaBlockAction" type="Node" parent="." unique_id=1658770917]
 script = ExtResource("4_qirf3")
+intent = SubResource("Resource_amkgu")
