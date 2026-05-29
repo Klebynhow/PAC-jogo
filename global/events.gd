@@ -11,3 +11,5 @@ signal tooltip_hide_requested
 
 #eventos de player
 signal player_hand_drawn
+signal player_hand_discarded
+signal player_turn_ended

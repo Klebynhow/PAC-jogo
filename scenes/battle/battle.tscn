@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://c26fychtlo6sq" path="res://scenes/player/player_handler.gd" id="8_mxe8n"]
 [ext_resource type="PackedScene" uid="uid://bl03dvkwalay0" path="res://scenes/ui/mana_ui.tscn" id="11_fisqk"]
 [ext_resource type="PackedScene" uid="uid://cxdle4b5q5o3n" path="res://scenes/ui/tooltip.tscn" id="12_mxe8n"]
+[ext_resource type="Theme" uid="uid://b54n13fqlduvn" path="res://main_theme.tres" id="13_icoan"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7gynk"]
 size = Vector2(256, 100)
@@ -72,3 +73,19 @@ char_stats = ExtResource("4_oiw7q")
 [node name="Tooltip" parent="battleUI" unique_id=1391804630 instance=ExtResource("12_mxe8n")]
 offset_top = 5.0
 offset_bottom = 41.0
+
+[node name="EndTurnButton" type="Button" parent="battleUI" unique_id=1382256642]
+unique_name_in_owner = true
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -69.0
+offset_top = -17.0
+offset_right = -4.0
+offset_bottom = -5.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("13_icoan")
+text = "Finalizar Turno"
