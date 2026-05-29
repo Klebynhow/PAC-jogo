@@ -1,9 +1,10 @@
 [gd_resource type="Theme" format=3 uid="uid://b54n13fqlduvn"]
 
-[ext_resource type="FontFile" uid="uid://qjdi0fewg221" path="res://art/ShareTech-Regular.ttf" id="1_470mv"]
 [ext_resource type="StyleBox" uid="uid://cee8utnorhmja" path="res://scenes/card_ui/card_base_stylebox.tres" id="1_a2l2q"]
+[ext_resource type="FontFile" uid="uid://buore8cwhj5d0" path="res://art/pixel_rpg.ttf" id="2_a2l2q"]
 
 [resource]
-default_font = ExtResource("1_470mv")
-default_font_size = 10
+default_font = ExtResource("2_a2l2q")
+default_font_size = 6
 Panel/styles/panel = ExtResource("1_a2l2q")
+PanelContainer/styles/panel = ExtResource("1_a2l2q")

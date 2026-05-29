@@ -11,6 +11,7 @@
 [ext_resource type="Resource" uid="uid://dqrsooet0sy4o" path="res://characters/vanessa/vanessa.tres" id="4_oiw7q"]
 [ext_resource type="Resource" uid="uid://dguv03k56565p" path="res://characters/vanessa/cards/block.tres" id="5_fh7rg"]
 [ext_resource type="PackedScene" uid="uid://bl03dvkwalay0" path="res://scenes/ui/mana_ui.tscn" id="11_fisqk"]
+[ext_resource type="PackedScene" uid="uid://cxdle4b5q5o3n" path="res://scenes/ui/tooltip.tscn" id="12_mxe8n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7gynk"]
 size = Vector2(256, 100)
@@ -75,3 +76,7 @@ char_stats = ExtResource("4_oiw7q")
 
 [node name="ManaUI" parent="battleUI" unique_id=698544404 instance=ExtResource("11_fisqk")]
 char_stats = ExtResource("4_oiw7q")
+
+[node name="Tooltip" parent="battleUI" unique_id=1391804630 instance=ExtResource("12_mxe8n")]
+offset_top = 5.0
+offset_bottom = 41.0

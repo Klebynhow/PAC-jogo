@@ -9,4 +9,6 @@ id = "normal_block"
 type = 1
 cost = 1
 icon = ExtResource("1_vf21o")
+tooltip_text = "[center]Ganha [color=\"0044ff\"]5[/color] de escudos.[/center]
+"
 metadata/_custom_type_script = "uid://ctg5l1ui52cf8"
