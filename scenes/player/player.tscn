@@ -3,11 +3,63 @@
 [ext_resource type="Texture2D" uid="uid://d0qdyprcywto2" path="res://art/ph_vanessa.png" id="1_dovo2"]
 [ext_resource type="Script" uid="uid://cmxlwh32i2m6m" path="res://scenes/player/player.gd" id="1_gmlin"]
 [ext_resource type="PackedScene" uid="uid://3t8goovc8y6t" path="res://scenes/ui/stats_ui.tscn" id="2_gmlin"]
+[ext_resource type="Texture2D" uid="uid://7fl7p8m18umb" path="res://art/vanessa-sprite-animado.png" id="2_lvxji"]
+
+[sub_resource type="Animation" id="Animation_p47bc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VanessaSpriteAnimado:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_75vfm"]
+resource_name = "idle"
+length = 1.4186404
+loop_mode = 1
+step = 0.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VanessaSpriteAnimado:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.07692308, 0.24151042, 0.34705853, 0.44187233, 0.5277407, 0.61897635, 0.712001, 0.79786944, 0.8855269, 0.97318435, 1.0644201, 1.1574447, 1.2468911, 1.3410422),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4, 6, 5, 7, 8, 9, 10, 11, 12, 13, 14]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0owmy"]
+_data = {
+&"RESET": SubResource("Animation_p47bc"),
+&"idle": SubResource("Animation_75vfm")
+}
 
 [node name="Player" type="Node2D" unique_id=987277480 groups=["player"]]
 script = ExtResource("1_gmlin")
 
+[node name="VanessaSpriteAnimado" type="Sprite2D" parent="." unique_id=749641048]
+texture_filter = 1
+position = Vector2(2, -7)
+texture = ExtResource("2_lvxji")
+hframes = 4
+vframes = 4
+
+[node name="PlayerAnimation" type="AnimationPlayer" parent="." unique_id=185380824]
+libraries/ = SubResource("AnimationLibrary_0owmy")
+speed_scale = 0.5
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1601474526]
+visible = false
 texture = ExtResource("1_dovo2")
 
 [node name="StatsUI" parent="." unique_id=120172452 instance=ExtResource("2_gmlin")]

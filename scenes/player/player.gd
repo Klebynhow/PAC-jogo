@@ -21,6 +21,7 @@ func update_player() -> void:
 	if not is_inside_tree():
 		await ready
 	sprite_2d.texture = stats.art
+	$PlayerAnimation.play("idle")
 	update_stats()
 	
 func update_stats() -> void:
