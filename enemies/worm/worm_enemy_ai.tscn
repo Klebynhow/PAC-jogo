@@ -6,8 +6,10 @@
 [ext_resource type="Script" uid="uid://o0bdkfbregux" path="res://enemies/worm/worm_block_action.gd" id="3_0pcc1"]
 [ext_resource type="Script" uid="uid://chopbebvi1op0" path="res://custom_resources/intent.gd" id="4_kf0wf"]
 [ext_resource type="Script" uid="uid://b556lki4rdxv0" path="res://enemies/worm/worm_mega_block_action.gd" id="4_qirf3"]
+[ext_resource type="AudioStream" uid="uid://bkoe45adqg1ec" path="res://art/bite.ogg" id="5_dwcwc"]
 [ext_resource type="Texture2D" uid="uid://iuiqo1rdt6gs" path="res://art/ph_shieldIcon.png" id="6_dwcwc"]
 [ext_resource type="Texture2D" uid="uid://dsyud7mx08wn8" path="res://art/ph_mega_block_action.png" id="8_p4jei"]
+[ext_resource type="AudioStream" uid="uid://qjtaob7w4340" path="res://art/block.ogg" id="8_urmxx"]
 
 [sub_resource type="Resource" id="Resource_urmxx"]
 script = ExtResource("4_kf0wf")
@@ -31,15 +33,18 @@ script = ExtResource("1_kic1x")
 [node name="AttackAction" type="Node" parent="." unique_id=92230433]
 script = ExtResource("2_j8376")
 intent = SubResource("Resource_urmxx")
+sound = ExtResource("5_dwcwc")
 type = 1
 chance_weight = 1.0
 
 [node name="BlockAction" type="Node" parent="." unique_id=1231305097]
 script = ExtResource("3_0pcc1")
 intent = SubResource("Resource_cyoi1")
+sound = ExtResource("8_urmxx")
 type = 1
 chance_weight = 1.0
 
 [node name="MegaBlockAction" type="Node" parent="." unique_id=1658770917]
 script = ExtResource("4_qirf3")
 intent = SubResource("Resource_amkgu")
+sound = ExtResource("8_urmxx")

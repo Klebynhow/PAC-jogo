@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://1qhsgrbhbrc0" path="res://art/ph_slash_attack.png" id="1_dnc1k"]
 [ext_resource type="Script" uid="uid://bdy5pteymb43h" path="res://characters/vanessa/cards/vanessa_slash.gd" id="2_dnc1k"]
+[ext_resource type="AudioStream" uid="uid://gcadlgif4qju" path="res://art/ph_slash.wav" id="3_e1qkp"]
 
 [resource]
 script = ExtResource("2_dnc1k")
@@ -10,4 +11,5 @@ target = 2
 cost = 2
 icon = ExtResource("1_dnc1k")
 tooltip_text = "[center]Causa [color=\"6e0303\"]4[/color] de dano em todos os inimigos.[/center]"
+sound = ExtResource("3_e1qkp")
 metadata/_custom_type_script = "uid://ctg5l1ui52cf8"

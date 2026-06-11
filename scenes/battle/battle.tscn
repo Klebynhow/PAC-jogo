@@ -12,7 +12,7 @@
 [ext_resource type="Script" uid="uid://byveacbqe27rk" path="res://scenes/enemy/enemy_handler.gd" id="6_kd6yx"]
 [ext_resource type="Script" uid="uid://cv0fqxetm0fbe" path="res://scenes/ui/battle_ui.gd" id="7_icoan"]
 [ext_resource type="Script" uid="uid://c26fychtlo6sq" path="res://scenes/player/player_handler.gd" id="8_mxe8n"]
-[ext_resource type="Resource" uid="uid://2glplr0mxptd" path="res://enemies/worm2/worm2_enemy.tres" id="9_6ofp8"]
+[ext_resource type="Resource" uid="uid://2glplr0mxptd" path="res://enemies/bat/bat_enemy.tres" id="9_6ofp8"]
 [ext_resource type="PackedScene" uid="uid://bl03dvkwalay0" path="res://scenes/ui/mana_ui.tscn" id="11_fisqk"]
 [ext_resource type="PackedScene" uid="uid://cxdle4b5q5o3n" path="res://scenes/ui/tooltip.tscn" id="12_mxe8n"]
 [ext_resource type="Theme" uid="uid://b54n13fqlduvn" path="res://main_theme.tres" id="13_icoan"]

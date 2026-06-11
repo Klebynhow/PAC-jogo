@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://iuiqo1rdt6gs" path="res://art/ph_shieldIcon.png" id="1_vf21o"]
 [ext_resource type="Script" uid="uid://drnlo3lvxnsfu" path="res://characters/vanessa/cards/vanessa_block.gd" id="2_vf21o"]
+[ext_resource type="AudioStream" uid="uid://qjtaob7w4340" path="res://art/block.ogg" id="3_nw25k"]
 
 [resource]
 script = ExtResource("2_vf21o")
@@ -11,4 +12,5 @@ cost = 1
 icon = ExtResource("1_vf21o")
 tooltip_text = "[center]Ganha [color=\"0044ff\"]5[/color] de escudos.[/center]
 "
+sound = ExtResource("3_nw25k")
 metadata/_custom_type_script = "uid://ctg5l1ui52cf8"
