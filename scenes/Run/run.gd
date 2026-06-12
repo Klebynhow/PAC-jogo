@@ -11,6 +11,8 @@ const TREASURE_SCENE := preload("res://scenes/treasure/treasure.tscn")
 @export var run_startup: RunStartup
 
 @onready var current_view: Node = $CurrentView
+@onready var deck_button: CardPileOpener = %DeckButton
+@onready var deck_view: CardPileView = %DeckView
 @onready var battle_button: Button = %BattleButton
 @onready var campfire_button: Button = %CampfireButton
 @onready var map_button: Button = %MapButton
@@ -32,6 +34,7 @@ func _ready() -> void:
 		
 func _start_run() -> void:
 	_setup_event_connections()
+	_setup_top_bar()
 	print("Fazer: gerar mapa procedualmente (procedural?)")
 
 func _change_view(scene: PackedScene) -> void:
@@ -56,6 +59,11 @@ func _setup_event_connections() -> void:
 	rewards_button.pressed.connect(_change_view.bind(BATTLE_REWARD_SCENE))
 	shop_button.pressed.connect(_change_view.bind(SHOP_SCENE))
 	treasure_button.pressed.connect(_change_view.bind(TREASURE_SCENE))
+
+func _setup_top_bar():
+	deck_button.card_pile = character.deck
+	deck_view.card_pile = character.deck
+	deck_button.pressed.connect(deck_view.show_current_view.bind("Pilha"))
 
 func _on_map_exited() -> void:
 	print("fazer: do mapa, muda a view baseada no tipo da sala")

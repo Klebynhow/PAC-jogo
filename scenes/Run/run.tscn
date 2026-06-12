@@ -4,6 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://ct1iv82fjldg5" path="res://scenes/map/map.tscn" id="1_jl8lb"]
 [ext_resource type="Theme" uid="uid://b54n13fqlduvn" path="res://main_theme.tres" id="2_biywv"]
 [ext_resource type="Resource" uid="uid://byufnhlv8cxfj" path="res://scenes/Run/run_startup.tres" id="2_rxkvi"]
+[ext_resource type="PackedScene" uid="uid://d2mnw7b57sfhx" path="res://scenes/ui/card_pile_opener.tscn" id="5_w4jsb"]
+[ext_resource type="Texture2D" uid="uid://bacjqb1jrrrq0" path="res://art/deckIcon.png" id="6_68kdb"]
+[ext_resource type="PackedScene" uid="uid://cahghvf68rkg0" path="res://scenes/ui/card_pile_view.tscn" id="7_68kdb"]
 
 [node name="Run" type="Node" unique_id=1284597986]
 script = ExtResource("1_4m5yt")
@@ -18,6 +21,7 @@ anchors_preset = 9
 anchor_bottom = 1.0
 grow_vertical = 2
 theme = ExtResource("2_biywv")
+alignment = 1
 
 [node name="MapButton" type="Button" parent="DebugButtons" unique_id=969503615]
 unique_name_in_owner = true
@@ -48,3 +52,44 @@ text = "Recompensas"
 unique_name_in_owner = true
 layout_mode = 2
 text = "Fogueira"
+
+[node name="TopBar" type="CanvasLayer" parent="." unique_id=856996032]
+layer = 3
+
+[node name="Background" type="ColorRect" parent="TopBar" unique_id=697071902]
+custom_minimum_size = Vector2(0, 16)
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+color = Color(0, 0, 0, 0.44705883)
+
+[node name="BarItems" type="HBoxContainer" parent="TopBar" unique_id=1801455148]
+custom_minimum_size = Vector2(0, 16)
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="Placeholder" type="Control" parent="TopBar/BarItems" unique_id=1217274277]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DeckButton" parent="TopBar/BarItems" unique_id=722744370 node_paths=PackedStringArray("counter") instance=ExtResource("5_w4jsb")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(14.185, 14.08)
+layout_mode = 2
+theme = ExtResource("2_biywv")
+texture_normal = ExtResource("6_68kdb")
+counter = NodePath("Counter")
+
+[node name="Counter" type="Label" parent="TopBar/BarItems/DeckButton" unique_id=1793495621]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 11.0
+offset_right = 7.0
+offset_bottom = 17.0
+text = "99"
+horizontal_alignment = 1
+
+[node name="DeckView" parent="TopBar" unique_id=1197527773 instance=ExtResource("7_68kdb")]
+unique_name_in_owner = true
+visible = false
