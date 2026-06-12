@@ -2,10 +2,14 @@
 
 [ext_resource type="Script" uid="uid://cqn3tcvl4br7j" path="res://custom_resources/character_stats.gd" id="1_eypgi"]
 [ext_resource type="Texture2D" uid="uid://d0qdyprcywto2" path="res://art/ph_vanessa.png" id="1_ial8b"]
+[ext_resource type="Texture2D" uid="uid://dw8ysabay4et2" path="res://art/vanessa-sprite.png" id="2_gt26e"]
 [ext_resource type="Resource" uid="uid://c5lemmsq38eff" path="res://characters/vanessa/vanessa_starting_deck.tres" id="3_gt26e"]
 
 [resource]
 script = ExtResource("1_eypgi")
+character_name = "Vanessa"
+description = "Gosta muito de livros!"
+portrait = ExtResource("2_gt26e")
 starting_deck = ExtResource("3_gt26e")
 cards_per_turn = 4
 max_mana = 3

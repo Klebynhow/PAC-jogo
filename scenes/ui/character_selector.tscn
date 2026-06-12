@@ -1,0 +1,138 @@
+[gd_scene format=3 uid="uid://d24vnkb52rsbe"]
+
+[ext_resource type="Theme" uid="uid://b54n13fqlduvn" path="res://main_theme.tres" id="1_mswbi"]
+[ext_resource type="Script" uid="uid://ck2fy3hw1coxv" path="res://scenes/ui/character_selector.gd" id="2_uigap"]
+[ext_resource type="Resource" uid="uid://byufnhlv8cxfj" path="res://scenes/Run/run_startup.tres" id="3_als7e"]
+[ext_resource type="Texture2D" uid="uid://dw8ysabay4et2" path="res://art/vanessa-sprite.png" id="3_uigap"]
+[ext_resource type="Texture2D" uid="uid://c64ociqg87fao" path="res://art/vanessa_iconPortrait.png" id="5_to3sr"]
+
+[sub_resource type="Gradient" id="Gradient_wu84c"]
+colors = PackedColorArray(0.29798043, 0.001434519, 0.04073544, 1, 0.085036315, 0, 0.0024677885, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8ln24"]
+gradient = SubResource("Gradient_wu84c")
+width = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_rtw2f"]
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 0.45882353)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mswbi"]
+font_size = 10
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 0.45882353)
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_als7e"]
+
+[node name="CharacterSelector" type="Control" unique_id=1835816904]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_mswbi")
+script = ExtResource("2_uigap")
+run_startup = ExtResource("3_als7e")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1639497526]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_8ln24")
+
+[node name="CharacterText" type="VBoxContainer" parent="." unique_id=645959485]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -77.5
+offset_top = 14.0
+offset_right = 77.5
+offset_bottom = 54.0
+grow_horizontal = 2
+
+[node name="Titulo" type="Label" parent="CharacterText" unique_id=1317951139]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_mswbi")
+text = "Vanessa"
+label_settings = SubResource("LabelSettings_rtw2f")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Descricao" type="Label" parent="CharacterText" unique_id=1480728076]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_mswbi")
+text = "Gosta de livros!"
+label_settings = SubResource("LabelSettings_mswbi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CharacterPortrait" type="TextureRect" parent="." unique_id=826317956]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 39.0
+offset_top = -83.0
+offset_right = 99.0
+offset_bottom = -23.0
+grow_vertical = 0
+texture = ExtResource("3_uigap")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="StartButton" type="Button" parent="." unique_id=807359566]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -81.0
+offset_top = -35.0
+offset_right = -30.580017
+offset_bottom = -15.235001
+grow_horizontal = 0
+grow_vertical = 0
+text = "Avante!"
+
+[node name="CharacterButtons" type="HBoxContainer" parent="." unique_id=1885409485]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 68.0
+offset_right = 142.0
+offset_bottom = 98.0
+
+[node name="VanessaButton" type="Button" parent="CharacterButtons" unique_id=102983913]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_als7e")
+
+[node name="Icon" type="TextureRect" parent="CharacterButtons/VanessaButton" unique_id=552769905]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_to3sr")
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CharacterButtons/VanessaButton" to="." method="_on_vanessa_button_pressed"]

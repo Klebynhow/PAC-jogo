@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dvysfl01rt67d"]
+
+[ext_resource type="Theme" uid="uid://b54n13fqlduvn" path="res://main_theme.tres" id="1_56ahn"]
+[ext_resource type="Script" uid="uid://bjfpsnpcewaiq" path="res://scenes/campfire/campfire.gd" id="2_56ahn"]
+
+[node name="Campfire" type="Control" unique_id=1479642650]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_56ahn")
+script = ExtResource("2_56ahn")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=477830362]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.58431375)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1078401837]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=640384558]
+layout_mode = 2
+text = "Fogueira"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1065314453]
+custom_minimum_size = Vector2(0, 12.795)
+layout_mode = 2
+text = "Voltar"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

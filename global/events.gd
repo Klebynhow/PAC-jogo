@@ -22,3 +22,19 @@ signal enemy_turn_ended
 
 #eventos de batalha
 signal battle_over_screen_requested(text: String, type: BattleOverPanel.Type)
+signal battle_won
+
+#eventos de mapa
+signal map_exited
+
+#eventos de loja
+signal shop_exited
+
+#eventos de fogueira/local de descanso
+signal campfire_exited
+
+#eventos de recompensas de batalha
+signal battle_reward_exited
+
+#eventos de tesouros
+signal treasure_room_exited
