@@ -1,0 +1,16 @@
+[gd_resource type="Resource" format=3 uid="uid://b6af8fyuefuix"]
+
+[ext_resource type="Texture2D" uid="uid://dxqgbjctsja2j" path="res://art/slam_icon.png" id="1_1qfjt"]
+[ext_resource type="Script" uid="uid://dmajn3p1wl3o" path="res://characters/vanessa/cards/vanessa_slam.gd" id="2_fup5y"]
+[ext_resource type="AudioStream" uid="uid://gcadlgif4qju" path="res://art/ph_slash.wav" id="3_a83aq"]
+
+[resource]
+script = ExtResource("2_fup5y")
+id = "vanessa_slam"
+rarity = 1
+target = 1
+cost = 2
+icon = ExtResource("1_1qfjt")
+tooltip_text = "[center]Causa [color=\"ff0000\"]10[/color] de dano e aplica 2 de [color=\"ffdf00\"]Exposto[/color].[/center]"
+sound = ExtResource("3_a83aq")
+metadata/_custom_type_script = "uid://ctg5l1ui52cf8"

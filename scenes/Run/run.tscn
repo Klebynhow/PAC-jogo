@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ct1iv82fjldg5" path="res://scenes/map/map.tscn" id="1_jl8lb"]
 [ext_resource type="Theme" uid="uid://b54n13fqlduvn" path="res://main_theme.tres" id="2_biywv"]
 [ext_resource type="Resource" uid="uid://byufnhlv8cxfj" path="res://scenes/Run/run_startup.tres" id="2_rxkvi"]
+[ext_resource type="PackedScene" uid="uid://7yttyw0pnry2" path="res://scenes/ui/gold_ui.tscn" id="5_psd1i"]
 [ext_resource type="PackedScene" uid="uid://d2mnw7b57sfhx" path="res://scenes/ui/card_pile_opener.tscn" id="5_w4jsb"]
 [ext_resource type="Texture2D" uid="uid://bacjqb1jrrrq0" path="res://art/deckIcon.png" id="6_68kdb"]
 [ext_resource type="PackedScene" uid="uid://cahghvf68rkg0" path="res://scenes/ui/card_pile_view.tscn" id="7_68kdb"]
@@ -26,7 +27,7 @@ alignment = 1
 [node name="MapButton" type="Button" parent="DebugButtons" unique_id=969503615]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Map"
+text = "Mapa"
 
 [node name="BattleButton" type="Button" parent="DebugButtons" unique_id=2144951988]
 unique_name_in_owner = true
@@ -68,6 +69,10 @@ custom_minimum_size = Vector2(0, 16)
 anchors_preset = 10
 anchor_right = 1.0
 grow_horizontal = 2
+
+[node name="GoldUI" parent="TopBar/BarItems" unique_id=199514364 instance=ExtResource("5_psd1i")]
+unique_name_in_owner = true
+layout_mode = 2
 
 [node name="Placeholder" type="Control" parent="TopBar/BarItems" unique_id=1217274277]
 layout_mode = 2

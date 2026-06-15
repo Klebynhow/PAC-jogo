@@ -1,0 +1,16 @@
+[gd_resource type="Resource" format=3 uid="uid://culd7dkj8njcy"]
+
+[ext_resource type="Texture2D" uid="uid://boy4vu0avxbvv" path="res://art/fortify_icon.png" id="1_8f07q"]
+[ext_resource type="Script" uid="uid://c1fqkrg3l62a2" path="res://characters/vanessa/cards/vanessa_toughen.gd" id="2_403d0"]
+[ext_resource type="AudioStream" uid="uid://cxpmfj3m8rdao" path="res://art/833031__zeltbolt__apply_buff.wav" id="3_bcfu5"]
+
+[resource]
+script = ExtResource("2_403d0")
+id = "vanessa_toughen"
+type = 2
+rarity = 2
+cost = 3
+icon = ExtResource("1_8f07q")
+tooltip_text = "[center]No comeco do seu turno, ganhe 2 de [color=\"ffdf00\"]força[/color].[/center]"
+sound = ExtResource("3_bcfu5")
+metadata/_custom_type_script = "uid://ctg5l1ui52cf8"

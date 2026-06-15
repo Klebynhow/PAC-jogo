@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://7yttyw0pnry2"]
+
+[ext_resource type="Theme" uid="uid://b54n13fqlduvn" path="res://main_theme.tres" id="1_h4fjr"]
+[ext_resource type="Texture2D" uid="uid://yuu5cnygnha6" path="res://art/coinIcon.png" id="2_4oho1"]
+[ext_resource type="Script" uid="uid://c4s53g4gyg54j" path="res://scenes/ui/gold_ui.gd" id="2_5u54n"]
+
+[node name="GoldUI" type="HBoxContainer" unique_id=199514364]
+offset_right = 32.0
+offset_bottom = 8.0
+size_flags_vertical = 4
+theme = ExtResource("1_h4fjr")
+theme_override_constants/separation = 2
+script = ExtResource("2_5u54n")
+
+[node name="Icon" type="TextureRect" parent="." unique_id=205804771]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+texture = ExtResource("2_4oho1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="." unique_id=1777115907]
+layout_mode = 2
+size_flags_vertical = 1
+text = "9999"
+vertical_alignment = 1

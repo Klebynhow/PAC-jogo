@@ -1,10 +1,8 @@
 [gd_scene format=3 uid="uid://bi3ljq2023fho"]
 
-[ext_resource type="Theme" uid="uid://b54n13fqlduvn" path="res://main_theme.tres" id="1_5m1pf"]
 [ext_resource type="Script" uid="uid://cm37lerabxlpl" path="res://scenes/ui/card_menu_ui.gd" id="1_escg4"]
 [ext_resource type="Resource" uid="uid://c8sd583fnx5yi" path="res://characters/vanessa/cards/vanessa_slash.tres" id="2_1as8l"]
-[ext_resource type="StyleBox" uid="uid://cee8utnorhmja" path="res://scenes/card_ui/card_base_stylebox.tres" id="3_spm00"]
-[ext_resource type="Texture2D" uid="uid://f4qrs78gknfy" path="res://art/ph_punchIcon.png" id="4_lccpa"]
+[ext_resource type="PackedScene" uid="uid://di7pg7aur5ibg" path="res://scenes/ui/card_visuals.tscn" id="3_5nlic"]
 
 [node name="CardMenuUI" type="CenterContainer" unique_id=1837923055]
 offset_right = 25.0
@@ -13,46 +11,8 @@ size_flags_horizontal = 3
 script = ExtResource("1_escg4")
 card = ExtResource("2_1as8l")
 
-[node name="Visuals" type="Control" parent="." unique_id=968843973]
-custom_minimum_size = Vector2(25, 30)
+[node name="Visuals" parent="." unique_id=461330279 instance=ExtResource("3_5nlic")]
 layout_mode = 2
-theme = ExtResource("1_5m1pf")
-
-[node name="Panel" type="Panel" parent="Visuals" unique_id=618951510]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_styles/panel = ExtResource("3_spm00")
-
-[node name="Cost" type="Label" parent="Visuals" unique_id=1497499811]
-layout_mode = 1
-offset_right = 10.0
-offset_bottom = 12.0
-text = "2"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Icon" type="TextureRect" parent="Visuals" unique_id=1955977518]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -5.0
-offset_top = -5.0
-offset_right = 5.0
-offset_bottom = 5.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("4_lccpa")
-expand_mode = 1
-stretch_mode = 5
 
 [connection signal="gui_input" from="Visuals" to="." method="_on_visuals_gui_input"]
 [connection signal="mouse_entered" from="Visuals" to="." method="_on_visuals_mouse_entered"]

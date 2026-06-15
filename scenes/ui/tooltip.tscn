@@ -37,7 +37,6 @@ stretch_mode = 5
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/line_separation = -2
+theme_override_constants/line_separation = 0
 bbcode_enabled = true
-text = "descrição da tooltip
-descrição da tooltip"
+text = "descrição da tooltip descrição da tooltip"
