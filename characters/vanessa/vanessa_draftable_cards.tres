@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardPile" format=3 uid="uid://0njnujeu3iua"]
+
+[ext_resource type="Script" uid="uid://ctg5l1ui52cf8" path="res://custom_resources/card.gd" id="1_kg045"]
+[ext_resource type="Script" uid="uid://bfkn877vk77ww" path="res://custom_resources/card_pile.gd" id="2_0g1ll"]
+[ext_resource type="Resource" uid="uid://dguv03k56565p" path="res://characters/vanessa/cards/block.tres" id="2_yu104"]
+[ext_resource type="Resource" uid="uid://c8sd583fnx5yi" path="res://characters/vanessa/cards/vanessa_slash.tres" id="3_xrpjk"]
+[ext_resource type="Resource" uid="uid://b6af8fyuefuix" path="res://characters/vanessa/cards/vanessa_slam.tres" id="4_f2yuq"]
+[ext_resource type="Resource" uid="uid://culd7dkj8njcy" path="res://characters/vanessa/cards/vanessa_toughen.tres" id="5_tr223"]
+
+[resource]
+script = ExtResource("2_0g1ll")
+cards = Array[ExtResource("1_kg045")]([ExtResource("2_yu104"), ExtResource("2_yu104"), ExtResource("3_xrpjk"), ExtResource("4_f2yuq"), ExtResource("4_f2yuq"), ExtResource("4_f2yuq"), ExtResource("5_tr223"), ExtResource("5_tr223"), ExtResource("5_tr223")])
+metadata/_custom_type_script = "uid://bfkn877vk77ww"
