@@ -2,6 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://b54n13fqlduvn" path="res://main_theme.tres" id="1_sxf4j"]
 [ext_resource type="Script" uid="uid://3aurka3g8eb4" path="res://scenes/map/map.gd" id="2_tqkkf"]
+[ext_resource type="Script" uid="uid://bl3bl77nqpdf7" path="res://scenes/map/map_generator.gd" id="3_a2pkv"]
 
 [node name="Map" type="Control" unique_id=1479642650]
 layout_mode = 3
@@ -47,5 +48,8 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(0, 12.795)
 layout_mode = 2
 text = "Voltar"
+
+[node name="MapGenerator" type="Node" parent="." unique_id=1120991663]
+script = ExtResource("3_a2pkv")
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
