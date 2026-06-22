@@ -25,7 +25,7 @@ signal battle_over_screen_requested(text: String, type: BattleOverPanel.Type)
 signal battle_won
 
 #eventos de mapa
-signal map_exited
+signal map_exited(room: Room)
 
 #eventos de loja
 signal shop_exited
