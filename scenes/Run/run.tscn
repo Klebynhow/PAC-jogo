@@ -18,6 +18,7 @@ run_startup = ExtResource("2_rxkvi")
 [node name="CurrentView" type="Node" parent="." unique_id=875293719]
 
 [node name="DebugButtons" type="VBoxContainer" parent="." unique_id=2045520260]
+visible = false
 anchors_preset = 9
 anchor_bottom = 1.0
 grow_vertical = 2

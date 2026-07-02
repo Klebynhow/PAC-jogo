@@ -4,21 +4,7 @@
 [ext_resource type="Script" uid="uid://cmxlwh32i2m6m" path="res://scenes/player/player.gd" id="1_gmlin"]
 [ext_resource type="PackedScene" uid="uid://3t8goovc8y6t" path="res://scenes/ui/stats_ui.tscn" id="2_gmlin"]
 [ext_resource type="Texture2D" uid="uid://7fl7p8m18umb" path="res://art/vanessa-sprite-animado.png" id="2_lvxji"]
-
-[sub_resource type="Animation" id="Animation_p47bc"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("VanessaSpriteAnimado:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
+[ext_resource type="Texture2D" uid="uid://b37aphpuacely" path="res://art/vanessa-sprite-animado-attack.png" id="3_p47bc"]
 
 [sub_resource type="Animation" id="Animation_75vfm"]
 resource_name = "idle"
@@ -38,24 +24,51 @@ tracks/0/keys = {
 "values": [1, 2, 3, 4, 6, 5, 7, 8, 9, 10, 11, 12, 13, 14]
 }
 
+[sub_resource type="Animation" id="Animation_0owmy"]
+resource_name = "vanessa_attack"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VanessaAttackAnimation:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.1, 0.11666667, 0.13333334, 0.16666667, 0.18666665, 0.21999998, 0.25333333, 0.27710113, 0.29043445, 0.3071011, 0.31710112, 0.3266667, 0.33666667, 0.3466667, 0.35666668, 0.36666667, 0.37666667, 0.38666666, 0.39623225),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0owmy"]
 _data = {
-&"RESET": SubResource("Animation_p47bc"),
-&"idle": SubResource("Animation_75vfm")
+&"idle": SubResource("Animation_75vfm"),
+&"vanessa_attack": SubResource("Animation_0owmy")
 }
 
 [node name="Player" type="Node2D" unique_id=987277480 groups=["player"]]
 script = ExtResource("1_gmlin")
 
 [node name="VanessaSpriteAnimado" type="Sprite2D" parent="." unique_id=749641048]
+unique_name_in_owner = true
 texture_filter = 1
 position = Vector2(2, -7)
 texture = ExtResource("2_lvxji")
 hframes = 4
 vframes = 4
+frame = 14
+
+[node name="VanessaAttackAnimation" type="Sprite2D" parent="." unique_id=514148020]
+unique_name_in_owner = true
+position = Vector2(2, -7)
+texture = ExtResource("3_p47bc")
+hframes = 5
+vframes = 5
+frame = 22
 
 [node name="PlayerAnimation" type="AnimationPlayer" parent="." unique_id=185380824]
 libraries/ = SubResource("AnimationLibrary_0owmy")
+autoplay = &"idle"
 speed_scale = 0.5
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1601474526]

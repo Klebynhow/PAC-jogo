@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Bookworm"
-run/main_scene="uid://cftnpkte0ovg6"
+run/main_scene="uid://7ghh6kjspivx"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
