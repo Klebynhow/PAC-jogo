@@ -80,6 +80,12 @@ func _setup_top_bar():
 	deck_view.card_pile = character.deck
 	deck_button.pressed.connect(deck_view.show_current_view.bind("Pilha"))
 
+func _on_battle_room_entered(room: Room) -> void:
+	var battle_scene: Battle = _change_view(BATTLE_SCENE) as Battle
+	battle_scene.char_stats = character
+	battle_scene.battle_stats = preload("res://battles/tier_0_worm.tres") #tira essa merda depois
+	battle_scene.start_battle()
+
 func _on_battle_won() -> void:
 	var reward_scene := _change_view(BATTLE_REWARD_SCENE) as BattleReward
 	reward_scene.run_stats = stats
@@ -92,7 +98,7 @@ func _on_battle_won() -> void:
 func _on_map_exited(room: Room) -> void:
 	match room.type:
 		Room.Type.MONSTER :
-			_change_view(BATTLE_SCENE)
+			_on_battle_room_entered(room)
 		Room.Type.TREASURE :
 			_change_view(TREASURE_SCENE)
 		Room.Type.CAMPFIRE :
@@ -100,4 +106,4 @@ func _on_map_exited(room: Room) -> void:
 		Room.Type.SHOP :
 			_change_view(SHOP_SCENE)
 		Room.Type.BOSS :
-			_change_view(BATTLE_SCENE)
+			_on_battle_room_entered(room)
