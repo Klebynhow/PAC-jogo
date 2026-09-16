@@ -3,6 +3,7 @@
 [ext_resource type="Theme" uid="uid://b54n13fqlduvn" path="res://main_theme.tres" id="1_56ahn"]
 [ext_resource type="Script" uid="uid://bjfpsnpcewaiq" path="res://scenes/campfire/campfire.gd" id="2_56ahn"]
 [ext_resource type="Texture2D" uid="uid://b4ia57bi6s322" path="res://art/map-line-path.png" id="3_5yci7"]
+[ext_resource type="Resource" uid="uid://dqrsooet0sy4o" path="res://characters/vanessa/vanessa.tres" id="3_vcaur"]
 
 [sub_resource type="Gradient" id="Gradient_vcaur"]
 offsets = PackedFloat32Array(0.13089006, 0.8429319)
@@ -50,6 +51,80 @@ color_ramp = SubResource("GradientTexture1D_auago")
 [sub_resource type="LabelSettings" id="LabelSettings_bacyy"]
 font_size = 12
 
+[sub_resource type="Animation" id="Animation_civeq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ParticlesLayer/GPUParticles2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UILayer/UI:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6jn8c"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ParticlesLayer/GPUParticles2D:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3, 0.8),
+"transitions": PackedFloat32Array(1, 2),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UILayer/UI:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3, 0.8),
+"transitions": PackedFloat32Array(1, 2),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_on_fade_out_finished"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_auago"]
+_data = {
+&"RESET": SubResource("Animation_civeq"),
+&"fade_out": SubResource("Animation_6jn8c")
+}
+
 [node name="Campfire" type="Control" unique_id=1479642650]
 layout_mode = 3
 anchors_preset = 15
@@ -60,6 +135,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("1_56ahn")
 script = ExtResource("2_56ahn")
+char_stats = ExtResource("3_vcaur")
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=1072167242]
 layer = 0
@@ -116,3 +192,8 @@ text = "Descansar"
 layout_mode = 2
 text = "+30% HP"
 horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=692821969]
+libraries/ = SubResource("AnimationLibrary_auago")
+
+[connection signal="pressed" from="UILayer/UI/RestButton" to="." method="_on_rest_button_pressed"]
