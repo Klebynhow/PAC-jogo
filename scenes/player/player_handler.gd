@@ -41,8 +41,11 @@ func draw_cards(amount: int) -> void:
 	tween.finished.connect(func(): Events.player_hand_drawn.emit())
 
 func discard_cards() -> void:
+	if hand.get_child_count() == 0:
+		Events.player_hand_discarded.emit()
+		return
 	var tween := create_tween()
-	for card_ui in hand.get_children():
+	for card_ui: CardUI in hand.get_children():
 		tween.tween_callback(character.discard.add_card.bind(card_ui.card))
 		tween.tween_callback(hand.discard_card.bind(card_ui))
 		tween.tween_interval(HAND_DISCARD_INTERVAL)

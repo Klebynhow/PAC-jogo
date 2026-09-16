@@ -2,6 +2,53 @@
 
 [ext_resource type="Theme" uid="uid://b54n13fqlduvn" path="res://main_theme.tres" id="1_56ahn"]
 [ext_resource type="Script" uid="uid://bjfpsnpcewaiq" path="res://scenes/campfire/campfire.gd" id="2_56ahn"]
+[ext_resource type="Texture2D" uid="uid://b4ia57bi6s322" path="res://art/map-line-path.png" id="3_5yci7"]
+
+[sub_resource type="Gradient" id="Gradient_vcaur"]
+offsets = PackedFloat32Array(0.13089006, 0.8429319)
+colors = PackedColorArray(0, 0, 0, 1, 0.2246351, 0.12722838, 0.43005934, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_civeq"]
+gradient = SubResource("Gradient_vcaur")
+fill_from = Vector2(0.375, 0)
+fill_to = Vector2(0.25, 1)
+metadata/_snap_enabled = true
+metadata/_snap_count = 8
+
+[sub_resource type="Gradient" id="Gradient_6jn8c"]
+offsets = PackedFloat32Array(0, 0.3469388, 0.5442177, 0.75510204, 1)
+colors = PackedColorArray(0.9843137, 1, 0, 1, 0.94509804, 0.37254903, 0.02745098, 1, 0.9137255, 0.34509805, 0.25490198, 1, 0.44567358, 0.08799986, 0.05674403, 1, 0.44705883, 0.08627451, 0.05490196, 0.105882354)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_auago"]
+gradient = SubResource("Gradient_6jn8c")
+
+[sub_resource type="Curve" id="Curve_8pjve"]
+_data = [Vector2(0, 0.41573036), 0.0, 0.0, 0, 0, Vector2(0.13294798, 1), 0.0, 0.0, 0, 0, Vector2(0.8323699, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.49438208), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_hk2pn"]
+curve = SubResource("Curve_8pjve")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ki1b5"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 25.0
+angle_min = 60.00001
+angle_max = 120.000015
+direction = Vector3(0, -1, 0)
+spread = 10.0
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 14.999997
+linear_accel_max = 24.999998
+damping_min = 20.0
+damping_max = 50.000004
+scale_curve = SubResource("CurveTexture_hk2pn")
+color_ramp = SubResource("GradientTexture1D_auago")
+
+[sub_resource type="LabelSettings" id="LabelSettings_bacyy"]
+font_size = 12
 
 [node name="Campfire" type="Control" unique_id=1479642650]
 layout_mode = 3
@@ -14,38 +61,58 @@ mouse_filter = 2
 theme = ExtResource("1_56ahn")
 script = ExtResource("2_56ahn")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=477830362]
-layout_mode = 1
+[node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=1072167242]
+layer = 0
+
+[node name="Background" type="TextureRect" parent="BackgroundLayer" unique_id=231702809]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-color = Color(0, 0, 0, 0.58431375)
+texture = SubResource("GradientTexture2D_civeq")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1078401837]
-layout_mode = 1
+[node name="ParticlesLayer" type="CanvasLayer" parent="." unique_id=1197078729]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="ParticlesLayer" unique_id=432349020]
+position = Vector2(79, 103)
+amount = 120
+texture = ExtResource("3_5yci7")
+lifetime = 1.5
+process_material = SubResource("ParticleProcessMaterial_ki1b5")
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=1478268399]
+
+[node name="UI" type="VBoxContainer" parent="UILayer" unique_id=1078401837]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = 9.0
+offset_top = -22.0
+offset_right = 98.0
+offset_bottom = 61.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_56ahn")
 
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=640384558]
+[node name="Title" type="Label" parent="UILayer/UI" unique_id=640384558]
 layout_mode = 2
 text = "Fogueira"
+label_settings = SubResource("LabelSettings_bacyy")
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="VBoxContainer" unique_id=1065314453]
-custom_minimum_size = Vector2(0, 12.795)
+[node name="Control" type="Control" parent="UILayer/UI" unique_id=579806072]
 layout_mode = 2
-text = "Voltar"
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[node name="RestButton" type="Button" parent="UILayer/UI" unique_id=1065314453]
+custom_minimum_size = Vector2(40, 14)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Descansar"
+
+[node name="Description" type="Label" parent="UILayer/UI" unique_id=1487746485]
+layout_mode = 2
+text = "+30% HP"
+horizontal_alignment = 1
