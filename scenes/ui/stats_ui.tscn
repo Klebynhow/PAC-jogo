@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://b54n13fqlduvn" path="res://main_theme.tres" id="1_08kyh"]
 [ext_resource type="Texture2D" uid="uid://cgtrwpec46ekt" path="res://art/ph_blockIcon.png" id="2_3ktwi"]
 [ext_resource type="Script" uid="uid://cp886n0ncp0c" path="res://scenes/ui/stats_ui.gd" id="2_7klq2"]
-[ext_resource type="Texture2D" uid="uid://i3r5b5x51ul8" path="res://art/ph_healthIcon.png" id="3_7klq2"]
+[ext_resource type="PackedScene" uid="uid://8endg6s6d3rb" path="res://scenes/ui/health_ui.tscn" id="4_3ktwi"]
 
 [node name="StatsUI" type="HBoxContainer" unique_id=120172452]
 anchors_preset = 5
@@ -34,19 +34,5 @@ text = "6"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Health" type="HBoxContainer" parent="." unique_id=2023810003]
+[node name="Health" parent="." unique_id=1491546837 instance=ExtResource("4_3ktwi")]
 layout_mode = 2
-theme_override_constants/separation = 2
-
-[node name="HealthImage" type="TextureRect" parent="Health" unique_id=907127641]
-layout_mode = 2
-texture = ExtResource("3_7klq2")
-stretch_mode = 5
-
-[node name="HealthLabel" type="Label" parent="Health" unique_id=1863179327]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 1
-text = "4"
-horizontal_alignment = 1
-vertical_alignment = 1

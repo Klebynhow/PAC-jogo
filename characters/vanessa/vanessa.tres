@@ -15,6 +15,6 @@ starting_deck = ExtResource("3_gt26e")
 draftable_cards = ExtResource("2_0aobs")
 cards_per_turn = 5
 max_mana = 3
-max_health = 35
+max_health = 50
 art = ExtResource("1_ial8b")
 metadata/_custom_type_script = "uid://cqn3tcvl4br7j"
