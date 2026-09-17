@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Status" format=3 uid="uid://dkwm67gn531lm"]
+
+[ext_resource type="Script" uid="uid://dyhlnagl8v6ml" path="res://custom_resources/status.gd" id="1_po5ww"]
+[ext_resource type="Texture2D" uid="uid://hulfjfji2unf" path="res://art/warrior_form_icon.png" id="1_rcwep"]
+
+[resource]
+script = ExtResource("1_po5ww")
+id = "warrior_form"
+icon = ExtResource("1_rcwep")
+tooltip = "FAZER"
+metadata/_custom_type_script = "uid://dyhlnagl8v6ml"

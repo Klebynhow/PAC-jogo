@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://c3080lpet42lg"]
+
+[ext_resource type="Theme" uid="uid://b54n13fqlduvn" path="res://main_theme.tres" id="1_r24ij"]
+[ext_resource type="Script" uid="uid://vun2o8lbc08o" path="res://scenes/status_handler/status_ui.gd" id="2_tth6i"]
+[ext_resource type="Texture2D" uid="uid://vekvq0c7me1e" path="res://art/exposed_icon.png" id="2_vm08l"]
+[ext_resource type="Resource" uid="uid://csm55y13qbalt" path="res://statuses/toughen.tres" id="3_tth6i"]
+
+[node name="StatusUI" type="Control" unique_id=703011345]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_r24ij")
+script = ExtResource("2_tth6i")
+status = ExtResource("3_tth6i")
+
+[node name="Icon" type="TextureRect" parent="." unique_id=667188933]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 0
+texture = ExtResource("2_vm08l")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Duration" type="Label" parent="." unique_id=265650859]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 6.0
+offset_right = 15.0
+offset_bottom = 12.0
+text = "99"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Stacks" type="Label" parent="." unique_id=796251637]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 6.0
+offset_right = 15.0
+offset_bottom = 12.0
+text = "99"
+horizontal_alignment = 1
+vertical_alignment = 1
