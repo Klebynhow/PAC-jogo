@@ -6,7 +6,7 @@ const STATUS_UI = preload("res://scenes/status_handler/status_ui.tscn")
 
 #teste apagar blabubibubbuuuuuuu
 func _ready() -> void:
-	var test := load("res://statuses/exposed.tres")
+	var test := load("res://statuses/toughen.tres")
 	await get_tree().create_timer(2).timeout
 	add_status(test)
 	await get_tree().create_timer(2).timeout

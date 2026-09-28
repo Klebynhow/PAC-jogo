@@ -6,12 +6,6 @@ extends Control
 @onready var duration: Label = $Duration
 @onready var stacks: Label = $Stacks
 
-# TESTE APAGA ESSA BOSTA 
-func _ready() -> void:
-	await get_tree().create_timer(2).timeout
-	status.duration -= 1
-	status.stacks -= 2
-
 func set_status(new_status: Status) -> void:
 	if not is_node_ready():
 		await ready
