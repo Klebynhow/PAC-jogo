@@ -6,12 +6,13 @@ const WHITE_SPRITE_MATERIAL := preload("res://art/white_sprite_material.tres")
 @export var stats: CharacterStats : set = set_character_stats
 @onready var vanessa_sprite_animado: Sprite2D = %VanessaSpriteAnimado
 @onready var vanessa_attack_animation: Sprite2D = %VanessaAttackAnimation
-
+@onready var player_animation: AnimationPlayer = $PlayerAnimation
+@onready var status_handler: StatusHandler = $StatusHandler
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var stats_ui: StatsUI = $StatsUI as StatsUI
-@onready var player_animation: AnimationPlayer = $PlayerAnimation
 
 func _ready() -> void:
+	status_handler.status_owner = self
 	Events.card_played.connect(_on_card_played)
 	player_animation.animation_finished.connect(_on_animation_finished)
 	vanessa_sprite_animado.show()
@@ -55,7 +56,6 @@ func take_damage(damage: int) -> void:
 			queue_free()
 		)
 	
-
 func _on_card_played(card) -> void:
 	player_animation.stop()
 	vanessa_attack_animation.show()
