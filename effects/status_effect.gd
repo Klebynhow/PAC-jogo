@@ -1,0 +1,11 @@
+class_name MyEffect
+extends Effect
+
+var status: Status
+
+func execute(_targets: Array[Node]) -> void:
+	for target in _targets:
+		if not target:
+			continue
+		if target is Enemy or target is Player:
+			target.status_handler.add_status(status)
