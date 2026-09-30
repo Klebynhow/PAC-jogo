@@ -64,6 +64,8 @@ func reshuffle_deck_from_discard() -> void:
 	character.draw_pile.shuffle()
 
 func _on_card_played(card: Card) -> void:
+	if card.exhausts or card.type == Card.Type.POWER:
+		return   #se algum dia eu quiser uma pilha de exhaust é só mudar aq
 	character.discard.add_card(card)
 
 func _on_statuses_applied(type: Status.Type) -> void:

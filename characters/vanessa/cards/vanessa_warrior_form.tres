@@ -1,14 +1,14 @@
 [gd_resource type="Resource" format=3 uid="uid://bnfuxphsngif4"]
 
-[ext_resource type="Texture2D" uid="uid://hulfjfji2unf" path="res://art/warrior_form_icon.png" id="1_pbhn0"]
-[ext_resource type="Script" uid="uid://cu7btpy0ll27m" path="res://characters/vanessa/cards/vanessa_warrior_form.gd" id="2_pbhn0"]
+[ext_resource type="Texture2D" uid="uid://hulfjfji2unf" path="res://art/warrior_form_icon.png" id="1_y7d1n"]
+[ext_resource type="Script" uid="uid://cu7btpy0ll27m" path="res://characters/vanessa/cards/vanessa_warrior_form.gd" id="2_jbxvu"]
 
 [resource]
-script = ExtResource("2_pbhn0")
+script = ExtResource("2_jbxvu")
 id = "warrior_form"
 type = 2
 rarity = 2
 cost = 3
-icon = ExtResource("1_pbhn0")
+icon = ExtResource("1_y7d1n")
 tooltip_text = "Eu tenho que arrumar essa tooltip"
 metadata/_custom_type_script = "uid://ctg5l1ui52cf8"
