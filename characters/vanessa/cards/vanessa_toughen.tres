@@ -9,7 +9,7 @@ script = ExtResource("2_403d0")
 id = "vanessa_toughen"
 type = 2
 rarity = 2
-cost = 3
+cost = 2
 icon = ExtResource("1_8f07q")
 tooltip_text = "[center]No comeco do seu turno, ganhe 2 de [color=\"ffdf00\"]força[/color].[/center]"
 sound = ExtResource("3_bcfu5")

@@ -12,7 +12,7 @@ func apply_effects(_targets: Array[Node]) -> void:
 	damage_effect.sound = sound
 	damage_effect.execute(_targets)
 	
-	var status_effect := MyEffect.new()
+	var status_effect := StatusEffect.new()
 	var exposed := EXPOSED_STATUS.duplicate()
 	exposed.duration = exposed_duration
 	status_effect.status = exposed

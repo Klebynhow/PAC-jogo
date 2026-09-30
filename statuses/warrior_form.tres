@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="Status" format=3 uid="uid://dkwm67gn531lm"]
+[gd_resource type="Resource" script_class="WarriorFormStatus" format=3 uid="uid://dkwm67gn531lm"]
 
-[ext_resource type="Script" uid="uid://dyhlnagl8v6ml" path="res://custom_resources/status.gd" id="1_po5ww"]
 [ext_resource type="Texture2D" uid="uid://hulfjfji2unf" path="res://art/warrior_form_icon.png" id="1_rcwep"]
+[ext_resource type="Script" uid="uid://bxgu8kfse03uk" path="res://statuses/warrior_form.gd" id="2_rcwep"]
 
 [resource]
-script = ExtResource("1_po5ww")
+script = ExtResource("2_rcwep")
 id = "warrior_form"
 icon = ExtResource("1_rcwep")
 tooltip = "FAZER"
