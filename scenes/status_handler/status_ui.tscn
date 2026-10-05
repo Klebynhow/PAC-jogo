@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://b54n13fqlduvn" path="res://main_theme.tres" id="1_r24ij"]
 [ext_resource type="Script" uid="uid://vun2o8lbc08o" path="res://scenes/status_handler/status_ui.gd" id="2_tth6i"]
 [ext_resource type="Texture2D" uid="uid://vekvq0c7me1e" path="res://art/exposed_icon.png" id="2_vm08l"]
-[ext_resource type="Resource" uid="uid://csm55y13qbalt" path="res://statuses/toughen.tres" id="3_tth6i"]
+[ext_resource type="Resource" uid="uid://csm55y13qbalt" path="res://statuses/muscle.tres" id="3_tth6i"]
 
 [node name="StatusUI" type="Control" unique_id=703011345]
 layout_mode = 3

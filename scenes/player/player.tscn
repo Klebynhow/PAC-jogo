@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://7fl7p8m18umb" path="res://art/vanessa-sprite-animado.png" id="2_lvxji"]
 [ext_resource type="Texture2D" uid="uid://b37aphpuacely" path="res://art/vanessa-sprite-animado-attack.png" id="3_p47bc"]
 [ext_resource type="Script" uid="uid://e37k4r40i602" path="res://scenes/status_handler/status_handler.gd" id="6_75vfm"]
+[ext_resource type="PackedScene" uid="uid://cnmp8gm6jqbkg" path="res://scenes/modifier_handler/modifier_handler.tscn" id="7_qek5x"]
+[ext_resource type="PackedScene" uid="uid://dv1mwb37xvnhc" path="res://scenes/modifier_handler/modifier.tscn" id="8_5gtgg"]
 
 [sub_resource type="Animation" id="Animation_75vfm"]
 resource_name = "idle"
@@ -88,3 +90,13 @@ offset_bottom = 26.0
 script = ExtResource("6_75vfm")
 status_owner = NodePath("..")
 metadata/_custom_type_script = "uid://e37k4r40i602"
+
+[node name="ModifierHandler" parent="." unique_id=1561661670 instance=ExtResource("7_qek5x")]
+
+[node name="DamageDealtModifier" parent="ModifierHandler" unique_id=553608970 instance=ExtResource("8_5gtgg")]
+
+[node name="DamageTakenModifier" parent="ModifierHandler" unique_id=1575544622 instance=ExtResource("8_5gtgg")]
+type = 1
+
+[node name="CardCostModifier" parent="ModifierHandler" unique_id=2058250421 instance=ExtResource("8_5gtgg")]
+type = 2
