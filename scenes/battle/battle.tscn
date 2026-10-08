@@ -75,7 +75,7 @@ hand = NodePath("../battleUI/hand")
 [node name="battleUI" type="CanvasLayer" parent="." unique_id=1674564968 groups=["ui_layer"]]
 script = ExtResource("7_icoan")
 
-[node name="hand" type="HBoxContainer" parent="battleUI" unique_id=747028500]
+[node name="hand" type="HBoxContainer" parent="battleUI" unique_id=747028500 node_paths=PackedStringArray("player")]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -88,6 +88,7 @@ grow_horizontal = 2
 grow_vertical = 0
 alignment = 1
 script = ExtResource("2_xd4uy")
+player = NodePath("../../Player")
 
 [node name="ManaUI" parent="battleUI" unique_id=698544404 instance=ExtResource("11_fisqk")]
 offset_top = -40.0
