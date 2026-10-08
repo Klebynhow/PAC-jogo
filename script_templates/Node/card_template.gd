@@ -4,6 +4,6 @@ extends Card
 
 @export var optional_sound: AudioStream
 
-func apply_effects(_targets: Array[Node]) -> void:
+func apply_effects(_targets: Array[Node], _modifiers: ModifierHandler) -> void:
 	print("oi poi teste")
 	print("Alvos: %s" % _targets)

@@ -9,6 +9,7 @@ const HOVER_STYLEBOX := preload("uid://dr40ty31ai72d")
 
 @export var card: Card : set = _set_card
 @export var char_stats: CharacterStats : set = _set_char_stats
+@export var player_modifiers: ModifierHandler
 
 @onready var card_visuals: CardVisuals = $CardVisuals
 @onready var drop_point_detector: Area2D = $DropPointDetector
@@ -38,7 +39,7 @@ func animate_to_position(new_position: Vector2, duration: float) -> void:
 func play() -> void:
 	if not card:
 		return
-	card.play(targets, char_stats)
+	card.play(targets, char_stats, player_modifiers)
 	queue_free()
 
 func _on_gui_input(event: InputEvent) -> void:
