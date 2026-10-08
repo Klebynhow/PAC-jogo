@@ -13,17 +13,19 @@
 
 [sub_resource type="Resource" id="Resource_urmxx"]
 script = ExtResource("4_kf0wf")
-number = "7"
+base_text = "%s"
 icon = ExtResource("3_0kp20")
 metadata/_custom_type_script = "uid://chopbebvi1op0"
 
 [sub_resource type="Resource" id="Resource_cyoi1"]
 script = ExtResource("4_kf0wf")
+base_text = "6"
 icon = ExtResource("6_dwcwc")
 metadata/_custom_type_script = "uid://chopbebvi1op0"
 
 [sub_resource type="Resource" id="Resource_amkgu"]
 script = ExtResource("4_kf0wf")
+base_text = "15"
 icon = ExtResource("8_p4jei")
 metadata/_custom_type_script = "uid://chopbebvi1op0"
 

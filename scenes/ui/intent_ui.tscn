@@ -24,7 +24,7 @@ texture = ExtResource("2_rdgft")
 expand_mode = 1
 stretch_mode = 3
 
-[node name="Number" type="Label" parent="." unique_id=99686981]
+[node name="Label" type="Label" parent="." unique_id=99686981]
 layout_mode = 2
 size_flags_vertical = 1
 text = "7"
