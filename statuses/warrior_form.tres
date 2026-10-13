@@ -7,5 +7,5 @@
 script = ExtResource("2_rcwep")
 id = "warrior_form"
 icon = ExtResource("1_rcwep")
-tooltip = "FAZER"
+tooltip = "Forma de Guerreiro: no começo de seu turno, ganhe mais 2 de força."
 metadata/_custom_type_script = "uid://dyhlnagl8v6ml"

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bpa6l1cdbhnav"]
+
+[ext_resource type="Theme" uid="uid://b54n13fqlduvn" path="res://main_theme.tres" id="1_5okso"]
+[ext_resource type="Texture2D" uid="uid://vekvq0c7me1e" path="res://art/exposed_icon.png" id="2_nj0h8"]
+
+[node name="StatusTooltip" type="HBoxContainer" unique_id=843533842]
+custom_minimum_size = Vector2(150, 15)
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_5okso")
+
+[node name="Icon" type="TextureRect" parent="." unique_id=508430531]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+texture = ExtResource("2_nj0h8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="." unique_id=193991422]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Causa blablabla de danos por n sei muitos tempos fodas"
+vertical_alignment = 1
+autowrap_mode = 2
