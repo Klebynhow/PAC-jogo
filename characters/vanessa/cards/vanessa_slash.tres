@@ -10,6 +10,6 @@ id = "vanessa_slash"
 target = 2
 cost = 2
 icon = ExtResource("1_dnc1k")
-tooltip_text = "[center]Causa [color=\"6e0303\"]4[/color] de dano em todos os inimigos.[/center]"
+tooltip_text = "[center]Causa [color=\"6e0303\"]%s[/color] de dano em todos os inimigos.[/center]"
 sound = ExtResource("3_e1qkp")
 metadata/_custom_type_script = "uid://ctg5l1ui52cf8"

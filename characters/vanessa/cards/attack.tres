@@ -10,6 +10,6 @@ id = "normal_attack"
 target = 1
 cost = 1
 icon = ExtResource("1_08mf8")
-tooltip_text = "[center]Causa [color=\"6e0303\"]6[/color] de dano.[/center]"
+tooltip_text = "[center]Causa [color=\"6e0303\"]%s[/color] de dano.[/center]"
 sound = ExtResource("3_vuw7f")
 metadata/_custom_type_script = "uid://ctg5l1ui52cf8"
