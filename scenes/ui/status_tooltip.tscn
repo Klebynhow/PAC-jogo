@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bpa6l1cdbhnav"]
 
 [ext_resource type="Theme" uid="uid://b54n13fqlduvn" path="res://main_theme.tres" id="1_5okso"]
+[ext_resource type="Script" uid="uid://ci0dwhfhi8p08" path="res://scenes/ui/status_tooltip.gd" id="2_6u54l"]
 [ext_resource type="Texture2D" uid="uid://vekvq0c7me1e" path="res://art/exposed_icon.png" id="2_nj0h8"]
 
 [node name="StatusTooltip" type="HBoxContainer" unique_id=843533842]
@@ -8,6 +9,7 @@ custom_minimum_size = Vector2(150, 15)
 offset_right = 40.0
 offset_bottom = 40.0
 theme = ExtResource("1_5okso")
+script = ExtResource("2_6u54l")
 
 [node name="Icon" type="TextureRect" parent="." unique_id=508430531]
 custom_minimum_size = Vector2(10, 10)

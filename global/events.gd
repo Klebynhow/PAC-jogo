@@ -24,6 +24,7 @@ signal enemy_died(enemy: Enemy)
 #eventos de batalha
 signal battle_over_screen_requested(text: String, type: BattleOverPanel.Type)
 signal battle_won
+signal status_tooltip_requested(statuses: Array[Status])
 
 #eventos de mapa
 signal map_exited(room: Room)

@@ -8,6 +8,7 @@
 [node name="StatusUI" type="Control" unique_id=703011345]
 layout_mode = 3
 anchors_preset = 0
+mouse_filter = 2
 theme = ExtResource("1_r24ij")
 script = ExtResource("2_tth6i")
 status = ExtResource("3_tth6i")

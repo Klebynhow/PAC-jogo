@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://daad1lrdnjspx"]
+
+[ext_resource type="Theme" uid="uid://b54n13fqlduvn" path="res://main_theme.tres" id="1_pbqwo"]
+[ext_resource type="Script" uid="uid://kgr02axlskos" path="res://scenes/ui/status_view.gd" id="2_msrfa"]
+
+[node name="StatusView" type="Control" unique_id=74930366]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_pbqwo")
+script = ExtResource("2_msrfa")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1050014900]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.50980395)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=2125051100]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -50.0
+offset_right = 100.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="CenterContainer" type="CenterContainer" parent="ScrollContainer" unique_id=171572291]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="StatusTooltips" type="VBoxContainer" parent="ScrollContainer/CenterContainer" unique_id=1752621187]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="BackButton" type="Button" parent="." unique_id=1719408393]
+custom_minimum_size = Vector2(50, 15)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -54.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = 19.0
+grow_horizontal = 0
+text = "Voltar"
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
