@@ -6,6 +6,11 @@ const STATUS_APPLY_INTERVAL := 0.25
 const STATUS_UI = preload("res://scenes/status_handler/status_ui.tscn")
 @export var status_owner: Node2D
 
+func _ready() -> void:
+	mouse_filter = Control.MOUSE_FILTER_STOP
+	if not gui_input.is_connected(_on_gui_input):
+		gui_input.connect(_on_gui_input)
+
 func apply_status_by_type(type: Status.Type) -> void:
 	if type == Status.Type.EVENT_BASED:
 		return
