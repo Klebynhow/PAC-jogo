@@ -1,7 +1,14 @@
 [gd_resource type="Resource" script_class="Relic" format=3 uid="uid://bxouhsrwj4q8"]
 
 [ext_resource type="Script" uid="uid://cyfywqwrmcwde" path="res://custom_resources/relic.gd" id="1_7jprv"]
+[ext_resource type="Texture2D" uid="uid://cd1dcx2xv6un0" path="res://art/reinforcedArmor_relic_icon.png" id="1_no180"]
 
 [resource]
 script = ExtResource("1_7jprv")
+relic_name = "Reinforced Armor"
+id = "reinforced_armor"
+type = 2
+icon = ExtResource("1_no180")
+tooltip = "[color=\"ffdf00\"]Armadura Reforçada[/color]
+No fim de seu turno, ganhe 3 de escudo."
 metadata/_custom_type_script = "uid://cyfywqwrmcwde"

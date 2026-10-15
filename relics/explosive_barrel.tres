@@ -1,7 +1,13 @@
 [gd_resource type="Resource" script_class="Relic" format=3 uid="uid://jsam6lywteta"]
 
+[ext_resource type="Texture2D" uid="uid://cwwo0vixkod8n" path="res://art/explosiveBarrel_relic_icon.png" id="1_fn0kn"]
 [ext_resource type="Script" uid="uid://cyfywqwrmcwde" path="res://custom_resources/relic.gd" id="1_whncs"]
 
 [resource]
 script = ExtResource("1_whncs")
+relic_name = "Explosive Barrel"
+id = "explosive_barrel"
+icon = ExtResource("1_fn0kn")
+tooltip = "[color=\"ffdf00\"]Barril Explosivo[/color]
+No começo de seu turno, cause 2 de dano em todos os inimigos."
 metadata/_custom_type_script = "uid://cyfywqwrmcwde"
