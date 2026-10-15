@@ -50,6 +50,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 mouse_filter = 2
+bbcode_enabled = true
 text = "Descricao da carta Descricao da carta Descricao da carta Descricao da carta Descricao da carta Descricao da carta "
 fit_content = true
 

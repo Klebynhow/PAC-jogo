@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Relic" format=3 uid="uid://b0omno08q2baj"]
+
+[ext_resource type="Script" uid="uid://cyfywqwrmcwde" path="res://custom_resources/relic.gd" id="1_efpid"]
+
+[resource]
+script = ExtResource("1_efpid")
+metadata/_custom_type_script = "uid://cyfywqwrmcwde"
