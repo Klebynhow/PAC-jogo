@@ -20,6 +20,8 @@ func _ready() -> void:
 	relics.child_order_changed.connect(_on_relics_child_order_changed)
 	
 func update() -> void:
+	if not is_inside_tree():
+		return
 	num_of_relics = relics.get_child_count()
 	max_page = ceili(num_of_relics / float(RELICS_PER_PAGE))
 	left_button.disabled = current_page <= 1
