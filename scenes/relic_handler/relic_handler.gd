@@ -9,7 +9,13 @@ const RELIC_UI = preload("res://scenes/relic_handler/relic_ui.tscn")
 
 func _ready() -> void:
 	relics.child_exiting_tree.connect(_on_relics_child_exiting_tree)
-	
+	#teste
+	add_relic(preload("res://relics/explosive_barrel.tres"))
+	await get_tree().create_timer(2.0).timeout
+	add_relic(preload("res://relics/mana_potion.tres"))
+	await get_tree().create_timer(2.0).timeout
+	add_relic(preload("res://relics/explosive_barrel.tres"))
+
 func activate_relics_by_type(type: Relic.Type) -> void:
 	if type == Relic.Type.EVENT_BASED: return
 	var relic_queue: Array[RelicUI] = _get_all_relic_ui_nodes().filter(
