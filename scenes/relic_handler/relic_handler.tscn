@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://kcsbhiwxtgpp"]
 
 [ext_resource type="Script" uid="uid://caw10gplosnpw" path="res://scenes/relic_handler/relic_handler.gd" id="1_4mcmm"]
-[ext_resource type="PackedScene" uid="uid://ckm8mtu27d8jb" path="res://scenes/relic_handler/relic_ui.tscn" id="1_hodi7"]
 [ext_resource type="Texture2D" uid="uid://6jycowfwe6fa" path="res://art/arrow_button_active.png" id="1_ivcrv"]
 [ext_resource type="Texture2D" uid="uid://dhto5i8d6j4yv" path="res://art/arrow_button_disabled.png" id="2_f73p0"]
 [ext_resource type="Script" uid="uid://7wgsp0oroxni" path="res://scenes/relic_handler/relics_control.gd" id="3_f73p0"]
@@ -37,42 +36,6 @@ layout_mode = 0
 offset_right = 156.0
 offset_bottom = 16.0
 theme_override_constants/separation = 2
-
-[node name="RelicUI" parent="RelicsControl/Relics" unique_id=1126329401 instance=ExtResource("1_hodi7")]
-layout_mode = 2
-
-[node name="RelicUI2" parent="RelicsControl/Relics" unique_id=1609012046 instance=ExtResource("1_hodi7")]
-layout_mode = 2
-
-[node name="RelicUI3" parent="RelicsControl/Relics" unique_id=2038483751 instance=ExtResource("1_hodi7")]
-layout_mode = 2
-
-[node name="RelicUI4" parent="RelicsControl/Relics" unique_id=936236872 instance=ExtResource("1_hodi7")]
-layout_mode = 2
-
-[node name="RelicUI5" parent="RelicsControl/Relics" unique_id=2054880792 instance=ExtResource("1_hodi7")]
-layout_mode = 2
-
-[node name="RelicUI6" parent="RelicsControl/Relics" unique_id=1945359843 instance=ExtResource("1_hodi7")]
-layout_mode = 2
-
-[node name="RelicUI7" parent="RelicsControl/Relics" unique_id=356146225 instance=ExtResource("1_hodi7")]
-layout_mode = 2
-
-[node name="RelicUI8" parent="RelicsControl/Relics" unique_id=459701282 instance=ExtResource("1_hodi7")]
-layout_mode = 2
-
-[node name="RelicUI9" parent="RelicsControl/Relics" unique_id=1901505619 instance=ExtResource("1_hodi7")]
-layout_mode = 2
-
-[node name="RelicUI10" parent="RelicsControl/Relics" unique_id=1591816052 instance=ExtResource("1_hodi7")]
-layout_mode = 2
-
-[node name="RelicUI11" parent="RelicsControl/Relics" unique_id=761678703 instance=ExtResource("1_hodi7")]
-layout_mode = 2
-
-[node name="RelicUI12" parent="RelicsControl/Relics" unique_id=359022681 instance=ExtResource("1_hodi7")]
-layout_mode = 2
 
 [node name="RightButton" type="TextureButton" parent="." unique_id=564294870]
 unique_name_in_owner = true

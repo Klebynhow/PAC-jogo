@@ -20,6 +20,7 @@ const TREASURE_SCENE := preload("res://scenes/treasure/treasure.tscn")
 @onready var rewards_button: Button = %RewardsButton
 @onready var shop_button: Button = %ShopButton
 @onready var treasure_button: Button = %TreasureButton
+@onready var relic_handler: RelicHandler = %RelicHandler
 
 var stats: RunStats
 var character: CharacterStats
@@ -78,6 +79,7 @@ func _setup_top_bar():
 	character.stats_changed.connect(health_ui.update_stats.bind(character))
 	health_ui.update_stats(character)
 	gold_ui.run_stats = stats
+	relic_handler.add_relic(character.starting_relic)
 	deck_button.card_pile = character.deck
 	deck_view.card_pile = character.deck
 	deck_button.pressed.connect(deck_view.show_current_view.bind("Pilha"))

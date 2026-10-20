@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://d2mnw7b57sfhx" path="res://scenes/ui/card_pile_opener.tscn" id="5_w4jsb"]
 [ext_resource type="Texture2D" uid="uid://bacjqb1jrrrq0" path="res://art/deckIcon.png" id="6_68kdb"]
 [ext_resource type="PackedScene" uid="uid://cahghvf68rkg0" path="res://scenes/ui/card_pile_view.tscn" id="7_68kdb"]
+[ext_resource type="PackedScene" uid="uid://kcsbhiwxtgpp" path="res://scenes/relic_handler/relic_handler.tscn" id="7_jbxqc"]
 
 [node name="Run" type="Node" unique_id=1284597986]
 script = ExtResource("1_4m5yt")
@@ -81,9 +82,14 @@ show_max_hp = true
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Placeholder" type="Control" parent="TopBar/BarItems" unique_id=1217274277]
+[node name="RelicHandlerContainer" type="CenterContainer" parent="TopBar/BarItems" unique_id=1079321490]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="RelicHandler" parent="TopBar/BarItems/RelicHandlerContainer" unique_id=329804753 instance=ExtResource("7_jbxqc")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 16)
+layout_mode = 2
 
 [node name="DeckButton" parent="TopBar/BarItems" unique_id=722744370 node_paths=PackedStringArray("counter") instance=ExtResource("5_w4jsb")]
 unique_name_in_owner = true
