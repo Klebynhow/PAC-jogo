@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://kcsbhiwxtgpp"]
 
+[ext_resource type="Script" uid="uid://caw10gplosnpw" path="res://scenes/relic_handler/relic_handler.gd" id="1_4mcmm"]
 [ext_resource type="PackedScene" uid="uid://ckm8mtu27d8jb" path="res://scenes/relic_handler/relic_ui.tscn" id="1_hodi7"]
 [ext_resource type="Texture2D" uid="uid://6jycowfwe6fa" path="res://art/arrow_button_active.png" id="1_ivcrv"]
 [ext_resource type="Texture2D" uid="uid://dhto5i8d6j4yv" path="res://art/arrow_button_disabled.png" id="2_f73p0"]
@@ -8,6 +9,7 @@
 [node name="RelicHandler" type="HBoxContainer" unique_id=329804753]
 offset_right = 120.0
 offset_bottom = 16.0
+script = ExtResource("1_4mcmm")
 
 [node name="LeftButton" type="TextureButton" parent="." unique_id=1980033916]
 unique_name_in_owner = true
