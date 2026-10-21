@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="Relic" format=3 uid="uid://jsam6lywteta"]
+[gd_resource type="Resource" format=3 uid="uid://jsam6lywteta"]
 
 [ext_resource type="Texture2D" uid="uid://cwwo0vixkod8n" path="res://art/explosiveBarrel_relic_icon.png" id="1_fn0kn"]
-[ext_resource type="Script" uid="uid://cyfywqwrmcwde" path="res://custom_resources/relic.gd" id="1_whncs"]
+[ext_resource type="Script" uid="uid://ctxo1ongnadoe" path="res://relics/explosive_barrel.gd" id="2_fn0kn"]
 
 [resource]
-script = ExtResource("1_whncs")
+script = ExtResource("2_fn0kn")
 relic_name = "Explosive Barrel"
 id = "explosive_barrel"
 icon = ExtResource("1_fn0kn")

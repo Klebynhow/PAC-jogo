@@ -24,6 +24,7 @@ func start_battle() -> void:
 	MusicPlayer.play(music, true)
 	battle_ui.char_stats = char_stats
 	player.stats = char_stats
+	player_handler.relics = relics
 	enemy_handler.setup_enemies(battle_stats)
 	enemy_handler.reset_enemy_actions()
 	relics.relics_activated.connect(_on_relics_activated)
