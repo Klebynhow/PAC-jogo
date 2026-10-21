@@ -14,5 +14,5 @@ func flash() -> void: animation_player.play("flash")
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_mouse"):
-		print("oi poi tooltip aq oiiii")
+		Events.relic_tooltip_requested.emit(relic)
 		

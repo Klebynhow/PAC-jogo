@@ -40,3 +40,6 @@ signal battle_reward_exited
 
 #eventos de tesouros
 signal treasure_room_exited
+
+#eventos de artefatos
+signal relic_tooltip_requested(relic: Relic)
