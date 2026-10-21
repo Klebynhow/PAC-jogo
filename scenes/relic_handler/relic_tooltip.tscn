@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://61ika0mj4wy6"]
+
+[ext_resource type="Theme" uid="uid://b54n13fqlduvn" path="res://main_theme.tres" id="1_fqibc"]
+[ext_resource type="Script" uid="uid://gaj3lw3lttj2" path="res://scenes/relic_handler/relic_tooltip.gd" id="2_fqibc"]
+[ext_resource type="Texture2D" uid="uid://336s5uemlode" path="res://art/healingPotion_relic_icon.png" id="2_mw276"]
+
+[node name="RelicTooltip" type="Control" unique_id=1068110371]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_fqibc")
+script = ExtResource("2_fqibc")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1294958483]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.6156863)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2129947121]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -29.0
+offset_right = 75.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RelicIcon" type="TextureRect" parent="VBoxContainer" unique_id=1093260963]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = ExtResource("2_mw276")
+stretch_mode = 5
+
+[node name="RelicTooltip" type="RichTextLabel" parent="VBoxContainer" unique_id=50224787]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "Descrição do artefato Descrição do artefato Descrição do artefato Descrição do artefato Descrição do artefato Descrição do artefato Descrição do artefato "
+fit_content = true
+
+[node name="BackButton" type="Button" parent="." unique_id=603226508]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -48.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 22.0
+grow_horizontal = 0
+text = "Voltar"
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
