@@ -30,7 +30,7 @@ func start_battle() -> void:
 	relics.activate_relics_by_type(Relic.Type.START_OF_COMBAT)
 
 func _on_enemies_child_order_changed() -> void:
-	if enemy_handler.get_child_count() == 0:
+	if enemy_handler.get_child_count() == 0 and is_instance_valid(relics):
 		relics.activate_relics_by_type(Relic.Type.END_OF_COMBAT)
 
 func _on_enemy_turn_ended() -> void:
