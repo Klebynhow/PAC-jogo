@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="Relic" format=3 uid="uid://b0omno08q2baj"]
+[gd_resource type="Resource" format=3 uid="uid://b0omno08q2baj"]
 
-[ext_resource type="Script" uid="uid://cyfywqwrmcwde" path="res://custom_resources/relic.gd" id="1_efpid"]
 [ext_resource type="Texture2D" uid="uid://crwv4c3r6wcws" path="res://art/manaPotion_relic_icon.png" id="1_nckqy"]
+[ext_resource type="Script" uid="uid://cway5n8hrmb1f" path="res://relics/mana_potion.gd" id="2_nckqy"]
 
 [resource]
-script = ExtResource("1_efpid")
+script = ExtResource("2_nckqy")
 relic_name = "Mana Potion"
 id = "mana_potion"
 type = 1
