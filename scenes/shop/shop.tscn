@@ -2,6 +2,8 @@
 
 [ext_resource type="Theme" uid="uid://b54n13fqlduvn" path="res://main_theme.tres" id="1_qaxay"]
 [ext_resource type="Script" uid="uid://cbfel0ykbovxo" path="res://scenes/shop/shop.gd" id="2_qaxay"]
+[ext_resource type="Texture2D" uid="uid://36ggwo0wkimt" path="res://art/shopkeeper-sprite.png" id="3_jp048"]
+[ext_resource type="Texture2D" uid="uid://70mfxuc05igk" path="res://art/shopkeeper-blinking-sprite.png" id="4_ctpgp"]
 
 [sub_resource type="Gradient" id="Gradient_vcaur"]
 offsets = PackedFloat32Array(0.13089006, 0.8429319)
@@ -13,6 +15,47 @@ fill_from = Vector2(0.375, 0)
 fill_to = Vector2(0.25, 1)
 metadata/_snap_enabled = true
 metadata/_snap_count = 8
+
+[sub_resource type="Animation" id="Animation_ptf86"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_jp048")]
+}
+
+[sub_resource type="Animation" id="Animation_ge4d2"]
+resource_name = "blink"
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("4_ctpgp"), ExtResource("3_jp048")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xcdpw"]
+_data = {
+&"RESET": SubResource("Animation_ptf86"),
+&"blink": SubResource("Animation_ge4d2")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_jp048"]
+font_size = 12
 
 [node name="Loja" type="Control" unique_id=1479642650]
 layout_mode = 3
@@ -39,8 +82,70 @@ texture = SubResource("GradientTexture2D_qaxay")
 [node name="DecorationLayer" type="CanvasLayer" parent="." unique_id=1080195183]
 
 [node name="Shopkeeper" type="TextureRect" parent="DecorationLayer" unique_id=1515256562]
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -80.0
+offset_right = 83.0
+grow_vertical = 0
+texture = ExtResource("3_jp048")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ShopkeeperAnimation" type="AnimationPlayer" parent="DecorationLayer" unique_id=1062519358]
+unique_name_in_owner = true
+root_node = NodePath("../Shopkeeper")
+libraries/ = SubResource("AnimationLibrary_xcdpw")
+
+[node name="BlinkTimer" type="Timer" parent="DecorationLayer" unique_id=162933510]
+unique_name_in_owner = true
+one_shot = true
 
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=280478290]
 layer = 2
+
+[node name="Title" type="Label" parent="UILayer" unique_id=1811643757]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -45.0
+offset_right = 60.0
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_qaxay")
+text = "Loja"
+label_settings = SubResource("LabelSettings_jp048")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="UILayer" unique_id=1642553063]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -109.0
+offset_top = -13.0
+offset_right = -69.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_qaxay")
+text = "Sair"
+
+[node name="ShopContent" type="VBoxContainer" parent="UILayer" unique_id=1614634800]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Cards" type="HBoxContainer" parent="UILayer/ShopContent" unique_id=1430893761]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Relics" type="HBoxContainer" parent="UILayer/ShopContent" unique_id=1970596804]
+unique_name_in_owner = true
+layout_mode = 2
