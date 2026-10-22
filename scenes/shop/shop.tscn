@@ -3,6 +3,17 @@
 [ext_resource type="Theme" uid="uid://b54n13fqlduvn" path="res://main_theme.tres" id="1_qaxay"]
 [ext_resource type="Script" uid="uid://cbfel0ykbovxo" path="res://scenes/shop/shop.gd" id="2_qaxay"]
 
+[sub_resource type="Gradient" id="Gradient_vcaur"]
+offsets = PackedFloat32Array(0.13089006, 0.8429319)
+colors = PackedColorArray(0, 0, 0, 1, 2.7675182e-07, 0.2324501, 0.28370163, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qaxay"]
+gradient = SubResource("Gradient_vcaur")
+fill_from = Vector2(0.375, 0)
+fill_to = Vector2(0.25, 1)
+metadata/_snap_enabled = true
+metadata/_snap_count = 8
+
 [node name="Loja" type="Control" unique_id=1479642650]
 layout_mode = 3
 anchors_preset = 15
@@ -14,38 +25,22 @@ mouse_filter = 2
 theme = ExtResource("1_qaxay")
 script = ExtResource("2_qaxay")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=477830362]
-layout_mode = 1
+[node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=2055935234]
+layer = 0
+
+[node name="Background" type="TextureRect" parent="BackgroundLayer" unique_id=562035485]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-color = Color(0, 0, 0, 0.58431375)
+texture = SubResource("GradientTexture2D_qaxay")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1078401837]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="DecorationLayer" type="CanvasLayer" parent="." unique_id=1080195183]
 
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=640384558]
-layout_mode = 2
-text = "Loja"
-horizontal_alignment = 1
+[node name="Shopkeeper" type="TextureRect" parent="DecorationLayer" unique_id=1515256562]
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Button" type="Button" parent="VBoxContainer" unique_id=1065314453]
-custom_minimum_size = Vector2(0, 12.795)
-layout_mode = 2
-text = "Voltar"
-
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=280478290]
+layer = 2
