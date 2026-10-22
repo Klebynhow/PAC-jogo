@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cljsxio0ov7kv"]
+
+[ext_resource type="Theme" uid="uid://b54n13fqlduvn" path="res://main_theme.tres" id="1_x3kbf"]
+[ext_resource type="Script" uid="uid://bl3pal1rikhub" path="res://scenes/shop/shop_relic.gd" id="2_vuhns"]
+[ext_resource type="PackedScene" uid="uid://ckm8mtu27d8jb" path="res://scenes/relic_handler/relic_ui.tscn" id="3_x3kbf"]
+[ext_resource type="Texture2D" uid="uid://yuu5cnygnha6" path="res://art/coinIcon.png" id="5_lo61f"]
+
+[node name="ShopRelic" type="VBoxContainer" unique_id=1592213198]
+custom_minimum_size = Vector2(40, 42)
+offset_right = 31.0
+offset_bottom = 42.0
+theme = ExtResource("1_x3kbf")
+theme_override_constants/separation = 2
+script = ExtResource("2_vuhns")
+
+[node name="RelicContainer" type="CenterContainer" parent="." unique_id=2115437819]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="RelicUI" parent="RelicContainer" unique_id=1126329401 instance=ExtResource("3_x3kbf")]
+layout_mode = 2
+
+[node name="Price" type="HBoxContainer" parent="." unique_id=2089628147]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="PriceLabel" type="Label" parent="Price" unique_id=274409198]
+unique_name_in_owner = true
+layout_mode = 2
+text = "999"
+
+[node name="GoldIcon" type="TextureRect" parent="Price" unique_id=135485910]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+texture = ExtResource("5_lo61f")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BuyButton" type="Button" parent="." unique_id=1638578854]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+text = "Comprar"
+
+[connection signal="pressed" from="BuyButton" to="." method="_on_buy_button_pressed"]
