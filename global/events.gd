@@ -31,6 +31,8 @@ signal map_exited(room: Room)
 
 #eventos de loja
 signal shop_exited
+signal shop_card_bought(card: Card, gold_cost: int)
+signal shop_relic_bought(relic: Relic, gold_cost: int)
 
 #eventos de fogueira/local de descanso
 signal campfire_exited

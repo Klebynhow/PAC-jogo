@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://822a6hbpxvd0"]
+
+[ext_resource type="Theme" uid="uid://b54n13fqlduvn" path="res://main_theme.tres" id="1_q5376"]
+[ext_resource type="Script" uid="uid://ndy0paeq31o5" path="res://scenes/shop/shop_card.gd" id="2_ve2vk"]
+[ext_resource type="PackedScene" uid="uid://bi3ljq2023fho" path="res://scenes/ui/card_menu_ui.tscn" id="2_w7nxn"]
+[ext_resource type="Resource" uid="uid://bnfuxphsngif4" path="res://characters/vanessa/cards/vanessa_warrior_form.tres" id="3_krlbm"]
+[ext_resource type="Texture2D" uid="uid://yuu5cnygnha6" path="res://art/coinIcon.png" id="3_ve2vk"]
+
+[node name="ShopCard" type="VBoxContainer" unique_id=1592213198]
+custom_minimum_size = Vector2(40, 56)
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_q5376")
+theme_override_constants/separation = 2
+script = ExtResource("2_ve2vk")
+card = ExtResource("3_krlbm")
+
+[node name="CardContainer" type="CenterContainer" parent="." unique_id=2115437819]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="CardMenuUI" parent="CardContainer" unique_id=1837923055 instance=ExtResource("2_w7nxn")]
+layout_mode = 2
+
+[node name="Price" type="HBoxContainer" parent="." unique_id=2089628147]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="PriceLabel" type="Label" parent="Price" unique_id=274409198]
+unique_name_in_owner = true
+layout_mode = 2
+text = "999"
+
+[node name="GoldIcon" type="TextureRect" parent="Price" unique_id=135485910]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+texture = ExtResource("3_ve2vk")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BuyButton" type="Button" parent="." unique_id=1638578854]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+text = "Comprar"
+
+[connection signal="pressed" from="BuyButton" to="." method="_on_buy_button_pressed"]
