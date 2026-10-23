@@ -2,11 +2,18 @@
 
 [ext_resource type="Theme" uid="uid://b54n13fqlduvn" path="res://main_theme.tres" id="1_qaxay"]
 [ext_resource type="Script" uid="uid://cbfel0ykbovxo" path="res://scenes/shop/shop.gd" id="2_qaxay"]
+[ext_resource type="Script" uid="uid://cyfywqwrmcwde" path="res://custom_resources/relic.gd" id="3_dww4p"]
 [ext_resource type="Texture2D" uid="uid://36ggwo0wkimt" path="res://art/shopkeeper-sprite.png" id="3_jp048"]
 [ext_resource type="Texture2D" uid="uid://70mfxuc05igk" path="res://art/shopkeeper-blinking-sprite.png" id="4_ctpgp"]
+[ext_resource type="Resource" uid="uid://boe51cj1lttpv" path="res://relics/coupons.tres" id="4_g6lcs"]
+[ext_resource type="Resource" uid="uid://jsam6lywteta" path="res://relics/explosive_barrel.tres" id="5_131kw"]
 [ext_resource type="PackedScene" uid="uid://822a6hbpxvd0" path="res://scenes/shop/shop_card.tscn" id="5_ctpgp"]
 [ext_resource type="PackedScene" uid="uid://cljsxio0ov7kv" path="res://scenes/shop/shop_relic.tscn" id="6_ge4d2"]
 [ext_resource type="PackedScene" uid="uid://drafesovpcnkk" path="res://scenes/ui/card_tooltip_popup.tscn" id="6_ptf86"]
+[ext_resource type="Resource" uid="uid://b0omno08q2baj" path="res://relics/mana_potion.tres" id="6_xoc10"]
+[ext_resource type="Resource" uid="uid://bxouhsrwj4q8" path="res://relics/reinforced_armor.tres" id="7_k5co3"]
+[ext_resource type="PackedScene" uid="uid://cnmp8gm6jqbkg" path="res://scenes/modifier_handler/modifier_handler.tscn" id="13_131kw"]
+[ext_resource type="PackedScene" uid="uid://dv1mwb37xvnhc" path="res://scenes/modifier_handler/modifier.tscn" id="14_xoc10"]
 
 [sub_resource type="Gradient" id="Gradient_vcaur"]
 offsets = PackedFloat32Array(0.13089006, 0.8429319)
@@ -70,6 +77,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("1_qaxay")
 script = ExtResource("2_qaxay")
+shop_relics = Array[ExtResource("3_dww4p")]([ExtResource("4_g6lcs"), ExtResource("5_131kw"), ExtResource("6_xoc10"), ExtResource("7_k5co3")])
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=2055935234]
 layer = 0
@@ -185,5 +193,10 @@ layout_mode = 2
 [node name="CardTooltipPopup" parent="UILayer" unique_id=1068110371 instance=ExtResource("6_ptf86")]
 unique_name_in_owner = true
 visible = false
+
+[node name="ModifierHandler" parent="." unique_id=1561661670 instance=ExtResource("13_131kw")]
+
+[node name="ShopCostModifier" parent="ModifierHandler" unique_id=553608970 instance=ExtResource("14_xoc10")]
+type = 3
 
 [connection signal="pressed" from="UILayer/BackButton" to="." method="_on_back_button_pressed"]
