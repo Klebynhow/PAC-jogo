@@ -101,7 +101,7 @@ func _on_shop_entered() -> void:
 	var shop := _change_view(SHOP_SCENE) as Shop
 	shop.char_stats = character
 	shop.run_stats = stats
-	shop.relics = relic_handler
+	shop.relic_handler = relic_handler
 	shop.populate_shop()
 
 func _on_battle_won() -> void:
