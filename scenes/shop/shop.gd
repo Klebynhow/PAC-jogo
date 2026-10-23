@@ -71,6 +71,14 @@ func _update_items() -> void:
 	for shop_relic: ShopRelic in relics.get_children():
 		shop_relic.update(run_stats)
 
+func _update_item_costs() -> void:
+	for shop_card: ShopCard in cards.get_children():
+		shop_card.gold_cost = _get_updated_shop_cost(shop_card.gold_cost)
+		shop_card.update(run_stats)
+	for shop_relic: ShopRelic in relics.get_children():
+		shop_relic.gold_cost = _get_updated_shop_cost(shop_relic.gold_cost)
+		shop_relic.update(run_stats)
+
 func _get_updated_shop_cost(original_cost: int) -> int:
 	return modifier_handler.get_modified_value(original_cost, Modifier.Type.SHOP_COST)
 
@@ -85,6 +93,10 @@ func _on_shop_card_bought(card: Card, gold_cost: int) -> void:
 func _on_shop_relic_bought(relic: Relic, gold_cost: int) -> void:
 	relic_handler.add_relic(relic)
 	run_stats.gold -= gold_cost
+	if relic is CouponsRelic:
+		var coupons_relic := relic as CouponsRelic
+		coupons_relic.add_shop_modifier(self)
+		_update_item_costs()
 	_update_items()
 
 func _on_blink_timer_timeout() -> void:
