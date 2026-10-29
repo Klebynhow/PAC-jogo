@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EnemyStats" format=3 uid="uid://b5q78nyi85toe"]
+
+[ext_resource type="PackedScene" uid="uid://cdm1mh6k1ovkl" path="res://enemies/grand_slime/grand_slime_ai.tscn" id="1_2cesm"]
+[ext_resource type="Texture2D" uid="uid://b1wpcwys2kest" path="res://art/grand_slime_enemy_sprite.png" id="1_72sp2"]
+[ext_resource type="Script" uid="uid://qgbimnh54mvb" path="res://custom_resources/enemy_stats.gd" id="1_rh31p"]
+
+[resource]
+script = ExtResource("1_rh31p")
+ai = ExtResource("1_2cesm")
+max_health = 100
+art = ExtResource("1_72sp2")
+metadata/_custom_type_script = "uid://qgbimnh54mvb"

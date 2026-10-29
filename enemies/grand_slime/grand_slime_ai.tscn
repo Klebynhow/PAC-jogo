@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cdm1mh6k1ovkl"]
+
+[ext_resource type="Script" uid="uid://cc1vyw63xwprt" path="res://scenes/enemy/enemy_action_picker.gd" id="1_rkctm"]
+[ext_resource type="Script" uid="uid://baqyy725511of" path="res://enemies/grand_slime/grand_slime_muscle_buff_action.gd" id="2_0n0y5"]
+
+[node name="GrandSlimeAI" type="Node" unique_id=1654064960]
+script = ExtResource("1_rkctm")
+
+[node name="MuscleBuffAction" type="Node" parent="." unique_id=360575778]
+script = ExtResource("2_0n0y5")
+
+[node name="AttackAction" type="Node" parent="." unique_id=1484434887]
+
+[node name="BlockAction" type="Node" parent="." unique_id=195531717]
