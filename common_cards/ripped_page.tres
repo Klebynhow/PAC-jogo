@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Card" format=3 uid="uid://bqq8ja3aff8a7"]
+
+[ext_resource type="Texture2D" uid="uid://4a4otx53jg7k" path="res://art/ripped_page_icon.png" id="1_khvvy"]
+[ext_resource type="Script" uid="uid://ctg5l1ui52cf8" path="res://custom_resources/card.gd" id="1_t28tg"]
+[ext_resource type="AudioStream" uid="uid://bbf37uxe8mxfu" path="res://art/paper_rip.wav" id="3_817se"]
+
+[resource]
+script = ExtResource("1_t28tg")
+id = "ripped_page"
+type = 1
+cost = 1
+exhausts = true
+icon = ExtResource("1_khvvy")
+tooltip_text = "[center]Página não utilizável. Exaurir.[/center]"
+sound = ExtResource("3_817se")
+metadata/_custom_type_script = "uid://ctg5l1ui52cf8"

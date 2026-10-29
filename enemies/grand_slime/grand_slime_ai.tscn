@@ -2,13 +2,50 @@
 
 [ext_resource type="Script" uid="uid://cc1vyw63xwprt" path="res://scenes/enemy/enemy_action_picker.gd" id="1_rkctm"]
 [ext_resource type="Script" uid="uid://baqyy725511of" path="res://enemies/grand_slime/grand_slime_muscle_buff_action.gd" id="2_0n0y5"]
+[ext_resource type="Texture2D" uid="uid://d017sabhuppfx" path="res://art/toughen_icon.png" id="3_unlsd"]
+[ext_resource type="Script" uid="uid://chopbebvi1op0" path="res://custom_resources/intent.gd" id="4_e7t16"]
+[ext_resource type="AudioStream" uid="uid://cxpmfj3m8rdao" path="res://art/833031__zeltbolt__apply_buff.wav" id="5_sj26o"]
+[ext_resource type="Script" uid="uid://ctkdhshgxshj0" path="res://enemies/grand_slime/grand_slime_attack_action.gd" id="6_e7t16"]
+[ext_resource type="Texture2D" uid="uid://b6kk58n68o30t" path="res://art/debbuf_attack_icon.png" id="7_ppomb"]
+[ext_resource type="AudioStream" uid="uid://dbt7pe0eihej2" path="res://art/squelch_sound.ogg" id="8_kritk"]
+[ext_resource type="Script" uid="uid://d3bugspjksm5" path="res://enemies/grand_slime/grand_slime_block_action.gd" id="9_kritk"]
+[ext_resource type="Texture2D" uid="uid://iuiqo1rdt6gs" path="res://art/ph_shieldIcon.png" id="10_nmvnj"]
+[ext_resource type="AudioStream" uid="uid://qjtaob7w4340" path="res://art/block.ogg" id="11_djwku"]
+
+[sub_resource type="Resource" id="Resource_ppomb"]
+script = ExtResource("4_e7t16")
+icon = ExtResource("3_unlsd")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[sub_resource type="Resource" id="Resource_e7t16"]
+script = ExtResource("4_e7t16")
+base_text = "%s"
+icon = ExtResource("7_ppomb")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[sub_resource type="Resource" id="Resource_w4cty"]
+script = ExtResource("4_e7t16")
+icon = ExtResource("10_nmvnj")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
 
 [node name="GrandSlimeAI" type="Node" unique_id=1654064960]
 script = ExtResource("1_rkctm")
 
 [node name="MuscleBuffAction" type="Node" parent="." unique_id=360575778]
 script = ExtResource("2_0n0y5")
+intent = SubResource("Resource_ppomb")
+sound = ExtResource("5_sj26o")
 
 [node name="AttackAction" type="Node" parent="." unique_id=1484434887]
+script = ExtResource("6_e7t16")
+intent = SubResource("Resource_e7t16")
+sound = ExtResource("8_kritk")
+type = 1
+chance_weight = 6.5
 
 [node name="BlockAction" type="Node" parent="." unique_id=195531717]
+script = ExtResource("9_kritk")
+intent = SubResource("Resource_w4cty")
+sound = ExtResource("11_djwku")
+type = 1
+chance_weight = 3.5
