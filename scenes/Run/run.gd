@@ -66,7 +66,7 @@ func _setup_event_connections() -> void:
 	Events.campfire_exited.connect(_show_map)
 	Events.map_exited.connect(_on_map_exited)
 	Events.shop_exited.connect(_show_map)
-	Events.treasure_room_exited.connect(_show_map)
+	Events.treasure_room_exited.connect(_on_treasure_room_exited)
 	
 	#debug
 	battle_button.pressed.connect(_change_view.bind(BATTLE_SCENE))
@@ -105,6 +105,19 @@ func _on_shop_entered() -> void:
 	Events.shop_entered.emit(shop)
 	shop.populate_shop()
 
+func _on_treasure_room_entered() -> void:
+	var treasure_scene := _change_view(TREASURE_SCENE) as Treasure
+	treasure_scene.relic_handler = relic_handler
+	treasure_scene.char_stats = character
+	treasure_scene.generate_relic()
+
+func _on_treasure_room_exited(relic: Relic) -> void:
+	var reward_scene := _change_view(BATTLE_REWARD_SCENE) as BattleReward
+	reward_scene.run_stats = stats
+	reward_scene.character_stats = character
+	reward_scene.relic_handler = relic_handler
+	reward_scene.add_relic_reward(relic)
+
 func _on_battle_won() -> void:
 	var reward_scene := _change_view(BATTLE_REWARD_SCENE) as BattleReward
 	reward_scene.run_stats = stats
@@ -118,7 +131,7 @@ func _on_map_exited(room: Room) -> void:
 		Room.Type.MONSTER :
 			_on_battle_room_entered(room)
 		Room.Type.TREASURE :
-			_change_view(TREASURE_SCENE)
+			_on_treasure_room_entered()
 		Room.Type.CAMPFIRE :
 			_on_campfire_room_entered()
 		Room.Type.SHOP :

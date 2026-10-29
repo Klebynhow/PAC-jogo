@@ -2,10 +2,13 @@
 
 [ext_resource type="Theme" uid="uid://b54n13fqlduvn" path="res://main_theme.tres" id="1_5dwmd"]
 [ext_resource type="Script" uid="uid://doje1rhaauhdy" path="res://scenes/treasure/treasure.gd" id="2_5dwmd"]
+[ext_resource type="Script" uid="uid://cyfywqwrmcwde" path="res://custom_resources/relic.gd" id="3_8auyv"]
 [ext_resource type="Texture2D" uid="uid://dim0cqc316o8e" path="res://art/cenario-batalha.png" id="3_8kvvt"]
-[ext_resource type="Texture2D" uid="uid://cuildwd0wugaq" path="res://art/chest-icon.png" id="4_1466h"]
+[ext_resource type="Resource" uid="uid://jsam6lywteta" path="res://relics/explosive_barrel.tres" id="4_bbvtr"]
+[ext_resource type="Resource" uid="uid://b0omno08q2baj" path="res://relics/mana_potion.tres" id="5_ko1oj"]
 [ext_resource type="Texture2D" uid="uid://dohuawmwg20qa" path="res://art/treasure_chest_icon.png" id="5_qhcu3"]
 [ext_resource type="Texture2D" uid="uid://yuu5cnygnha6" path="res://art/coinIcon.png" id="5_w2wav"]
+[ext_resource type="Resource" uid="uid://bxouhsrwj4q8" path="res://relics/reinforced_armor.tres" id="6_ab3yx"]
 [ext_resource type="Texture2D" uid="uid://bamge7pt7bin" path="res://art/treasure_chest_opening_icon.png" id="6_gkj16"]
 [ext_resource type="Texture2D" uid="uid://bnalw87a0i7fg" path="res://art/treasure_chest_open_icon.png" id="7_mn6fe"]
 
@@ -36,7 +39,19 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4_1466h")]
+"values": [ExtResource("5_qhcu3")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GPUParticles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_ufafs"]
@@ -72,6 +87,32 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [ExtResource("5_qhcu3"), ExtResource("6_gkj16"), ExtResource("7_mn6fe")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GPUParticles2D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_on_treasure_opened"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gkj16"]
@@ -114,6 +155,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("1_5dwmd")
 script = ExtResource("2_5dwmd")
+treasure_relic_pool = Array[ExtResource("3_8auyv")]([ExtResource("4_bbvtr"), ExtResource("5_ko1oj"), ExtResource("6_ab3yx")])
 
 [node name="Background" type="TextureRect" parent="." unique_id=1182264826]
 layout_mode = 1
@@ -167,10 +209,12 @@ offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(20, 20)
-texture = ExtResource("4_1466h")
+mouse_filter = 0
+texture = ExtResource("5_qhcu3")
 stretch_mode = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TreasureChest" unique_id=2120282162]
+unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_gkj16")
 autoplay = &"highlight"
 
@@ -183,3 +227,5 @@ lifetime = 1.5
 one_shot = true
 explosiveness = 0.9
 process_material = SubResource("ParticleProcessMaterial_ab3yx")
+
+[connection signal="gui_input" from="TreasureChest" to="." method="_on_treasure_chest_gui_input"]

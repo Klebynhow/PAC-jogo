@@ -42,7 +42,7 @@ signal campfire_exited
 signal battle_reward_exited
 
 #eventos de tesouros
-signal treasure_room_exited
+signal treasure_room_exited(found_relic: Relic)
 
 #eventos de artefatos
 signal relic_tooltip_requested(relic: Relic)
