@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dbwwfjpypvbmi"]
+
+[ext_resource type="PackedScene" uid="uid://dhikfqwioqyff" path="res://scenes/enemy/enemy.tscn" id="1_0y5gu"]
+[ext_resource type="Resource" uid="uid://b5q78nyi85toe" path="res://enemies/grand_slime/grand_slime.tres" id="2_2pxkx"]
+
+[node name="Tier2GrandSlime" type="Node2D" unique_id=462041463]
+
+[node name="Enemy" parent="." unique_id=816305621 instance=ExtResource("1_0y5gu")]
+position = Vector2(189, 59)
+stats = ExtResource("2_2pxkx")

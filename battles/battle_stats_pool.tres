@@ -6,8 +6,9 @@
 [ext_resource type="Resource" uid="uid://bpit5mhdnop3" path="res://battles/tier_0_worm.tres" id="3_s5wuo"]
 [ext_resource type="Resource" uid="uid://bn2f316jf8ye" path="res://battles/tier_1_bats3.tres" id="4_7ckf5"]
 [ext_resource type="Resource" uid="uid://dkq0op6r0luvr" path="res://battles/tier_1_bat_worm.tres" id="5_hpysq"]
+[ext_resource type="Resource" uid="uid://j343ljy1wpnw" path="res://battles/tier_2_grand_slime.tres" id="6_s5wuo"]
 
 [resource]
 script = ExtResource("2_42yw1")
-pool = Array[ExtResource("1_c4ej1")]([ExtResource("2_lrvlq"), ExtResource("3_s5wuo"), ExtResource("4_7ckf5"), ExtResource("5_hpysq")])
+pool = Array[ExtResource("1_c4ej1")]([ExtResource("2_lrvlq"), ExtResource("3_s5wuo"), ExtResource("4_7ckf5"), ExtResource("5_hpysq"), ExtResource("6_s5wuo")])
 metadata/_custom_type_script = "uid://b7bohumkx4bum"
