@@ -74,6 +74,9 @@ func _load_run() -> void:
 	relic_handler.add_relics(save_data.relics)
 	_setup_top_bar()
 	_setup_event_connections()
+	map.load_map(save_data.map_data, save_data.floors_climbed, save_data.last_room)
+	if save_data.last_room and not save_data.was_on_map:
+		_on_map_exited(save_data.last_room)
 
 func _change_view(scene: PackedScene) -> Node:
 	if current_view.get_child_count() > 0:
@@ -89,6 +92,7 @@ func _show_map() -> void:
 		current_view.get_child(0).queue_free()
 	map.show_map()
 	map.unlock_next_rooms()
+	_save_run(true)
 
 func _setup_event_connections() -> void:
 	Events.battle_won.connect(_on_battle_won)
@@ -163,6 +167,7 @@ func _on_battle_won() -> void:
 	else: _show_regular_battle_rewards()
 
 func _on_map_exited(room: Room) -> void:
+	_save_run(false)
 	match room.type:
 		Room.Type.MONSTER :
 			_on_battle_room_entered(room)
