@@ -12,6 +12,8 @@ const SAVE_PATH := "user://savegame.tres"
 @export var last_room: Room
 @export var floors_climbed: int
 @export var was_on_map: bool
+@export var rng_seed: int
+@export var rng_state: int
 
 func save_data() -> void:
 	var err := ResourceSaver.save(self, SAVE_PATH)

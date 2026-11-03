@@ -53,6 +53,8 @@ func _start_run() -> void:
 	_save_run(true)
 	
 func _save_run(was_on_map: bool) -> void:
+	save_data.rng_seed = RNG.instance.seed
+	save_data.rng_state = RNG.instance.state
 	save_data.run_stats = stats
 	save_data.char_stats = character
 	save_data.current_deck = character.deck
@@ -67,6 +69,7 @@ func _save_run(was_on_map: bool) -> void:
 func _load_run() -> void:
 	save_data = SaveGame.load_data()
 	assert(save_data, "Não foi possível carregar")
+	RNG.set_from_save_data(save_data.rng_seed, save_data.rng_state)
 	stats = save_data.run_stats
 	character = save_data.char_stats
 	character.deck = save_data.current_deck
@@ -164,6 +167,7 @@ func _on_battle_won() -> void:
 	if map.floors_climbed == MapGenerator.FLOORS:
 		var win_screen := _change_view(WIN_SCREEN_SCENE) as WinScreen
 		win_screen.character = character
+		SaveGame.delete_data()
 	else: _show_regular_battle_rewards()
 
 func _on_map_exited(room: Room) -> void:

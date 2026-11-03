@@ -25,6 +25,7 @@ Events="*uid://b3d31xcm0ghbs"
 Shaker="*uid://ephauhwcxl32"
 MusicPlayer="*uid://codfv743eadhd"
 SFXPlayer="*uid://c2srwvb01sw8h"
+RNG="*uid://cri8b2lg717nc"
 
 [display]
 
