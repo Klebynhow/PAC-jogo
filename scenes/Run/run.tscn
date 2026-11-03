@@ -11,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://cahghvf68rkg0" path="res://scenes/ui/card_pile_view.tscn" id="7_68kdb"]
 [ext_resource type="PackedScene" uid="uid://kcsbhiwxtgpp" path="res://scenes/relic_handler/relic_handler.tscn" id="7_jbxqc"]
 [ext_resource type="PackedScene" uid="uid://61ika0mj4wy6" path="res://scenes/relic_handler/relic_tooltip.tscn" id="11_wmr4r"]
+[ext_resource type="Script" uid="uid://jflnh6vbs06w" path="res://scenes/Run/pause_menu.gd" id="12_nvqan"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lbbjh"]
 
 [node name="Run" type="Node" unique_id=1284597986]
 script = ExtResource("1_4m5yt")
@@ -118,3 +121,53 @@ visible = false
 [node name="RelicTooltip" parent="TopBar" unique_id=1068110371 instance=ExtResource("11_wmr4r")]
 unique_name_in_owner = true
 visible = false
+
+[node name="PauseMenu" type="CanvasLayer" parent="." unique_id=2128870800]
+layer = 5
+script = ExtResource("12_nvqan")
+
+[node name="ColorRect" type="ColorRect" parent="PauseMenu" unique_id=99472793]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.011764706, 0.011764706, 0.011764706, 0.69803923)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu" unique_id=1314919502]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_top = -20.0
+offset_right = 52.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_biywv")
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="PauseMenu/VBoxContainer" unique_id=1877674849]
+layout_mode = 2
+text = "Pausado"
+label_settings = SubResource("LabelSettings_lbbjh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PauseMenu/VBoxContainer" unique_id=1009779848]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="BackToGameButton" type="Button" parent="PauseMenu/VBoxContainer/HBoxContainer" unique_id=877545987]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 14)
+layout_mode = 2
+text = "Voltar"
+
+[node name="SaveAndQuitButton" type="Button" parent="PauseMenu/VBoxContainer/HBoxContainer" unique_id=1524627221]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 14)
+layout_mode = 2
+text = "Menu Principal"
