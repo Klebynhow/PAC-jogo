@@ -7,6 +7,7 @@ const CAMPFIRE_SCENE := preload("res://scenes/campfire/campfire.tscn")
 const SHOP_SCENE := preload("res://scenes/shop/shop.tscn")
 const TREASURE_SCENE := preload("res://scenes/treasure/treasure.tscn")
 const WIN_SCREEN_SCENE := preload("res://scenes/win_screen/win_screen.tscn")
+const MAIN_MENU_PATH := "res://scenes/ui/main_menu.tscn"
 
 @export var run_startup: RunStartup
 @onready var health_ui: HealthUI = %HealthUI
@@ -23,19 +24,24 @@ const WIN_SCREEN_SCENE := preload("res://scenes/win_screen/win_screen.tscn")
 @onready var treasure_button: Button = %TreasureButton
 @onready var relic_handler: RelicHandler = %RelicHandler
 @onready var relic_tooltip: RelicTooltip = %RelicTooltip
+@onready var pause_menu: PauseMenu = $PauseMenu
 
 var stats: RunStats
 var character: CharacterStats
+var save_data: SaveGame
 
 func _ready() -> void:
 	if not run_startup:
 		return
+	pause_menu.save_and_quit.connect(
+		func(): get_tree().change_scene_to_file(MAIN_MENU_PATH)
+	)
 	match run_startup.type:
 		RunStartup.Type.NEW_RUN:
 			character = run_startup.picked_character.create_instance()
 			_start_run()
 		RunStartup.Type.CONTINUED_RUN:
-			print("fazer: carregar run anterior")
+			_load_run()
 		
 func _start_run() -> void:
 	stats = RunStats.new()
@@ -43,11 +49,31 @@ func _start_run() -> void:
 	_setup_top_bar()
 	map.generate_new_map()
 	map.unlock_floor(0)
+	save_data = SaveGame.new()
+	_save_run(true)
 	
-# remover
-#func _input(event: InputEvent) -> void:
-	#if event.is_action_pressed("trapaca"):
-		#get_tree().call_group("enemies", "queue_free")
+func _save_run(was_on_map: bool) -> void:
+	save_data.run_stats = stats
+	save_data.char_stats = character
+	save_data.current_deck = character.deck
+	save_data.current_health = character.health
+	save_data.relics = relic_handler.get_all_relics()
+	save_data.last_room = map.last_room
+	save_data.map_data = map.map_data.duplicate()
+	save_data.floors_climbed = map.floors_climbed
+	save_data.was_on_map = was_on_map
+	save_data.save_data()
+
+func _load_run() -> void:
+	save_data = SaveGame.load_data()
+	assert(save_data, "Não foi possível carregar")
+	stats = save_data.run_stats
+	character = save_data.char_stats
+	character.deck = save_data.current_deck
+	character.health = save_data.current_health
+	relic_handler.add_relics(save_data.relics)
+	_setup_top_bar()
+	_setup_event_connections()
 
 func _change_view(scene: PackedScene) -> Node:
 	if current_view.get_child_count() > 0:
