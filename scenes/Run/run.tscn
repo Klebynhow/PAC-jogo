@@ -123,7 +123,9 @@ unique_name_in_owner = true
 visible = false
 
 [node name="PauseMenu" type="CanvasLayer" parent="." unique_id=2128870800]
+process_mode = 3
 layer = 5
+visible = false
 script = ExtResource("12_nvqan")
 
 [node name="ColorRect" type="ColorRect" parent="PauseMenu" unique_id=99472793]
