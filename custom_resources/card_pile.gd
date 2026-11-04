@@ -24,6 +24,17 @@ func clear() -> void:
 	cards.clear()
 	card_pile_size_changed.emit(cards.size())
 
+func duplicate_cards() -> Array[Card]:
+	var new_array: Array[Card] = []
+	for card: Card in cards:
+		new_array.append(card.duplicate())
+	return new_array
+
+func custom_duplicate() -> CardPile:
+	var new_card_pile := CardPile.new()
+	new_card_pile.cards = duplicate_cards()
+	return new_card_pile
+
 func _to_string() -> String:
 	var _card_strings: PackedStringArray = []
 	for i in range(cards.size()):
