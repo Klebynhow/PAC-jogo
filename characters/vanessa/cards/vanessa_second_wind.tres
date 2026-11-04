@@ -1,0 +1,16 @@
+[gd_resource type="Resource" format=3 uid="uid://1ojodq8oowlf"]
+
+[ext_resource type="Texture2D" uid="uid://crwv4c3r6wcws" path="res://art/manaPotion_relic_icon.png" id="1_icon"]
+[ext_resource type="Script" uid="uid://d1e1drgj0j0y7" path="res://characters/vanessa/cards/vanessa_second_wind.gd" id="2_script"]
+[ext_resource type="AudioStream" uid="uid://cxpmfj3m8rdao" path="res://art/833031__zeltbolt__apply_buff.wav" id="3_sound"]
+
+[resource]
+script = ExtResource("2_script")
+id = "vanessa_second_wind"
+type = 1
+rarity = 1
+exhausts = true
+icon = ExtResource("1_icon")
+tooltip_text = "[center]Ganhe [color=\"00aaff\"]%s[/color] de mana. Exaure.[/center]"
+sound = ExtResource("3_sound")
+metadata/_custom_type_script = "uid://ctg5l1ui52cf8"

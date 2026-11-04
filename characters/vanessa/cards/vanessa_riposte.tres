@@ -1,0 +1,16 @@
+[gd_resource type="Resource" format=3 uid="uid://blw3qs3lttx01"]
+
+[ext_resource type="Texture2D" uid="uid://bjui3utspcbiy" path="res://art/mega_block_icon.png" id="1_icon"]
+[ext_resource type="Script" uid="uid://0fmi5gcjed3u" path="res://characters/vanessa/cards/vanessa_riposte.gd" id="2_script"]
+[ext_resource type="AudioStream" uid="uid://cq8wnie61sa4j" path="res://art/sword sound.wav" id="3_sound"]
+
+[resource]
+script = ExtResource("2_script")
+id = "vanessa_riposte"
+rarity = 1
+target = 1
+cost = 2
+icon = ExtResource("1_icon")
+tooltip_text = "[center]Causa [color=\"ff0000\"]%s[/color] de dano e ganha [color=\"0044ff\"]%s[/color] de escudo.[/center]"
+sound = ExtResource("3_sound")
+metadata/_custom_type_script = "uid://ctg5l1ui52cf8"

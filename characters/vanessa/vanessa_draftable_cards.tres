@@ -7,7 +7,13 @@
 [ext_resource type="Resource" uid="uid://b6af8fyuefuix" path="res://characters/vanessa/cards/vanessa_slam.tres" id="4_f2yuq"]
 [ext_resource type="Resource" uid="uid://culd7dkj8njcy" path="res://characters/vanessa/cards/vanessa_toughen.tres" id="5_tr223"]
 
+[ext_resource type="Resource" path="res://characters/vanessa/cards/vanessa_shield_bash.tres" id="6_shbash"]
+[ext_resource type="Resource" path="res://characters/vanessa/cards/vanessa_mark.tres" id="7_mark"]
+[ext_resource type="Resource" path="res://characters/vanessa/cards/vanessa_riposte.tres" id="8_ripost"]
+[ext_resource type="Resource" path="res://characters/vanessa/cards/vanessa_bloodlust.tres" id="9_bloodl"]
+[ext_resource type="Resource" path="res://characters/vanessa/cards/vanessa_second_wind.tres" id="10_swind"]
+
 [resource]
 script = ExtResource("2_0g1ll")
-cards = Array[ExtResource("1_kg045")]([ExtResource("2_yu104"), ExtResource("2_yu104"), ExtResource("3_xrpjk"), ExtResource("4_f2yuq"), ExtResource("4_f2yuq"), ExtResource("4_f2yuq"), ExtResource("5_tr223"), ExtResource("5_tr223"), ExtResource("5_tr223")])
+cards = Array[ExtResource("1_kg045")]([ExtResource("2_yu104"), ExtResource("2_yu104"), ExtResource("3_xrpjk"), ExtResource("4_f2yuq"), ExtResource("4_f2yuq"), ExtResource("4_f2yuq"), ExtResource("5_tr223"), ExtResource("5_tr223"), ExtResource("5_tr223"), ExtResource("6_shbash"), ExtResource("7_mark"), ExtResource("8_ripost"), ExtResource("9_bloodl"), ExtResource("10_swind")])
 metadata/_custom_type_script = "uid://bfkn877vk77ww"

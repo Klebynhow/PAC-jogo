@@ -1,0 +1,13 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Texture2D" path="res://art/toughen_icon.png" id="1_icon"]
+[ext_resource type="Script" path="res://relics/whetstone.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+relic_name = "Whetstone"
+id = "whetstone"
+type = 1
+icon = ExtResource("1_icon")
+tooltip = "[color=\"ffdf00\"]Pedra de Amolar[/color]\nNo começo do combate, ganhe 1 de força."
+metadata/_custom_type_script = "uid://cyfywqwrmcwde"

@@ -10,7 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://yuu5cnygnha6" path="res://art/coinIcon.png" id="5_w2wav"]
 [ext_resource type="Resource" uid="uid://bxouhsrwj4q8" path="res://relics/reinforced_armor.tres" id="6_ab3yx"]
 [ext_resource type="Texture2D" uid="uid://bamge7pt7bin" path="res://art/treasure_chest_opening_icon.png" id="6_gkj16"]
+[ext_resource type="Resource" path="res://relics/stone_skin.tres" id="7_ab3yx"]
 [ext_resource type="Texture2D" uid="uid://bnalw87a0i7fg" path="res://art/treasure_chest_open_icon.png" id="7_mn6fe"]
+[ext_resource type="Resource" path="res://relics/vampire_fang.tres" id="8_odogb"]
+[ext_resource type="Resource" path="res://relics/whetstone.tres" id="9_2i7av"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1466h"]
 font_size = 13
@@ -155,7 +158,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("1_5dwmd")
 script = ExtResource("2_5dwmd")
-treasure_relic_pool = Array[ExtResource("3_8auyv")]([ExtResource("4_bbvtr"), ExtResource("5_ko1oj"), ExtResource("6_ab3yx")])
+treasure_relic_pool = Array[ExtResource("3_8auyv")]([ExtResource("4_bbvtr"), ExtResource("5_ko1oj"), ExtResource("6_ab3yx"), ExtResource("7_ab3yx"), ExtResource("8_odogb"), ExtResource("9_2i7av")])
 
 [node name="Background" type="TextureRect" parent="." unique_id=1182264826]
 layout_mode = 1
