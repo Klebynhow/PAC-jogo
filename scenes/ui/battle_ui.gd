@@ -12,6 +12,7 @@ extends CanvasLayer
 @onready var discard_pile_view: CardPileView = %DiscardPileView
 
 func _ready() -> void:
+	end_turn_button.disabled = true
 	Events.player_hand_drawn.connect(_on_player_hand_drawn)
 	end_turn_button.pressed.connect(_on_end_turn_button_pressed)
 	draw_pile_button.pressed.connect(draw_pile_view.show_current_view.bind("Pilha de Compras", true))
@@ -32,5 +33,6 @@ func _on_player_hand_drawn() -> void:
 	end_turn_button.disabled = false
 	
 func _on_end_turn_button_pressed() -> void:
+	if end_turn_button.disabled: return
 	end_turn_button.disabled = true
 	Events.player_turn_ended.emit()

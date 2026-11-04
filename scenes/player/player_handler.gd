@@ -9,6 +9,7 @@ const HAND_DISCARD_INTERVAL := 0.25
 @export var hand: Hand
 
 var character: CharacterStats
+var turn_ending := false
 
 func _ready() -> void:
 	Events.card_played.connect(_on_card_played)
@@ -23,11 +24,14 @@ func start_battle(char_stats: CharacterStats) -> void:
 	start_turn()
 
 func start_turn() -> void:
+	turn_ending = false
 	character.block = 0
 	character.reset_mana()
 	relics.activate_relics_by_type(Relic.Type.START_OF_TURN)
 
 func end_turn() -> void:
+	if turn_ending: return
+	turn_ending = true
 	hand.disable_hand()
 	relics.activate_relics_by_type(Relic.Type.END_OF_TURN)
 
