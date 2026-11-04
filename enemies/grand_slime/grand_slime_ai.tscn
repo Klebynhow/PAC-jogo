@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b6kk58n68o30t" path="res://art/debbuf_attack_icon.png" id="7_ppomb"]
 [ext_resource type="AudioStream" uid="uid://dbt7pe0eihej2" path="res://art/squelch_sound.ogg" id="8_kritk"]
 [ext_resource type="Script" uid="uid://d3bugspjksm5" path="res://enemies/grand_slime/grand_slime_block_action.gd" id="9_kritk"]
-[ext_resource type="Texture2D" uid="uid://iuiqo1rdt6gs" path="res://art/ph_shieldIcon.png" id="10_nmvnj"]
+[ext_resource type="Texture2D" uid="uid://gko2ggjryke" path="res://art/shield_icon.png" id="10_nmvnj"]
 [ext_resource type="AudioStream" uid="uid://qjtaob7w4340" path="res://art/block.ogg" id="11_djwku"]
 
 [sub_resource type="Resource" id="Resource_ppomb"]

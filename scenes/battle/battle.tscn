@@ -47,7 +47,7 @@ shape = SubResource("RectangleShape2D_7gynk")
 debug_color = Color(0, 0.6, 0.69803923, 0.2)
 
 [node name="Player" parent="." unique_id=987277480 instance=ExtResource("3_agsc7")]
-position = Vector2(50, 96)
+position = Vector2(50, 90)
 stats = ExtResource("4_oiw7q")
 
 [node name="CardTargetSelector" parent="." unique_id=741348768 instance=ExtResource("3_pll4o")]
@@ -98,8 +98,8 @@ offset_bottom = -22.0
 char_stats = ExtResource("4_oiw7q")
 
 [node name="Tooltip" parent="battleUI" unique_id=1391804630 instance=ExtResource("12_mxe8n")]
-offset_top = 5.0
-offset_bottom = 41.0
+offset_top = 11.0
+offset_bottom = 47.0
 
 [node name="EndTurnButton" type="Button" parent="battleUI" unique_id=1382256642]
 unique_name_in_owner = true

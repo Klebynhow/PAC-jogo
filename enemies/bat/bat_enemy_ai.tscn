@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://chopbebvi1op0" path="res://custom_resources/intent.gd" id="4_6cpw6"]
 [ext_resource type="AudioStream" uid="uid://bkoe45adqg1ec" path="res://art/bite.ogg" id="5_5laa2"]
 [ext_resource type="Script" uid="uid://dplou3xdcbclm" path="res://enemies/bat/bat_block_action.gd" id="5_8hwcw"]
-[ext_resource type="Texture2D" uid="uid://iuiqo1rdt6gs" path="res://art/ph_shieldIcon.png" id="6_iplk6"]
+[ext_resource type="Texture2D" uid="uid://gko2ggjryke" path="res://art/shield_icon.png" id="7_5laa2"]
 [ext_resource type="AudioStream" uid="uid://qjtaob7w4340" path="res://art/block.ogg" id="8_6cpw6"]
 
 [sub_resource type="Resource" id="Resource_w0dap"]
@@ -18,7 +18,7 @@ metadata/_custom_type_script = "uid://chopbebvi1op0"
 [sub_resource type="Resource" id="Resource_ihxhl"]
 script = ExtResource("4_6cpw6")
 base_text = "4"
-icon = ExtResource("6_iplk6")
+icon = ExtResource("7_5laa2")
 metadata/_custom_type_script = "uid://chopbebvi1op0"
 
 [node name="WormEnemyAI" type="Node" unique_id=1654064960]

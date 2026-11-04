@@ -3,8 +3,6 @@
 [ext_resource type="Theme" uid="uid://b54n13fqlduvn" path="res://main_theme.tres" id="1_qaxay"]
 [ext_resource type="Script" uid="uid://cbfel0ykbovxo" path="res://scenes/shop/shop.gd" id="2_qaxay"]
 [ext_resource type="Script" uid="uid://cyfywqwrmcwde" path="res://custom_resources/relic.gd" id="3_dww4p"]
-[ext_resource type="Texture2D" uid="uid://36ggwo0wkimt" path="res://art/shopkeeper-sprite.png" id="3_jp048"]
-[ext_resource type="Texture2D" uid="uid://70mfxuc05igk" path="res://art/shopkeeper-blinking-sprite.png" id="4_ctpgp"]
 [ext_resource type="Resource" uid="uid://boe51cj1lttpv" path="res://relics/coupons.tres" id="4_g6lcs"]
 [ext_resource type="Resource" uid="uid://jsam6lywteta" path="res://relics/explosive_barrel.tres" id="5_131kw"]
 [ext_resource type="PackedScene" uid="uid://822a6hbpxvd0" path="res://scenes/shop/shop_card.tscn" id="5_ctpgp"]
@@ -12,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://drafesovpcnkk" path="res://scenes/ui/card_tooltip_popup.tscn" id="6_ptf86"]
 [ext_resource type="Resource" uid="uid://b0omno08q2baj" path="res://relics/mana_potion.tres" id="6_xoc10"]
 [ext_resource type="Resource" uid="uid://bxouhsrwj4q8" path="res://relics/reinforced_armor.tres" id="7_k5co3"]
+[ext_resource type="Texture2D" uid="uid://c6plx8rc56yov" path="res://art/shopkeeper-normal-sprite.png" id="9_xoc10"]
+[ext_resource type="Texture2D" uid="uid://dgvesuxg5b6fh" path="res://art/shopkeeper-blink-sprite.png" id="10_k5co3"]
 [ext_resource type="PackedScene" uid="uid://cnmp8gm6jqbkg" path="res://scenes/modifier_handler/modifier_handler.tscn" id="13_131kw"]
 [ext_resource type="PackedScene" uid="uid://dv1mwb37xvnhc" path="res://scenes/modifier_handler/modifier.tscn" id="14_xoc10"]
 
@@ -38,7 +38,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_jp048")]
+"values": [ExtResource("9_xoc10")]
 }
 
 [sub_resource type="Animation" id="Animation_ge4d2"]
@@ -55,7 +55,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.15),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("4_ctpgp"), ExtResource("3_jp048")]
+"values": [ExtResource("9_xoc10"), ExtResource("10_k5co3")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xcdpw"]
@@ -100,7 +100,7 @@ offset_left = 3.0
 offset_top = -80.0
 offset_right = 83.0
 grow_vertical = 0
-texture = ExtResource("3_jp048")
+texture = ExtResource("9_xoc10")
 expand_mode = 1
 stretch_mode = 5
 

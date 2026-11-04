@@ -7,9 +7,9 @@
 [ext_resource type="Script" uid="uid://chopbebvi1op0" path="res://custom_resources/intent.gd" id="4_kf0wf"]
 [ext_resource type="Script" uid="uid://b556lki4rdxv0" path="res://enemies/worm/worm_mega_block_action.gd" id="4_qirf3"]
 [ext_resource type="AudioStream" uid="uid://bkoe45adqg1ec" path="res://art/bite.ogg" id="5_dwcwc"]
-[ext_resource type="Texture2D" uid="uid://iuiqo1rdt6gs" path="res://art/ph_shieldIcon.png" id="6_dwcwc"]
-[ext_resource type="Texture2D" uid="uid://dsyud7mx08wn8" path="res://art/ph_mega_block_action.png" id="8_p4jei"]
+[ext_resource type="Texture2D" uid="uid://gko2ggjryke" path="res://art/shield_icon.png" id="7_dwcwc"]
 [ext_resource type="AudioStream" uid="uid://qjtaob7w4340" path="res://art/block.ogg" id="8_urmxx"]
+[ext_resource type="Texture2D" uid="uid://bjui3utspcbiy" path="res://art/mega_block_icon.png" id="10_p4jei"]
 
 [sub_resource type="Resource" id="Resource_urmxx"]
 script = ExtResource("4_kf0wf")
@@ -20,13 +20,13 @@ metadata/_custom_type_script = "uid://chopbebvi1op0"
 [sub_resource type="Resource" id="Resource_cyoi1"]
 script = ExtResource("4_kf0wf")
 base_text = "6"
-icon = ExtResource("6_dwcwc")
+icon = ExtResource("7_dwcwc")
 metadata/_custom_type_script = "uid://chopbebvi1op0"
 
 [sub_resource type="Resource" id="Resource_amkgu"]
 script = ExtResource("4_kf0wf")
 base_text = "15"
-icon = ExtResource("8_p4jei")
+icon = ExtResource("10_p4jei")
 metadata/_custom_type_script = "uid://chopbebvi1op0"
 
 [node name="WormEnemyAI" type="Node" unique_id=1654064960]

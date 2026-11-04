@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://8endg6s6d3rb"]
 
 [ext_resource type="Theme" uid="uid://b54n13fqlduvn" path="res://main_theme.tres" id="1_fht25"]
-[ext_resource type="Texture2D" uid="uid://i3r5b5x51ul8" path="res://art/ph_healthIcon.png" id="1_hdb0t"]
 [ext_resource type="Script" uid="uid://dd21jgtxmcxnx" path="res://scenes/ui/health_ui.gd" id="2_r7myk"]
+[ext_resource type="Texture2D" uid="uid://vah15xc168mg" path="res://art/heart_icon.png" id="3_fht25"]
 
 [node name="HealthUI" type="HBoxContainer" unique_id=1491546837]
 theme = ExtResource("1_fht25")
@@ -11,7 +11,7 @@ script = ExtResource("2_r7myk")
 
 [node name="HealthImage" type="TextureRect" parent="." unique_id=30969299]
 layout_mode = 2
-texture = ExtResource("1_hdb0t")
+texture = ExtResource("3_fht25")
 stretch_mode = 5
 
 [node name="HealthLabel" type="Label" parent="." unique_id=1202457023]

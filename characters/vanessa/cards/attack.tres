@@ -1,6 +1,6 @@
 [gd_resource type="Resource" format=3 uid="uid://wigqdmjm73gp"]
 
-[ext_resource type="Texture2D" uid="uid://f4qrs78gknfy" path="res://art/ph_punchIcon.png" id="1_08mf8"]
+[ext_resource type="Texture2D" uid="uid://cwdl5vd2sw6ix" path="res://art/punch_icon.png" id="1_vuw7f"]
 [ext_resource type="Script" uid="uid://ooxt4xrv2o5e" path="res://characters/vanessa/cards/vanessa_attack.gd" id="2_08mf8"]
 [ext_resource type="AudioStream" uid="uid://cq8wnie61sa4j" path="res://art/sword sound.wav" id="3_vuw7f"]
 
@@ -9,7 +9,7 @@ script = ExtResource("2_08mf8")
 id = "normal_attack"
 target = 1
 cost = 1
-icon = ExtResource("1_08mf8")
+icon = ExtResource("1_vuw7f")
 tooltip_text = "[center]Causa [color=\"ff0000\"]%s[/color] de dano.[/center]"
 sound = ExtResource("3_vuw7f")
 metadata/_custom_type_script = "uid://ctg5l1ui52cf8"
