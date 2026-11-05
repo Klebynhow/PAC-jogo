@@ -251,6 +251,7 @@ Esta é uma versão de **protótipo**. Itens conhecidos:
 ```
 
 O documento de design (GDD) complementa este guia, com a visão completa de mecânicas, conteúdo e roadmap.
+Confira aqui: [GDD](GDD/)
 
 ---
 
