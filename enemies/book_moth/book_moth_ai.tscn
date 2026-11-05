@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://d0gx4u2dla4y6"]
+
+[ext_resource type="Script" uid="uid://corghf114cuwk" path="res://enemies/common/attack_action.gd" id="1_90847"]
+[ext_resource type="Texture2D" uid="uid://iyyg6dstlwoo" path="res://art/ph_bite_attack.png" id="2_09299"]
+[ext_resource type="AudioStream" uid="uid://bkoe45adqg1ec" path="res://art/bite.ogg" id="3_22459"]
+[ext_resource type="Texture2D" uid="uid://b6kk58n68o30t" path="res://art/debbuf_attack_icon.png" id="4_09750"]
+[ext_resource type="Resource" uid="uid://bqq8ja3aff8a7" path="res://common_cards/ripped_page.tres" id="5_91388"]
+[ext_resource type="Script" uid="uid://cc1vyw63xwprt" path="res://scenes/enemy/enemy_action_picker.gd" id="6_81713"]
+[ext_resource type="Script" uid="uid://chopbebvi1op0" path="res://custom_resources/intent.gd" id="7_52677"]
+
+[sub_resource type="Resource" id="Intent_1"]
+script = ExtResource("7_52677")
+icon = ExtResource("2_09299")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[sub_resource type="Resource" id="Intent_2"]
+script = ExtResource("7_52677")
+icon = ExtResource("4_09750")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[node name="BookMothAI" type="Node" unique_id=1018682276]
+script = ExtResource("6_81713")
+
+[node name="BiteAction" type="Node" parent="." unique_id=2137578976]
+script = ExtResource("1_90847")
+damage = 3
+intent = SubResource("Intent_1")
+sound = ExtResource("3_22459")
+type = 1
+chance_weight = 3.0
+
+[node name="GnawPageAction" type="Node" parent="." unique_id=258956267]
+script = ExtResource("1_90847")
+damage = 2
+debuff_card = ExtResource("5_91388")
+intent = SubResource("Intent_2")
+sound = ExtResource("3_22459")
+type = 1
+chance_weight = 2.0

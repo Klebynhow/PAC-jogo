@@ -1,0 +1,16 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Texture2D" path="res://art/heavy_page_icon.png" id="1_icon"]
+[ext_resource type="Script" path="res://custom_resources/card.gd" id="2_script"]
+[ext_resource type="AudioStream" path="res://art/paper_rip.wav" id="3_sound"]
+
+[resource]
+script = ExtResource("2_script")
+id = "heavy_page"
+type = 1
+cost = 2
+exhausts = true
+icon = ExtResource("1_icon")
+tooltip_text = "[center]Página pesada demais. Não faz nada. Exaurir.[/center]"
+sound = ExtResource("3_sound")
+metadata/_custom_type_script = "uid://ctg5l1ui52cf8"

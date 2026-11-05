@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EnemyStats" format=3 uid="uid://23xhx4cg2d0f"]
+
+[ext_resource type="Script" uid="uid://qgbimnh54mvb" path="res://custom_resources/enemy_stats.gd" id="1_stats"]
+[ext_resource type="PackedScene" uid="uid://d0gx4u2dla4y6" path="res://enemies/book_moth/book_moth_ai.tscn" id="2_ai"]
+
+[sub_resource type="Resource" id="Resource_u0v58"]
+metadata/__load_path__ = "res://art/book_moth.png"
+
+[resource]
+script = ExtResource("1_stats")
+ai = ExtResource("2_ai")
+max_health = 11
+art = SubResource("Resource_u0v58")
+metadata/_custom_type_script = "uid://qgbimnh54mvb"

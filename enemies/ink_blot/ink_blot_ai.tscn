@@ -1,0 +1,41 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://enemies/common/attack_action.gd" id="1_90847"]
+[ext_resource type="Texture2D" path="res://art/debbuf_attack_icon.png" id="2_09750"]
+[ext_resource type="AudioStream" path="res://art/squelch_sound.ogg" id="3_60235"]
+[ext_resource type="Resource" path="res://common_cards/ink_spill.tres" id="4_70970"]
+[ext_resource type="Script" path="res://enemies/common/block_action.gd" id="5_21439"]
+[ext_resource type="Texture2D" path="res://art/shield_icon.png" id="6_64930"]
+[ext_resource type="AudioStream" path="res://art/block.ogg" id="7_31180"]
+[ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="8_81713"]
+[ext_resource type="Script" path="res://custom_resources/intent.gd" id="9_52677"]
+
+[sub_resource type="Resource" id="Intent_1"]
+script = ExtResource("9_52677")
+icon = ExtResource("2_09750")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[sub_resource type="Resource" id="Intent_2"]
+script = ExtResource("9_52677")
+icon = ExtResource("6_64930")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[node name="InkBlotAI" type="Node"]
+script = ExtResource("8_81713")
+
+[node name="SplashAction" type="Node" parent="."]
+script = ExtResource("1_90847")
+intent = SubResource("Intent_1")
+sound = ExtResource("3_60235")
+type = 1
+chance_weight = 3.0
+damage = 5
+debuff_card = ExtResource("4_70970")
+
+[node name="SlideAction" type="Node" parent="."]
+script = ExtResource("5_21439")
+intent = SubResource("Intent_2")
+sound = ExtResource("7_31180")
+type = 1
+chance_weight = 2.0
+block = 6

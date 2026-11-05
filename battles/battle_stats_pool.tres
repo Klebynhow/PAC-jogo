@@ -8,7 +8,15 @@
 [ext_resource type="Resource" uid="uid://dkq0op6r0luvr" path="res://battles/tier_1_bat_worm.tres" id="5_hpysq"]
 [ext_resource type="Resource" uid="uid://j343ljy1wpnw" path="res://battles/tier_2_grand_slime.tres" id="6_s5wuo"]
 
+[ext_resource type="Resource" path="res://battles/tier_0_moths2.tres" id="10_new"]
+[ext_resource type="Resource" path="res://battles/tier_0_ink_blot.tres" id="11_new"]
+[ext_resource type="Resource" path="res://battles/tier_0_stamper_moth.tres" id="12_new"]
+[ext_resource type="Resource" path="res://battles/tier_1_ghost_scribe.tres" id="13_new"]
+[ext_resource type="Resource" path="res://battles/tier_1_mimic_tome.tres" id="14_new"]
+[ext_resource type="Resource" path="res://battles/tier_1_stamper_moths.tres" id="15_new"]
+[ext_resource type="Resource" path="res://battles/tier_1_scribe_ink.tres" id="16_new"]
+
 [resource]
 script = ExtResource("2_42yw1")
-pool = Array[ExtResource("1_c4ej1")]([ExtResource("2_lrvlq"), ExtResource("3_s5wuo"), ExtResource("4_7ckf5"), ExtResource("5_hpysq"), ExtResource("6_s5wuo")])
+pool = Array[ExtResource("1_c4ej1")]([ExtResource("2_lrvlq"), ExtResource("3_s5wuo"), ExtResource("4_7ckf5"), ExtResource("5_hpysq"), ExtResource("6_s5wuo"), ExtResource("10_new"), ExtResource("11_new"), ExtResource("12_new"), ExtResource("13_new"), ExtResource("14_new"), ExtResource("15_new"), ExtResource("16_new")])
 metadata/_custom_type_script = "uid://b7bohumkx4bum"

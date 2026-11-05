@@ -1,0 +1,19 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/enemy/enemy.tscn" id="1_enemy"]
+[ext_resource type="Resource" path="res://enemies/stamper/stamper.tres" id="2_stamper"]
+[ext_resource type="Resource" path="res://enemies/book_moth/book_moth.tres" id="3_moth"]
+
+[node name="Tier1StamperMoths" type="Node2D"]
+
+[node name="Enemy" parent="." instance=ExtResource("1_enemy")]
+position = Vector2(160, 70)
+stats = ExtResource("2_stamper")
+
+[node name="Enemy2" parent="." instance=ExtResource("1_enemy")]
+position = Vector2(229, 70)
+stats = ExtResource("3_moth")
+
+[node name="Enemy3" parent="." instance=ExtResource("1_enemy")]
+position = Vector2(197, 52)
+stats = ExtResource("3_moth")

@@ -1,0 +1,72 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://enemies/mimic_tome/mimic_tome_close_action.gd" id="1_46286"]
+[ext_resource type="Texture2D" path="res://art/mega_block_icon.png" id="2_23990"]
+[ext_resource type="AudioStream" path="res://art/block.ogg" id="3_31180"]
+[ext_resource type="Script" path="res://enemies/common/attack_action.gd" id="4_90847"]
+[ext_resource type="Texture2D" path="res://art/debbuf_attack_icon.png" id="5_09750"]
+[ext_resource type="AudioStream" path="res://art/bite.ogg" id="6_22459"]
+[ext_resource type="Resource" path="res://common_cards/ink_spill.tres" id="7_70970"]
+[ext_resource type="Texture2D" path="res://art/ph_slash_attack.png" id="8_29868"]
+[ext_resource type="AudioStream" path="res://art/paper_rip.wav" id="9_41427"]
+[ext_resource type="Script" path="res://enemies/common/block_action.gd" id="10_21439"]
+[ext_resource type="Texture2D" path="res://art/shield_icon.png" id="11_64930"]
+[ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="12_81713"]
+[ext_resource type="Script" path="res://custom_resources/intent.gd" id="13_52677"]
+
+[sub_resource type="Resource" id="Intent_1"]
+script = ExtResource("13_52677")
+icon = ExtResource("2_23990")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[sub_resource type="Resource" id="Intent_2"]
+script = ExtResource("13_52677")
+icon = ExtResource("5_09750")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[sub_resource type="Resource" id="Intent_3"]
+script = ExtResource("13_52677")
+icon = ExtResource("8_29868")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[sub_resource type="Resource" id="Intent_4"]
+script = ExtResource("13_52677")
+icon = ExtResource("11_64930")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[node name="MimicTomeAI" type="Node"]
+script = ExtResource("12_81713")
+
+[node name="CloseBookAction" type="Node" parent="."]
+script = ExtResource("1_46286")
+intent = SubResource("Intent_1")
+sound = ExtResource("3_31180")
+block = 14
+stacks = 2
+hp_threshold = 24
+
+[node name="BiteAction" type="Node" parent="."]
+script = ExtResource("4_90847")
+intent = SubResource("Intent_2")
+sound = ExtResource("6_22459")
+type = 1
+chance_weight = 4.0
+damage = 8
+debuff_card = ExtResource("7_70970")
+
+[node name="FlipPagesAction" type="Node" parent="."]
+script = ExtResource("4_90847")
+intent = SubResource("Intent_3")
+sound = ExtResource("9_41427")
+type = 1
+chance_weight = 3.0
+damage = 3
+hits = 3
+
+[node name="SpineAction" type="Node" parent="."]
+script = ExtResource("10_21439")
+intent = SubResource("Intent_4")
+sound = ExtResource("3_31180")
+type = 1
+chance_weight = 2.0
+block = 8

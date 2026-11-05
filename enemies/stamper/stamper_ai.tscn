@@ -1,0 +1,39 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://enemies/common/attack_action.gd" id="1_90847"]
+[ext_resource type="Texture2D" path="res://art/punch_icon.png" id="2_98282"]
+[ext_resource type="AudioStream" path="res://art/sword sound.wav" id="3_92611"]
+[ext_resource type="Script" path="res://enemies/common/muscle_allies_action.gd" id="4_79231"]
+[ext_resource type="Texture2D" path="res://art/toughen_icon.png" id="5_35727"]
+[ext_resource type="AudioStream" path="res://art/833031__zeltbolt__apply_buff.wav" id="6_78665"]
+[ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="7_81713"]
+[ext_resource type="Script" path="res://custom_resources/intent.gd" id="8_52677"]
+
+[sub_resource type="Resource" id="Intent_1"]
+script = ExtResource("8_52677")
+icon = ExtResource("2_98282")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[sub_resource type="Resource" id="Intent_2"]
+script = ExtResource("8_52677")
+icon = ExtResource("5_35727")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[node name="StamperAI" type="Node"]
+script = ExtResource("7_81713")
+
+[node name="StampAction" type="Node" parent="."]
+script = ExtResource("1_90847")
+intent = SubResource("Intent_1")
+sound = ExtResource("3_92611")
+type = 1
+chance_weight = 3.0
+damage = 6
+
+[node name="RageStampAction" type="Node" parent="."]
+script = ExtResource("4_79231")
+intent = SubResource("Intent_2")
+sound = ExtResource("6_78665")
+type = 1
+chance_weight = 1.5
+stacks = 1

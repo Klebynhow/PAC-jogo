@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Texture2D" path="res://art/ink_spill_icon.png" id="1_icon"]
+[ext_resource type="Script" path="res://common_cards/ink_spill.gd" id="2_script"]
+[ext_resource type="AudioStream" path="res://art/squelch_sound.ogg" id="3_sound"]
+
+[resource]
+script = ExtResource("2_script")
+id = "ink_spill"
+type = 1
+exhausts = true
+icon = ExtResource("1_icon")
+tooltip_text = "[center]Ao jogar, receba [color=\"ff0000\"]%s[/color] de dano. Exaurir.[/center]"
+sound = ExtResource("3_sound")
+metadata/_custom_type_script = "uid://ctg5l1ui52cf8"
