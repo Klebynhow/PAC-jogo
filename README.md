@@ -235,6 +235,7 @@ Esta é uma versão de **protótipo**. Itens conhecidos:
 ```text
 .
 ├── project.godot        # configuração do projeto (cena principal, entradas, resolução)
+├── GDD                  # pasta com arquivo .pdf do GDD atual
 ├── main_menu.gd         # script do menu principal
 ├── art/                 # sprites, ícones, sons e música
 ├── battles/             # batalhas (cena + peso + ouro) e o pool por tier
