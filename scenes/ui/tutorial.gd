@@ -1,6 +1,10 @@
 class_name Tutorial
 extends Control
 
+# Guia de como jogar. Abre como uma tela por cima do menu principal.
+# Textos SEM acentos de proposito: a fonte pixel_rpg.ttf nao tem esses glifos.
+# Para adicionar ou editar paginas, mexa apenas na lista PAGES.
+
 signal closed
 
 const COIN := "[img=7]res://art/coinIcon.png[/img]"
@@ -17,6 +21,7 @@ const SHOP := "[img=7]res://art/shop-icon.png[/img]"
 const CAMPFIRE := "[img=7]res://art/ph_healthIcon.png[/img]"
 const CHEST := "[img=7]res://art/chest-icon.png[/img]"
 const BOSS := "[img=7]res://art/boss-encounter-icon.png[/img]"
+const ELITE := "[img=7]res://art/elite-encounter-icon.png[/img]"
 const Y := "[color=\"ffdf00\"]"
 const END := "[/color]"
 
@@ -110,6 +115,7 @@ const PAGES := [
 		"lines": [
 			"Escolha uma sala ligada a sua posicao. Role o mapa com a roda do mouse.",
 			COMBAT + " Combate: ganhe ouro e escolha 1 entre 3 cartas (ou pule).",
+			ELITE + " Subchefe: inimigo forte. Vencer rende um artefato!",
 			SHOP + " Loja: compre cartas e artefatos.",
 			CAMPFIRE + " Fogueira: recupere 30% da vida.",
 			CHEST + " Tesouro: receba um artefato aleatorio.",

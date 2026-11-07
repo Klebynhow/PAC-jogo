@@ -10,6 +10,7 @@ const WIN_SCREEN_SCENE := preload("res://scenes/win_screen/win_screen.tscn")
 const MAIN_MENU_PATH := "res://scenes/ui/main_menu.tscn"
 
 @export var run_startup: RunStartup
+@export var elite_relic_pool: Array[Relic]
 @onready var health_ui: HealthUI = %HealthUI
 @onready var map: Map = $Map
 @onready var current_view: Node = $CurrentView
@@ -127,9 +128,25 @@ func _show_regular_battle_rewards() -> void:
 	var reward_scene := _change_view(BATTLE_REWARD_SCENE) as BattleReward
 	reward_scene.run_stats = stats
 	reward_scene.character_stats = character
+	reward_scene.relic_handler = relic_handler
 	
 	reward_scene.add_gold_reward(map.last_room.battle_stats.roll_gold_reward())
+	if map.last_room.type == Room.Type.ELITE:
+		reward_scene.add_relic_reward(_get_elite_relic_reward())
 	reward_scene.add_card_reward()
+
+func _get_elite_relic_reward() -> Relic:
+	var pool: Array[Relic] = []
+	pool.assign(elite_relic_pool)
+	if pool.is_empty():
+		var treasure := TREASURE_SCENE.instantiate() as Treasure
+		pool.assign(treasure.treasure_relic_pool)
+		treasure.free()
+	var available := pool.filter(
+		func(relic: Relic):
+			return relic.can_appear_as_reward(character) and not relic_handler.has_relic(relic.id)
+	)
+	return RNG.array_pick_random(available)
 
 func _on_battle_room_entered(room: Room) -> void:
 	var battle_scene: Battle = _change_view(BATTLE_SCENE) as Battle
@@ -182,4 +199,6 @@ func _on_map_exited(room: Room) -> void:
 		Room.Type.SHOP :
 			_on_shop_entered()
 		Room.Type.BOSS :
+			_on_battle_room_entered(room)
+		Room.Type.ELITE :
 			_on_battle_room_entered(room)

@@ -1,0 +1,71 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://enemies/common/exposed_action.gd" id="1_62404"]
+[ext_resource type="Texture2D" path="res://art/exposed_icon.png" id="2_64498"]
+[ext_resource type="AudioStream" path="res://art/833031__zeltbolt__apply_buff.wav" id="3_61321"]
+[ext_resource type="Script" path="res://enemies/common/attack_action.gd" id="4_99733"]
+[ext_resource type="Texture2D" path="res://art/ph_slash_attack.png" id="5_50861"]
+[ext_resource type="AudioStream" path="res://art/ph_slash.wav" id="6_49190"]
+[ext_resource type="Texture2D" path="res://art/debbuf_attack_icon.png" id="7_13370"]
+[ext_resource type="AudioStream" path="res://art/paper_rip.wav" id="8_10640"]
+[ext_resource type="Resource" path="res://common_cards/heavy_page.tres" id="9_37765"]
+[ext_resource type="Script" path="res://enemies/common/muscle_allies_action.gd" id="10_40330"]
+[ext_resource type="Texture2D" path="res://art/toughen_icon.png" id="11_17643"]
+[ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="12_29416"]
+[ext_resource type="Script" path="res://custom_resources/intent.gd" id="13_20756"]
+
+[sub_resource type="Resource" id="Intent_1"]
+script = ExtResource("13_20756")
+icon = ExtResource("2_64498")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[sub_resource type="Resource" id="Intent_2"]
+script = ExtResource("13_20756")
+icon = ExtResource("5_50861")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[sub_resource type="Resource" id="Intent_3"]
+script = ExtResource("13_20756")
+icon = ExtResource("7_13370")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[sub_resource type="Resource" id="Intent_4"]
+script = ExtResource("13_20756")
+icon = ExtResource("11_17643")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[node name="DarkEditorAI" type="Node"]
+script = ExtResource("12_29416")
+
+[node name="CriticalReviewAction" type="Node" parent="."]
+script = ExtResource("1_62404")
+intent = SubResource("Intent_1")
+sound = ExtResource("3_61321")
+duration = 3
+once_per_battle = true
+
+[node name="EditorialCutAction" type="Node" parent="."]
+script = ExtResource("4_99733")
+intent = SubResource("Intent_2")
+sound = ExtResource("6_49190")
+type = 1
+chance_weight = 3.0
+damage = 12
+
+[node name="TotalStrikeoutAction" type="Node" parent="."]
+script = ExtResource("4_99733")
+intent = SubResource("Intent_3")
+sound = ExtResource("8_10640")
+type = 1
+chance_weight = 3.0
+damage = 5
+debuff_card = ExtResource("9_37765")
+debuff_card_count = 2
+
+[node name="NewEditionAction" type="Node" parent="."]
+script = ExtResource("10_40330")
+intent = SubResource("Intent_4")
+sound = ExtResource("3_61321")
+type = 1
+chance_weight = 1.5
+stacks = 2
