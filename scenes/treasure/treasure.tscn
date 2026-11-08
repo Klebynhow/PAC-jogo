@@ -3,7 +3,6 @@
 [ext_resource type="Theme" uid="uid://b54n13fqlduvn" path="res://main_theme.tres" id="1_5dwmd"]
 [ext_resource type="Script" uid="uid://doje1rhaauhdy" path="res://scenes/treasure/treasure.gd" id="2_5dwmd"]
 [ext_resource type="Script" uid="uid://cyfywqwrmcwde" path="res://custom_resources/relic.gd" id="3_8auyv"]
-[ext_resource type="Texture2D" uid="uid://dim0cqc316o8e" path="res://art/cenario-batalha.png" id="3_8kvvt"]
 [ext_resource type="Resource" uid="uid://jsam6lywteta" path="res://relics/explosive_barrel.tres" id="4_bbvtr"]
 [ext_resource type="Resource" uid="uid://b0omno08q2baj" path="res://relics/mana_potion.tres" id="5_ko1oj"]
 [ext_resource type="Texture2D" uid="uid://dohuawmwg20qa" path="res://art/treasure_chest_icon.png" id="5_qhcu3"]
@@ -14,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bnalw87a0i7fg" path="res://art/treasure_chest_open_icon.png" id="7_mn6fe"]
 [ext_resource type="Resource" path="res://relics/vampire_fang.tres" id="8_odogb"]
 [ext_resource type="Resource" path="res://relics/whetstone.tres" id="9_2i7av"]
+[ext_resource type="Texture2D" uid="uid://bs6sbhfeui0nf" path="res://art/treasure_room_background.png" id="10_ab3yx"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1466h"]
 font_size = 13
@@ -167,7 +167,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_8kvvt")
+texture = ExtResource("10_ab3yx")
 expand_mode = 1
 stretch_mode = 5
 
@@ -179,7 +179,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0, 0, 0, 0.7921569)
+color = Color(0, 0, 0, 0.33333334)
 
 [node name="Label" type="Label" parent="." unique_id=1703284256]
 layout_mode = 1
