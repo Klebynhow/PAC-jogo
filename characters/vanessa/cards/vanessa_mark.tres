@@ -1,8 +1,8 @@
-[gd_resource type="Resource" format=3]
+[gd_resource type="Resource" format=3 uid="uid://c44wsaf7cd22o"]
 
-[ext_resource type="Texture2D" path="res://art/exposed_icon.png" id="1_icon"]
-[ext_resource type="Script" path="res://characters/vanessa/cards/vanessa_mark.gd" id="2_script"]
-[ext_resource type="AudioStream" path="res://art/833031__zeltbolt__apply_buff.wav" id="3_sound"]
+[ext_resource type="Texture2D" uid="uid://n4b2o6c4y7vq" path="res://art/vanessa_X_mark_icon.png" id="1_ykgnl"]
+[ext_resource type="Script" uid="uid://bid8uhr74vau7" path="res://characters/vanessa/cards/vanessa_mark.gd" id="2_script"]
+[ext_resource type="AudioStream" uid="uid://cxpmfj3m8rdao" path="res://art/833031__zeltbolt__apply_buff.wav" id="3_sound"]
 
 [resource]
 script = ExtResource("2_script")
@@ -10,7 +10,7 @@ id = "vanessa_mark"
 type = 1
 target = 1
 cost = 1
-icon = ExtResource("1_icon")
+icon = ExtResource("1_ykgnl")
 tooltip_text = "[center]Aplica %s de [color=\"ffdf00\"]Exposto[/color].[/center]"
 sound = ExtResource("3_sound")
 metadata/_custom_type_script = "uid://ctg5l1ui52cf8"

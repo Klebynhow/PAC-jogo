@@ -1,6 +1,6 @@
 [gd_resource type="Resource" format=3 uid="uid://b087yufewpc7i"]
 
-[ext_resource type="Texture2D" uid="uid://cgtrwpec46ekt" path="res://art/ph_blockIcon.png" id="1_icon"]
+[ext_resource type="Texture2D" uid="uid://chc5unvq21q0c" path="res://art/vanessa_shieldbash_icon.png" id="1_qh4vl"]
 [ext_resource type="Script" uid="uid://cdj4p16uohi6x" path="res://characters/vanessa/cards/vanessa_shield_bash.gd" id="2_script"]
 [ext_resource type="AudioStream" uid="uid://cq8wnie61sa4j" path="res://art/sword sound.wav" id="3_sound"]
 
@@ -9,7 +9,7 @@ script = ExtResource("2_script")
 id = "vanessa_shield_bash"
 target = 1
 cost = 1
-icon = ExtResource("1_icon")
+icon = ExtResource("1_qh4vl")
 tooltip_text = "[center]Causa dano igual ao seu [color=\"0044ff\"]escudo[/color] atual.[/center]"
 sound = ExtResource("3_sound")
 metadata/_custom_type_script = "uid://ctg5l1ui52cf8"

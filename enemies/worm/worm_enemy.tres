@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://qgbimnh54mvb" path="res://custom_resources/enemy_stats.gd" id="1_1l6w3"]
 [ext_resource type="PackedScene" uid="uid://7gr8qudc12fl" path="res://enemies/worm/worm_enemy_ai.tscn" id="1_2mxfn"]
-[ext_resource type="Texture2D" uid="uid://256vx8cjekao" path="res://art/ph_enemy.png" id="1_8op8v"]
+[ext_resource type="Texture2D" uid="uid://blaulho81nt5" path="res://art/worm_enemy_sprite.png" id="2_2mxfn"]
 
 [resource]
 script = ExtResource("1_1l6w3")
 ai = ExtResource("1_2mxfn")
 max_health = 18
-art = ExtResource("1_8op8v")
+art = ExtResource("2_2mxfn")
 metadata/_custom_type_script = "uid://qgbimnh54mvb"

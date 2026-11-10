@@ -1,13 +1,14 @@
-[gd_resource type="Resource" format=3]
+[gd_resource type="Resource" format=3 uid="uid://cf8f33rl4k1lg"]
 
-[ext_resource type="Texture2D" path="res://art/shield_icon.png" id="1_icon"]
-[ext_resource type="Script" path="res://relics/stone_skin.gd" id="2_script"]
+[ext_resource type="Texture2D" uid="uid://mrtnw2tox8g6" path="res://art/stone_skin_icon.png" id="1_u2v1w"]
+[ext_resource type="Script" uid="uid://dmmek46mgx7uk" path="res://relics/stone_skin.gd" id="2_script"]
 
 [resource]
 script = ExtResource("2_script")
 relic_name = "Stone Skin"
 id = "stone_skin"
 type = 4
-icon = ExtResource("1_icon")
-tooltip = "[color=\"ffdf00\"]Pele de Pedra[/color]\nSempre que perder vida, ganhe 2 de escudo."
+icon = ExtResource("1_u2v1w")
+tooltip = "[color=\"ffdf00\"]Pele de Pedra[/color]
+Sempre que perder vida, ganhe 2 de escudo."
 metadata/_custom_type_script = "uid://cyfywqwrmcwde"

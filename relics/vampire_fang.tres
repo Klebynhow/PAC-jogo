@@ -1,13 +1,14 @@
-[gd_resource type="Resource" format=3]
+[gd_resource type="Resource" format=3 uid="uid://kjhmschp4hkk"]
 
-[ext_resource type="Texture2D" path="res://art/heart_icon.png" id="1_icon"]
-[ext_resource type="Script" path="res://relics/vampire_fang.gd" id="2_script"]
+[ext_resource type="Texture2D" uid="uid://0urahmedgp6c" path="res://art/vampire_fang_icon.png" id="1_2rl7b"]
+[ext_resource type="Script" uid="uid://b3jj3xxc6om4h" path="res://relics/vampire_fang.gd" id="2_script"]
 
 [resource]
 script = ExtResource("2_script")
 relic_name = "Vampire Fang"
 id = "vampire_fang"
 type = 4
-icon = ExtResource("1_icon")
-tooltip = "[color=\"ffdf00\"]Presa Vampírica[/color]\nSempre que um inimigo morrer, cure 2 de vida."
+icon = ExtResource("1_2rl7b")
+tooltip = "[color=\"ffdf00\"]Presa Vampírica[/color]
+Sempre que um inimigo morrer, cure 2 de vida."
 metadata/_custom_type_script = "uid://cyfywqwrmcwde"

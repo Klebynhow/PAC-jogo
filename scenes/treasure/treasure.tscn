@@ -9,10 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://yuu5cnygnha6" path="res://art/coinIcon.png" id="5_w2wav"]
 [ext_resource type="Resource" uid="uid://bxouhsrwj4q8" path="res://relics/reinforced_armor.tres" id="6_ab3yx"]
 [ext_resource type="Texture2D" uid="uid://bamge7pt7bin" path="res://art/treasure_chest_opening_icon.png" id="6_gkj16"]
-[ext_resource type="Resource" path="res://relics/stone_skin.tres" id="7_ab3yx"]
+[ext_resource type="Resource" uid="uid://cf8f33rl4k1lg" path="res://relics/stone_skin.tres" id="7_ab3yx"]
 [ext_resource type="Texture2D" uid="uid://bnalw87a0i7fg" path="res://art/treasure_chest_open_icon.png" id="7_mn6fe"]
-[ext_resource type="Resource" path="res://relics/vampire_fang.tres" id="8_odogb"]
-[ext_resource type="Resource" path="res://relics/whetstone.tres" id="9_2i7av"]
+[ext_resource type="Resource" uid="uid://kjhmschp4hkk" path="res://relics/vampire_fang.tres" id="8_odogb"]
+[ext_resource type="Resource" uid="uid://c8af7fts21y5m" path="res://relics/whetstone.tres" id="9_2i7av"]
 [ext_resource type="Texture2D" uid="uid://bs6sbhfeui0nf" path="res://art/treasure_room_background.png" id="10_ab3yx"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1466h"]

@@ -1,17 +1,16 @@
-[gd_resource type="Resource" format=3]
+[gd_resource type="Resource" format=3 uid="uid://c2yoeop8lx63q"]
 
-[ext_resource type="Texture2D" path="res://art/heart_icon.png" id="1_icon"]
-[ext_resource type="Script" path="res://characters/vanessa/cards/vanessa_bloodlust.gd" id="2_script"]
-[ext_resource type="AudioStream" path="res://art/833031__zeltbolt__apply_buff.wav" id="3_sound"]
+[ext_resource type="Texture2D" uid="uid://cekmfp1p2tbd3" path="res://art/vanessa_bloodlust_icon.png" id="1_2a5b7"]
+[ext_resource type="Script" uid="uid://ha62mlgoxxuh" path="res://characters/vanessa/cards/vanessa_bloodlust.gd" id="2_script"]
+[ext_resource type="AudioStream" uid="uid://cxpmfj3m8rdao" path="res://art/833031__zeltbolt__apply_buff.wav" id="3_sound"]
 
 [resource]
 script = ExtResource("2_script")
 id = "vanessa_bloodlust"
 type = 1
 rarity = 2
-cost = 0
 exhausts = true
-icon = ExtResource("1_icon")
+icon = ExtResource("1_2a5b7")
 tooltip_text = "[center]Recebe [color=\"ff0000\"]%s[/color] de dano. Ganhe %s de [color=\"ffdf00\"]força[/color]. Exaure.[/center]"
 sound = ExtResource("3_sound")
 metadata/_custom_type_script = "uid://ctg5l1ui52cf8"
