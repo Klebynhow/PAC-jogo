@@ -4,6 +4,9 @@
 [ext_resource type="Script" uid="uid://ckvxs14ngqy3i" path="res://main_menu.gd" id="2_bqqt6"]
 [ext_resource type="Resource" uid="uid://byufnhlv8cxfj" path="res://scenes/Run/run_startup.tres" id="3_1g8jr"]
 [ext_resource type="PackedScene" uid="uid://c7bkmxf3fyhp3" path="res://scenes/ui/tutorial.tscn" id="4_tutorial"]
+[ext_resource type="Texture2D" uid="uid://b4tmo27et60oo" path="res://art/main-menu-new_foreground.png" id="4_uhagc"]
+[ext_resource type="Texture2D" uid="uid://wilsbnkvuikn" path="res://art/bookWorm-LOGO.png" id="5_btxxm"]
+[ext_resource type="Texture2D" uid="uid://dharaqc05naxd" path="res://art/new_bookWorm-LOGO.png" id="6_btxxm"]
 
 [sub_resource type="Gradient" id="Gradient_wu84c"]
 colors = PackedColorArray(0.29798043, 0.001434519, 0.04073544, 1, 0.085036315, 0, 0.0024677885, 1)
@@ -36,7 +39,49 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture1D_8ln24")
 
+[node name="Foreground" type="TextureRect" parent="." unique_id=601647473]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_uhagc")
+
+[node name="BackgroundGameTitle" type="TextureRect" parent="." unique_id=79421165]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = -204.0
+offset_right = 965.0
+offset_bottom = 1146.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.225, 0.225)
+texture = ExtResource("5_btxxm")
+
+[node name="ForegroundGameTitle" type="TextureRect" parent="." unique_id=916378393]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = -205.0
+offset_right = 965.0
+offset_bottom = 1145.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.225, 0.225)
+texture = ExtResource("6_btxxm")
+
 [node name="Titulo" type="Label" parent="." unique_id=1317951139]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -74,21 +119,25 @@ theme_override_constants/separation = 6
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 15.005)
 layout_mode = 2
+theme_override_font_sizes/font_size = 7
 text = "Continuar"
 
 [node name="NewRun" type="Button" parent="VBoxContainer" unique_id=140302794]
 custom_minimum_size = Vector2(0, 15.005)
 layout_mode = 2
+theme_override_font_sizes/font_size = 7
 text = "Nova Tentativa"
 
 [node name="HowToPlay" type="Button" parent="VBoxContainer" unique_id=2078408789]
 custom_minimum_size = Vector2(0, 15.005)
 layout_mode = 2
+theme_override_font_sizes/font_size = 7
 text = "Como Jogar"
 
 [node name="Exit" type="Button" parent="VBoxContainer" unique_id=1145576484]
 custom_minimum_size = Vector2(0, 15.005)
 layout_mode = 2
+theme_override_font_sizes/font_size = 7
 text = "Sair :(
 "
 
