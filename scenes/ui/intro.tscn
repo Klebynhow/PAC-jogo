@@ -32,6 +32,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 stream = ExtResource("2_video")
+volume_db = -20.489998
 autoplay = true
 expand = true
 
