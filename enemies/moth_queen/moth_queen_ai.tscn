@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bjui3utspcbiy" path="res://art/mega_block_icon.png" id="2_38682"]
 [ext_resource type="AudioStream" uid="uid://qjtaob7w4340" path="res://art/block.ogg" id="3_49230"]
 [ext_resource type="Script" uid="uid://corghf114cuwk" path="res://enemies/common/attack_action.gd" id="4_99733"]
-[ext_resource type="Texture2D" uid="uid://iyyg6dstlwoo" path="res://art/ph_bite_attack.png" id="5_37803"]
 [ext_resource type="AudioStream" uid="uid://bkoe45adqg1ec" path="res://art/bite.ogg" id="6_28795"]
+[ext_resource type="Texture2D" uid="uid://dxx7cxqk4psbw" path="res://art/bite_attack_icon.png" id="7_05ypq"]
 [ext_resource type="Texture2D" uid="uid://b6kk58n68o30t" path="res://art/debbuf_attack_icon.png" id="7_13370"]
 [ext_resource type="AudioStream" uid="uid://bbf37uxe8mxfu" path="res://art/paper_rip.wav" id="8_10640"]
 [ext_resource type="Resource" uid="uid://bqq8ja3aff8a7" path="res://common_cards/ripped_page.tres" id="9_99940"]
@@ -21,7 +21,7 @@ metadata/_custom_type_script = "uid://chopbebvi1op0"
 
 [sub_resource type="Resource" id="Intent_2"]
 script = ExtResource("13_20756")
-icon = ExtResource("5_37803")
+icon = ExtResource("7_05ypq")
 metadata/_custom_type_script = "uid://chopbebvi1op0"
 
 [sub_resource type="Resource" id="Intent_3"]

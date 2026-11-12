@@ -46,6 +46,7 @@ chance_weight = 3.0
 
 [node name="ScratchOutAction" type="Node" parent="." unique_id=603094447]
 script = ExtResource("4_90847")
+damage = 6
 debuff_card = ExtResource("9_62894")
 intent = SubResource("Intent_3")
 sound = ExtResource("8_41427")
