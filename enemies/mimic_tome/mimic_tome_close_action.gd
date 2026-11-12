@@ -1,13 +1,10 @@
 extends EnemyAction
 
-# Acao CONDICIONAL: quando a vida chega no limite, o Tomo se fecha
-# (escudo + forca). So acontece uma vez.
-
 const MUSCLE_STATUS = preload("res://statuses/muscle.tres")
 
 @export var block := 14
 @export var stacks := 2
-@export var hp_threshold := 24
+@export var hp_threshold := 26
 
 var used := false
 

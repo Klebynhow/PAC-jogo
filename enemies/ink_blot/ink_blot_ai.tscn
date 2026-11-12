@@ -1,14 +1,14 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://cdjmr68e6ola"]
 
-[ext_resource type="Script" path="res://enemies/common/attack_action.gd" id="1_90847"]
-[ext_resource type="Texture2D" path="res://art/debbuf_attack_icon.png" id="2_09750"]
-[ext_resource type="AudioStream" path="res://art/squelch_sound.ogg" id="3_60235"]
-[ext_resource type="Resource" path="res://common_cards/ink_spill.tres" id="4_70970"]
-[ext_resource type="Script" path="res://enemies/common/block_action.gd" id="5_21439"]
-[ext_resource type="Texture2D" path="res://art/shield_icon.png" id="6_64930"]
-[ext_resource type="AudioStream" path="res://art/block.ogg" id="7_31180"]
-[ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="8_81713"]
-[ext_resource type="Script" path="res://custom_resources/intent.gd" id="9_52677"]
+[ext_resource type="Script" uid="uid://corghf114cuwk" path="res://enemies/common/attack_action.gd" id="1_90847"]
+[ext_resource type="Texture2D" uid="uid://b6kk58n68o30t" path="res://art/debbuf_attack_icon.png" id="2_09750"]
+[ext_resource type="AudioStream" uid="uid://dbt7pe0eihej2" path="res://art/squelch_sound.ogg" id="3_60235"]
+[ext_resource type="Resource" uid="uid://dym8eihbxceli" path="res://common_cards/ink_spill.tres" id="4_70970"]
+[ext_resource type="Script" uid="uid://djydudir0qdoe" path="res://enemies/common/block_action.gd" id="5_21439"]
+[ext_resource type="Texture2D" uid="uid://gko2ggjryke" path="res://art/shield_icon.png" id="6_64930"]
+[ext_resource type="AudioStream" uid="uid://qjtaob7w4340" path="res://art/block.ogg" id="7_31180"]
+[ext_resource type="Script" uid="uid://cc1vyw63xwprt" path="res://scenes/enemy/enemy_action_picker.gd" id="8_81713"]
+[ext_resource type="Script" uid="uid://chopbebvi1op0" path="res://custom_resources/intent.gd" id="9_52677"]
 
 [sub_resource type="Resource" id="Intent_1"]
 script = ExtResource("9_52677")
@@ -20,22 +20,21 @@ script = ExtResource("9_52677")
 icon = ExtResource("6_64930")
 metadata/_custom_type_script = "uid://chopbebvi1op0"
 
-[node name="InkBlotAI" type="Node"]
+[node name="InkBlotAI" type="Node" unique_id=1543479049]
 script = ExtResource("8_81713")
 
-[node name="SplashAction" type="Node" parent="."]
+[node name="SplashAction" type="Node" parent="." unique_id=1830798461]
 script = ExtResource("1_90847")
+damage = 8
+debuff_card = ExtResource("4_70970")
 intent = SubResource("Intent_1")
 sound = ExtResource("3_60235")
 type = 1
 chance_weight = 3.0
-damage = 5
-debuff_card = ExtResource("4_70970")
 
-[node name="SlideAction" type="Node" parent="."]
+[node name="SlideAction" type="Node" parent="." unique_id=378444425]
 script = ExtResource("5_21439")
 intent = SubResource("Intent_2")
 sound = ExtResource("7_31180")
 type = 1
 chance_weight = 2.0
-block = 6

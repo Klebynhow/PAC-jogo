@@ -1,13 +1,13 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://bjrvm14q2bmcn"]
 
-[ext_resource type="Script" path="res://enemies/common/attack_action.gd" id="1_90847"]
-[ext_resource type="Texture2D" path="res://art/punch_icon.png" id="2_98282"]
-[ext_resource type="AudioStream" path="res://art/sword sound.wav" id="3_92611"]
-[ext_resource type="Script" path="res://enemies/common/muscle_allies_action.gd" id="4_79231"]
-[ext_resource type="Texture2D" path="res://art/toughen_icon.png" id="5_35727"]
-[ext_resource type="AudioStream" path="res://art/833031__zeltbolt__apply_buff.wav" id="6_78665"]
-[ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="7_81713"]
-[ext_resource type="Script" path="res://custom_resources/intent.gd" id="8_52677"]
+[ext_resource type="Script" uid="uid://corghf114cuwk" path="res://enemies/common/attack_action.gd" id="1_90847"]
+[ext_resource type="Texture2D" uid="uid://cwdl5vd2sw6ix" path="res://art/punch_icon.png" id="2_98282"]
+[ext_resource type="AudioStream" uid="uid://cq8wnie61sa4j" path="res://art/sword sound.wav" id="3_92611"]
+[ext_resource type="Script" uid="uid://csf04u5i5e0j6" path="res://enemies/common/muscle_allies_action.gd" id="4_79231"]
+[ext_resource type="Texture2D" uid="uid://d017sabhuppfx" path="res://art/toughen_icon.png" id="5_35727"]
+[ext_resource type="AudioStream" uid="uid://cxpmfj3m8rdao" path="res://art/833031__zeltbolt__apply_buff.wav" id="6_78665"]
+[ext_resource type="Script" uid="uid://cc1vyw63xwprt" path="res://scenes/enemy/enemy_action_picker.gd" id="7_81713"]
+[ext_resource type="Script" uid="uid://chopbebvi1op0" path="res://custom_resources/intent.gd" id="8_52677"]
 
 [sub_resource type="Resource" id="Intent_1"]
 script = ExtResource("8_52677")
@@ -19,21 +19,20 @@ script = ExtResource("8_52677")
 icon = ExtResource("5_35727")
 metadata/_custom_type_script = "uid://chopbebvi1op0"
 
-[node name="StamperAI" type="Node"]
+[node name="StamperAI" type="Node" unique_id=363873345]
 script = ExtResource("7_81713")
 
-[node name="StampAction" type="Node" parent="."]
+[node name="StampAction" type="Node" parent="." unique_id=787178559]
 script = ExtResource("1_90847")
+damage = 8
 intent = SubResource("Intent_1")
 sound = ExtResource("3_92611")
 type = 1
 chance_weight = 3.0
-damage = 6
 
-[node name="RageStampAction" type="Node" parent="."]
+[node name="RageStampAction" type="Node" parent="." unique_id=1527212314]
 script = ExtResource("4_79231")
 intent = SubResource("Intent_2")
 sound = ExtResource("6_78665")
 type = 1
 chance_weight = 1.5
-stacks = 1

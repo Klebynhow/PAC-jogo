@@ -1,8 +1,5 @@
 extends EnemyAction
 
-# Da Forca para todos os inimigos vivos (incluindo quem usa).
-# Forca nao some quando o escudo reseta, ao contrario de dar escudo aos aliados.
-
 const MUSCLE_STATUS = preload("res://statuses/muscle.tres")
 
 @export var stacks := 1

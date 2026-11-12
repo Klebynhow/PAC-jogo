@@ -1,16 +1,16 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://b3jci85snms51"]
 
-[ext_resource type="Script" path="res://enemies/common/exposed_action.gd" id="1_25707"]
-[ext_resource type="Texture2D" path="res://art/exposed_icon.png" id="2_20057"]
-[ext_resource type="AudioStream" path="res://art/833031__zeltbolt__apply_buff.wav" id="3_78665"]
-[ext_resource type="Script" path="res://enemies/common/attack_action.gd" id="4_90847"]
-[ext_resource type="Texture2D" path="res://art/ph_slash_attack.png" id="5_29868"]
-[ext_resource type="AudioStream" path="res://art/ph_slash.wav" id="6_08210"]
-[ext_resource type="Texture2D" path="res://art/debbuf_attack_icon.png" id="7_09750"]
-[ext_resource type="AudioStream" path="res://art/paper_rip.wav" id="8_41427"]
-[ext_resource type="Resource" path="res://common_cards/heavy_page.tres" id="9_62894"]
-[ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="10_81713"]
-[ext_resource type="Script" path="res://custom_resources/intent.gd" id="11_52677"]
+[ext_resource type="Script" uid="uid://b3uwxuupgurla" path="res://enemies/common/exposed_action.gd" id="1_25707"]
+[ext_resource type="Texture2D" uid="uid://vekvq0c7me1e" path="res://art/exposed_icon.png" id="2_20057"]
+[ext_resource type="AudioStream" uid="uid://cxpmfj3m8rdao" path="res://art/833031__zeltbolt__apply_buff.wav" id="3_78665"]
+[ext_resource type="Script" uid="uid://corghf114cuwk" path="res://enemies/common/attack_action.gd" id="4_90847"]
+[ext_resource type="Texture2D" uid="uid://1qhsgrbhbrc0" path="res://art/ph_slash_attack.png" id="5_29868"]
+[ext_resource type="AudioStream" uid="uid://gcadlgif4qju" path="res://art/ph_slash.wav" id="6_08210"]
+[ext_resource type="Texture2D" uid="uid://b6kk58n68o30t" path="res://art/debbuf_attack_icon.png" id="7_09750"]
+[ext_resource type="AudioStream" uid="uid://bbf37uxe8mxfu" path="res://art/paper_rip.wav" id="8_41427"]
+[ext_resource type="Resource" uid="uid://cpxpwtyl0sdlj" path="res://common_cards/heavy_page.tres" id="9_62894"]
+[ext_resource type="Script" uid="uid://cc1vyw63xwprt" path="res://scenes/enemy/enemy_action_picker.gd" id="10_81713"]
+[ext_resource type="Script" uid="uid://chopbebvi1op0" path="res://custom_resources/intent.gd" id="11_52677"]
 
 [sub_resource type="Resource" id="Intent_1"]
 script = ExtResource("11_52677")
@@ -27,29 +27,27 @@ script = ExtResource("11_52677")
 icon = ExtResource("7_09750")
 metadata/_custom_type_script = "uid://chopbebvi1op0"
 
-[node name="GhostScribeAI" type="Node"]
+[node name="GhostScribeAI" type="Node" unique_id=1039959934]
 script = ExtResource("10_81713")
 
-[node name="CurseAction" type="Node" parent="."]
+[node name="CurseAction" type="Node" parent="." unique_id=1582515082]
 script = ExtResource("1_25707")
+once_per_battle = true
 intent = SubResource("Intent_1")
 sound = ExtResource("3_78665")
-duration = 2
-once_per_battle = true
 
-[node name="QuillAction" type="Node" parent="."]
+[node name="QuillAction" type="Node" parent="." unique_id=2090642721]
 script = ExtResource("4_90847")
+damage = 8
 intent = SubResource("Intent_2")
 sound = ExtResource("6_08210")
 type = 1
 chance_weight = 3.0
-damage = 7
 
-[node name="ScratchOutAction" type="Node" parent="."]
+[node name="ScratchOutAction" type="Node" parent="." unique_id=603094447]
 script = ExtResource("4_90847")
+debuff_card = ExtResource("9_62894")
 intent = SubResource("Intent_3")
 sound = ExtResource("8_41427")
 type = 1
 chance_weight = 2.0
-damage = 4
-debuff_card = ExtResource("9_62894")

@@ -1,8 +1,5 @@
 extends EnemyAction
 
-# Aplica Exposto no jogador. Se "once_per_battle" estiver ligado, funciona
-# como acao CONDICIONAL que so acontece uma vez (o primeiro turno).
-
 const EXPOSED_STATUS = preload("res://statuses/exposed.tres")
 
 @export var duration := 2

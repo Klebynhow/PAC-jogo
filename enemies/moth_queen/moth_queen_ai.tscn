@@ -1,18 +1,18 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://cn6envndo7i0w"]
 
-[ext_resource type="Script" path="res://enemies/mimic_tome/mimic_tome_close_action.gd" id="1_06788"]
-[ext_resource type="Texture2D" path="res://art/mega_block_icon.png" id="2_38682"]
-[ext_resource type="AudioStream" path="res://art/block.ogg" id="3_49230"]
-[ext_resource type="Script" path="res://enemies/common/attack_action.gd" id="4_99733"]
-[ext_resource type="Texture2D" path="res://art/ph_bite_attack.png" id="5_37803"]
-[ext_resource type="AudioStream" path="res://art/bite.ogg" id="6_28795"]
-[ext_resource type="Texture2D" path="res://art/debbuf_attack_icon.png" id="7_13370"]
-[ext_resource type="AudioStream" path="res://art/paper_rip.wav" id="8_10640"]
-[ext_resource type="Resource" path="res://common_cards/ripped_page.tres" id="9_99940"]
-[ext_resource type="Script" path="res://enemies/common/block_action.gd" id="10_16909"]
-[ext_resource type="Texture2D" path="res://art/shield_icon.png" id="11_05800"]
-[ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="12_29416"]
-[ext_resource type="Script" path="res://custom_resources/intent.gd" id="13_20756"]
+[ext_resource type="Script" uid="uid://0dlaqfqot320" path="res://enemies/mimic_tome/mimic_tome_close_action.gd" id="1_06788"]
+[ext_resource type="Texture2D" uid="uid://bjui3utspcbiy" path="res://art/mega_block_icon.png" id="2_38682"]
+[ext_resource type="AudioStream" uid="uid://qjtaob7w4340" path="res://art/block.ogg" id="3_49230"]
+[ext_resource type="Script" uid="uid://corghf114cuwk" path="res://enemies/common/attack_action.gd" id="4_99733"]
+[ext_resource type="Texture2D" uid="uid://iyyg6dstlwoo" path="res://art/ph_bite_attack.png" id="5_37803"]
+[ext_resource type="AudioStream" uid="uid://bkoe45adqg1ec" path="res://art/bite.ogg" id="6_28795"]
+[ext_resource type="Texture2D" uid="uid://b6kk58n68o30t" path="res://art/debbuf_attack_icon.png" id="7_13370"]
+[ext_resource type="AudioStream" uid="uid://bbf37uxe8mxfu" path="res://art/paper_rip.wav" id="8_10640"]
+[ext_resource type="Resource" uid="uid://bqq8ja3aff8a7" path="res://common_cards/ripped_page.tres" id="9_99940"]
+[ext_resource type="Script" uid="uid://djydudir0qdoe" path="res://enemies/common/block_action.gd" id="10_16909"]
+[ext_resource type="Texture2D" uid="uid://gko2ggjryke" path="res://art/shield_icon.png" id="11_05800"]
+[ext_resource type="Script" uid="uid://cc1vyw63xwprt" path="res://scenes/enemy/enemy_action_picker.gd" id="12_29416"]
+[ext_resource type="Script" uid="uid://chopbebvi1op0" path="res://custom_resources/intent.gd" id="13_20756"]
 
 [sub_resource type="Resource" id="Intent_1"]
 script = ExtResource("13_20756")
@@ -34,39 +34,38 @@ script = ExtResource("13_20756")
 icon = ExtResource("11_05800")
 metadata/_custom_type_script = "uid://chopbebvi1op0"
 
-[node name="MothQueenAI" type="Node"]
+[node name="MothQueenAI" type="Node" unique_id=1791175041]
 script = ExtResource("12_29416")
 
-[node name="CocoonAction" type="Node" parent="."]
+[node name="CocoonAction" type="Node" parent="." unique_id=2062414970]
 script = ExtResource("1_06788")
+block = 12
+hp_threshold = 30
 intent = SubResource("Intent_1")
 sound = ExtResource("3_49230")
-block = 12
-stacks = 2
-hp_threshold = 30
 
-[node name="RoyalBiteAction" type="Node" parent="."]
+[node name="RoyalBiteAction" type="Node" parent="." unique_id=235112829]
 script = ExtResource("4_99733")
+damage = 10
 intent = SubResource("Intent_2")
 sound = ExtResource("6_28795")
 type = 1
 chance_weight = 3.0
-damage = 9
 
-[node name="DevourPagesAction" type="Node" parent="."]
+[node name="DevourPagesAction" type="Node" parent="." unique_id=174063468]
 script = ExtResource("4_99733")
+damage = 6
+debuff_card = ExtResource("9_99940")
+debuff_card_count = 2
 intent = SubResource("Intent_3")
 sound = ExtResource("8_10640")
 type = 1
 chance_weight = 3.0
-damage = 5
-debuff_card = ExtResource("9_99940")
-debuff_card_count = 2
 
-[node name="SilkShieldAction" type="Node" parent="."]
+[node name="SilkShieldAction" type="Node" parent="." unique_id=194524097]
 script = ExtResource("10_16909")
+block = 8
 intent = SubResource("Intent_4")
 sound = ExtResource("3_49230")
 type = 1
 chance_weight = 2.0
-block = 8

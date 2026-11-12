@@ -1,18 +1,18 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://dia70cph2gnub"]
 
-[ext_resource type="Script" path="res://enemies/mimic_tome/mimic_tome_close_action.gd" id="1_46286"]
-[ext_resource type="Texture2D" path="res://art/mega_block_icon.png" id="2_23990"]
-[ext_resource type="AudioStream" path="res://art/block.ogg" id="3_31180"]
-[ext_resource type="Script" path="res://enemies/common/attack_action.gd" id="4_90847"]
-[ext_resource type="Texture2D" path="res://art/debbuf_attack_icon.png" id="5_09750"]
-[ext_resource type="AudioStream" path="res://art/bite.ogg" id="6_22459"]
-[ext_resource type="Resource" path="res://common_cards/ink_spill.tres" id="7_70970"]
-[ext_resource type="Texture2D" path="res://art/ph_slash_attack.png" id="8_29868"]
-[ext_resource type="AudioStream" path="res://art/paper_rip.wav" id="9_41427"]
-[ext_resource type="Script" path="res://enemies/common/block_action.gd" id="10_21439"]
-[ext_resource type="Texture2D" path="res://art/shield_icon.png" id="11_64930"]
-[ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="12_81713"]
-[ext_resource type="Script" path="res://custom_resources/intent.gd" id="13_52677"]
+[ext_resource type="Script" uid="uid://0dlaqfqot320" path="res://enemies/mimic_tome/mimic_tome_close_action.gd" id="1_46286"]
+[ext_resource type="Texture2D" uid="uid://bjui3utspcbiy" path="res://art/mega_block_icon.png" id="2_23990"]
+[ext_resource type="AudioStream" uid="uid://qjtaob7w4340" path="res://art/block.ogg" id="3_31180"]
+[ext_resource type="Script" uid="uid://corghf114cuwk" path="res://enemies/common/attack_action.gd" id="4_90847"]
+[ext_resource type="Texture2D" uid="uid://b6kk58n68o30t" path="res://art/debbuf_attack_icon.png" id="5_09750"]
+[ext_resource type="AudioStream" uid="uid://bkoe45adqg1ec" path="res://art/bite.ogg" id="6_22459"]
+[ext_resource type="Resource" uid="uid://dym8eihbxceli" path="res://common_cards/ink_spill.tres" id="7_70970"]
+[ext_resource type="Texture2D" uid="uid://1qhsgrbhbrc0" path="res://art/ph_slash_attack.png" id="8_29868"]
+[ext_resource type="AudioStream" uid="uid://bbf37uxe8mxfu" path="res://art/paper_rip.wav" id="9_41427"]
+[ext_resource type="Script" uid="uid://djydudir0qdoe" path="res://enemies/common/block_action.gd" id="10_21439"]
+[ext_resource type="Texture2D" uid="uid://gko2ggjryke" path="res://art/shield_icon.png" id="11_64930"]
+[ext_resource type="Script" uid="uid://cc1vyw63xwprt" path="res://scenes/enemy/enemy_action_picker.gd" id="12_81713"]
+[ext_resource type="Script" uid="uid://chopbebvi1op0" path="res://custom_resources/intent.gd" id="13_52677"]
 
 [sub_resource type="Resource" id="Intent_1"]
 script = ExtResource("13_52677")
@@ -34,39 +34,37 @@ script = ExtResource("13_52677")
 icon = ExtResource("11_64930")
 metadata/_custom_type_script = "uid://chopbebvi1op0"
 
-[node name="MimicTomeAI" type="Node"]
+[node name="MimicTomeAI" type="Node" unique_id=1546184118]
 script = ExtResource("12_81713")
 
-[node name="CloseBookAction" type="Node" parent="."]
+[node name="CloseBookAction" type="Node" parent="." unique_id=1961319196]
 script = ExtResource("1_46286")
+hp_threshold = 24
 intent = SubResource("Intent_1")
 sound = ExtResource("3_31180")
-block = 14
-stacks = 2
-hp_threshold = 24
 
-[node name="BiteAction" type="Node" parent="."]
+[node name="BiteAction" type="Node" parent="." unique_id=2018387040]
 script = ExtResource("4_90847")
+damage = 9
+debuff_card = ExtResource("7_70970")
 intent = SubResource("Intent_2")
 sound = ExtResource("6_22459")
 type = 1
 chance_weight = 4.0
-damage = 8
-debuff_card = ExtResource("7_70970")
 
-[node name="FlipPagesAction" type="Node" parent="."]
+[node name="FlipPagesAction" type="Node" parent="." unique_id=673902030]
 script = ExtResource("4_90847")
+damage = 4
+hits = 3
 intent = SubResource("Intent_3")
 sound = ExtResource("9_41427")
 type = 1
 chance_weight = 3.0
-damage = 3
-hits = 3
 
-[node name="SpineAction" type="Node" parent="."]
+[node name="SpineAction" type="Node" parent="." unique_id=908444604]
 script = ExtResource("10_21439")
+block = 8
 intent = SubResource("Intent_4")
 sound = ExtResource("3_31180")
 type = 1
 chance_weight = 2.0
-block = 8

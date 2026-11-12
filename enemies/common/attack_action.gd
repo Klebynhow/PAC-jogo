@@ -1,8 +1,5 @@
 extends EnemyAction
 
-# Ataque generico: dano, numero de golpes e (opcional) carta de debuff
-# que vai para a pilha de compra do jogador depois do golpe.
-
 @export var damage := 5
 @export var hits := 1
 @export var debuff_card: Card
