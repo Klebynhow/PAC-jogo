@@ -1,8 +1,8 @@
-[gd_resource type="Resource" format=3]
+[gd_resource type="Resource" format=3 uid="uid://dym8eihbxceli"]
 
-[ext_resource type="Texture2D" path="res://art/ink_spill_icon.png" id="1_icon"]
-[ext_resource type="Script" path="res://common_cards/ink_spill.gd" id="2_script"]
-[ext_resource type="AudioStream" path="res://art/squelch_sound.ogg" id="3_sound"]
+[ext_resource type="Texture2D" uid="uid://crvpjb3hxf7ii" path="res://art/ink_spill_icon.png" id="1_icon"]
+[ext_resource type="Script" uid="uid://dnarpl571aabs" path="res://common_cards/ink_spill.gd" id="2_script"]
+[ext_resource type="AudioStream" uid="uid://dbt7pe0eihej2" path="res://art/squelch_sound.ogg" id="3_sound"]
 
 [resource]
 script = ExtResource("2_script")

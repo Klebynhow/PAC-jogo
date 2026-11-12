@@ -1,8 +1,8 @@
-[gd_resource type="Resource" format=3]
+[gd_resource type="Resource" script_class="Card" format=3 uid="uid://cpxpwtyl0sdlj"]
 
-[ext_resource type="Texture2D" path="res://art/heavy_page_icon.png" id="1_icon"]
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="2_script"]
-[ext_resource type="AudioStream" path="res://art/paper_rip.wav" id="3_sound"]
+[ext_resource type="Texture2D" uid="uid://d4l62gq8c4cv3" path="res://art/heavy_page_icon.png" id="1_icon"]
+[ext_resource type="Script" uid="uid://ctg5l1ui52cf8" path="res://custom_resources/card.gd" id="2_script"]
+[ext_resource type="AudioStream" uid="uid://bbf37uxe8mxfu" path="res://art/paper_rip.wav" id="3_sound"]
 
 [resource]
 script = ExtResource("2_script")

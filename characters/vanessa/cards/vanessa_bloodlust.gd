@@ -11,7 +11,6 @@ func get_updated_tooltip(_player_modifiers: ModifierHandler, _enemy_modifiers: M
 	return tooltip_text % [hp_cost, strength]
 
 func apply_effects(_targets: Array[Node], _modifiers: ModifierHandler) -> void:
-	# o dano em si mesmo ignora modificadores (Exposto, etc), mas ainda passa pelo escudo
 	var damage_effect := DamageEffect.new()
 	damage_effect.amount = hp_cost
 	damage_effect.receiver_modifier_type = Modifier.Type.NO_MODIFIER

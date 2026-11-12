@@ -1,7 +1,5 @@
 extends Card
 
-# Causa dano igual ao escudo atual do jogador.
-
 func get_default_tooltip() -> String:
 	return tooltip_text
 

@@ -15,7 +15,6 @@ func get_updated_tooltip(_player_modifiers: ModifierHandler, _enemy_modifiers: M
 func apply_effects(_targets: Array[Node], _modifiers: ModifierHandler) -> void:
 	if _targets.is_empty() or not _targets[0]:
 		return
-	# pega o jogador antes do dano, caso o alvo morra
 	var players := _targets[0].get_tree().get_nodes_in_group("player")
 
 	var damage_effect := DamageEffect.new()

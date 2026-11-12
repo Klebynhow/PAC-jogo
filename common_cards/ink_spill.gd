@@ -1,7 +1,5 @@
 extends Card
 
-# Carta de debuff: ao jogar, o jogador sofre dano.
-
 var self_damage := 2
 
 func get_default_tooltip() -> String:

@@ -3,7 +3,7 @@ extends Card
 @export var optional_sound: AudioStream
 
 const EXPOSED_STATUS = preload("res://statuses/exposed.tres")
-var base_damage := 6
+var base_damage := 7
 var exposed_duration := 2
 
 func get_default_tooltip() -> String:
