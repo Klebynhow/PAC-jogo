@@ -45,6 +45,7 @@ const PAGES := [
 			Y + "Botao direito:" + END + " cancelar a carta que esta segurando.",
 			Y + "Roda do mouse:" + END + " rolar o mapa.",
 			Y + "Esc:" + END + " pausar o jogo (neste guia, fecha o guia).",
+			Y + "Volume:" + END + " engrenagem no menu principal, ou Esc durante o jogo.",
 			Y + "Setas esquerda/direita:" + END + " trocar de pagina deste guia.",
 		],
 	},

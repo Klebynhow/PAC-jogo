@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://kcsbhiwxtgpp" path="res://scenes/relic_handler/relic_handler.tscn" id="7_jbxqc"]
 [ext_resource type="PackedScene" uid="uid://61ika0mj4wy6" path="res://scenes/relic_handler/relic_tooltip.tscn" id="11_wmr4r"]
 [ext_resource type="Script" uid="uid://jflnh6vbs06w" path="res://scenes/Run/pause_menu.gd" id="12_nvqan"]
+[ext_resource type="PackedScene" path="res://scenes/ui/volume_slider.tscn" id="99_volslider"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lbbjh"]
 
@@ -157,6 +158,9 @@ text = "Pausado"
 label_settings = SubResource("LabelSettings_lbbjh")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="VolumeSlider" parent="PauseMenu/VBoxContainer" unique_id=2002405451 instance=ExtResource("99_volslider")]
+layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PauseMenu/VBoxContainer" unique_id=1009779848]
 layout_mode = 2

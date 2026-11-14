@@ -4,6 +4,7 @@ extends Control
 const MAIN_MENU_PATH := "res://scenes/ui/main_menu.tscn"
 const FADE_TIME := 0.3
 const HINT_TIME := 4.0
+const INTRO_VOLUME_DB := -12.0
 
 @onready var video: VideoStreamPlayer = %VideoStreamPlayer
 @onready var skip_hint: Label = %SkipHint
@@ -16,6 +17,8 @@ func _ready() -> void:
 	if video.stream == null:
 		_go_to_menu.call_deferred()
 		return
+	var music_volume := Settings.get_volume("music")
+	video.volume_db = (INTRO_VOLUME_DB + linear_to_db(music_volume)) if music_volume > 0.0 else -80.0
 	video.finished.connect(_go_to_menu)
 	var hint_tween := create_tween()
 	hint_tween.tween_interval(HINT_TIME)
@@ -39,7 +42,7 @@ func _go_to_menu() -> void:
 	leaving = true
 	var tween := create_tween().set_parallel(true)
 	tween.tween_property(fade, "color:a", 1.0, FADE_TIME)
-	tween.tween_property(video, "volume_db", -40.0, FADE_TIME)
+	tween.tween_property(video, "volume_db", -80.0, FADE_TIME)
 	tween.chain().tween_callback(
 		func(): get_tree().change_scene_to_file(MAIN_MENU_PATH)
 	)
