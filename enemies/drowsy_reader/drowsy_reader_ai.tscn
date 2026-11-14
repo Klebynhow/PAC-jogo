@@ -1,0 +1,70 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://enemies/common/apply_status_action.gd" id="1_59660"]
+[ext_resource type="Texture2D" path="res://art/drained_icon.png" id="2_28582"]
+[ext_resource type="AudioStream" path="res://art/833031__zeltbolt__apply_buff.wav" id="3_51992"]
+[ext_resource type="Resource" path="res://statuses/drained.tres" id="4_77712"]
+[ext_resource type="Script" path="res://enemies/common/attack_action.gd" id="5_63526"]
+[ext_resource type="Texture2D" path="res://art/punch_icon.png" id="6_68036"]
+[ext_resource type="AudioStream" path="res://art/sword sound.wav" id="7_48395"]
+[ext_resource type="Script" path="res://enemies/common/block_action.gd" id="8_96039"]
+[ext_resource type="Texture2D" path="res://art/shield_icon.png" id="9_40263"]
+[ext_resource type="AudioStream" path="res://art/block.ogg" id="10_13982"]
+[ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="11_25927"]
+[ext_resource type="Script" path="res://custom_resources/intent.gd" id="12_79143"]
+
+[sub_resource type="Resource" id="Intent_1"]
+script = ExtResource("12_79143")
+icon = ExtResource("2_28582")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[sub_resource type="Resource" id="Intent_2"]
+script = ExtResource("12_79143")
+icon = ExtResource("6_68036")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[sub_resource type="Resource" id="Intent_3"]
+script = ExtResource("12_79143")
+icon = ExtResource("2_28582")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[sub_resource type="Resource" id="Intent_4"]
+script = ExtResource("12_79143")
+icon = ExtResource("9_40263")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[node name="DrowsyReaderAI" type="Node"]
+script = ExtResource("11_25927")
+
+[node name="OpeningYawnAction" type="Node" parent="."]
+script = ExtResource("1_59660")
+intent = SubResource("Intent_1")
+sound = ExtResource("3_51992")
+status_a = ExtResource("4_77712")
+amount_a = 2
+once_per_battle = true
+
+[node name="ColdTouchAction" type="Node" parent="."]
+script = ExtResource("5_63526")
+intent = SubResource("Intent_2")
+sound = ExtResource("7_48395")
+type = 1
+chance_weight = 3.0
+damage = 5
+
+[node name="YawnAction" type="Node" parent="."]
+script = ExtResource("1_59660")
+intent = SubResource("Intent_3")
+sound = ExtResource("3_51992")
+type = 1
+chance_weight = 1.5
+status_a = ExtResource("4_77712")
+amount_a = 2
+
+[node name="NapAction" type="Node" parent="."]
+script = ExtResource("8_96039")
+intent = SubResource("Intent_4")
+sound = ExtResource("10_13982")
+type = 1
+chance_weight = 1.0
+block = 6

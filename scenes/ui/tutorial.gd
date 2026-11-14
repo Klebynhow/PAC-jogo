@@ -16,6 +16,9 @@ const DISCARD := "[img=7]res://art/discardIcon.png[/img]"
 const EXPOSED := "[img=7]res://art/exposed_icon.png[/img]"
 const STRENGTH := "[img=7]res://art/toughen_icon.png[/img]"
 const RIPPED := "[img=7]res://art/ripped_page_icon.png[/img]"
+const WEAK := "[img=7]res://art/weak_icon.png[/img]"
+const POISON := "[img=7]res://art/poison_icon.png[/img]"
+const DRAINED := "[img=7]res://art/drained_icon.png[/img]"
 const COMBAT := "[img=7]res://art/combat-icon.png[/img]"
 const SHOP := "[img=7]res://art/shop-icon.png[/img]"
 const CAMPFIRE := "[img=7]res://art/ph_healthIcon.png[/img]"
@@ -45,7 +48,6 @@ const PAGES := [
 			Y + "Botao direito:" + END + " cancelar a carta que esta segurando.",
 			Y + "Roda do mouse:" + END + " rolar o mapa.",
 			Y + "Esc:" + END + " pausar o jogo (neste guia, fecha o guia).",
-			Y + "Volume:" + END + " engrenagem no menu principal, ou Esc durante o jogo.",
 			Y + "Setas esquerda/direita:" + END + " trocar de pagina deste guia.",
 		],
 	},
@@ -100,15 +102,25 @@ const PAGES := [
 		],
 	},
 	{
-		"title": "STATUS E CARTAS RUINS",
+		"title": "STATUS",
 		"lines": [
-			"Os status ficam abaixo da vida. Clique no icone para ler a descricao.",
-			"",
+			"Clique no icone de um status (abaixo da vida) para ler a descricao.",
 			EXPOSED + " " + Y + "Exposto" + END + ": sofre 50% mais dano.",
 			STRENGTH + " " + Y + "Forca" + END + ": ataques causam mais dano.",
-			"",
+			WEAK + " " + Y + "Fraco" + END + ": causa 25% menos dano.",
+			POISON + " " + Y + "Veneno" + END + ": perde vida no comeco do turno.",
+			DRAINED + " " + Y + "Cansaco" + END + ": perde 1 de mana por turno.",
+			"Forca e Veneno se acumulam. Os outros duram alguns turnos.",
+		],
+	},
+	{
+		"title": "CARTAS RUINS",
+		"lines": [
 			RIPPED + " " + Y + "Cartas de debuff" + END + " (ex.: Pagina Rasgada) sao colocadas no seu baralho por alguns inimigos.",
+			"",
 			"Elas atrapalham sua mao e somem quando o combate acaba.",
+			"",
+			"Algumas custam mana, outras machucam quando jogadas. Veja a descricao antes de usar.",
 		],
 	},
 	{

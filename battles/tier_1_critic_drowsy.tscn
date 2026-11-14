@@ -1,0 +1,15 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/enemy/enemy.tscn" id="1_enemy"]
+[ext_resource type="Resource" path="res://enemies/acid_critic/acid_critic.tres" id="2_critic"]
+[ext_resource type="Resource" path="res://enemies/drowsy_reader/drowsy_reader.tres" id="3_reader"]
+
+[node name="Tier1CriticDrowsy" type="Node2D"]
+
+[node name="Enemy" parent="." instance=ExtResource("1_enemy")]
+position = Vector2(163, 67)
+stats = ExtResource("2_critic")
+
+[node name="Enemy2" parent="." instance=ExtResource("1_enemy")]
+position = Vector2(208, 67)
+stats = ExtResource("3_reader")

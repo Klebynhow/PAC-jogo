@@ -1,0 +1,102 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://enemies/common/apply_status_action.gd" id="1_59660"]
+[ext_resource type="Texture2D" path="res://art/poison_icon.png" id="2_16573"]
+[ext_resource type="AudioStream" path="res://art/squelch_sound.ogg" id="3_58289"]
+[ext_resource type="Resource" path="res://statuses/poison.tres" id="4_20886"]
+[ext_resource type="Resource" path="res://statuses/drained.tres" id="5_77712"]
+[ext_resource type="Script" path="res://enemies/common/attack_action.gd" id="6_63526"]
+[ext_resource type="Texture2D" path="res://art/debbuf_attack_icon.png" id="7_02797"]
+[ext_resource type="Resource" path="res://common_cards/ink_spill.tres" id="8_51262"]
+[ext_resource type="Script" path="res://enemies/common/block_action.gd" id="9_96039"]
+[ext_resource type="Texture2D" path="res://art/shield_icon.png" id="10_40263"]
+[ext_resource type="AudioStream" path="res://art/block.ogg" id="11_13982"]
+[ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="12_25927"]
+[ext_resource type="Script" path="res://custom_resources/intent.gd" id="13_79143"]
+
+[sub_resource type="Resource" id="Intent_1"]
+script = ExtResource("13_79143")
+icon = ExtResource("2_16573")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[sub_resource type="Resource" id="Intent_2"]
+script = ExtResource("13_79143")
+icon = ExtResource("2_16573")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[sub_resource type="Resource" id="Intent_3"]
+script = ExtResource("13_79143")
+icon = ExtResource("7_02797")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[sub_resource type="Resource" id="Intent_4"]
+script = ExtResource("13_79143")
+icon = ExtResource("7_02797")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[sub_resource type="Resource" id="Intent_5"]
+script = ExtResource("13_79143")
+icon = ExtResource("2_16573")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[sub_resource type="Resource" id="Intent_6"]
+script = ExtResource("13_79143")
+icon = ExtResource("10_40263")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[node name="DarkInkwellAI" type="Node"]
+script = ExtResource("12_25927")
+
+[node name="SpillAction" type="Node" parent="."]
+script = ExtResource("1_59660")
+intent = SubResource("Intent_1")
+sound = ExtResource("3_58289")
+status_a = ExtResource("4_20886")
+amount_a = 3
+once_per_battle = true
+
+[node name="OverflowAction" type="Node" parent="."]
+script = ExtResource("1_59660")
+intent = SubResource("Intent_2")
+sound = ExtResource("3_58289")
+status_a = ExtResource("4_20886")
+amount_a = 5
+status_b = ExtResource("5_77712")
+amount_b = 2
+hp_threshold = 55
+
+[node name="InkJetAction" type="Node" parent="."]
+script = ExtResource("6_63526")
+intent = SubResource("Intent_3")
+sound = ExtResource("3_58289")
+type = 1
+chance_weight = 3.0
+damage = 8
+status_to_apply = ExtResource("4_20886")
+status_amount = 2
+
+[node name="HeavySplashAction" type="Node" parent="."]
+script = ExtResource("6_63526")
+intent = SubResource("Intent_4")
+sound = ExtResource("3_58289")
+type = 1
+chance_weight = 2.0
+damage = 10
+debuff_card = ExtResource("8_51262")
+
+[node name="BlackTideAction" type="Node" parent="."]
+script = ExtResource("1_59660")
+intent = SubResource("Intent_5")
+sound = ExtResource("3_58289")
+type = 1
+chance_weight = 1.5
+status_a = ExtResource("4_20886")
+amount_a = 4
+
+[node name="DriedShellAction" type="Node" parent="."]
+script = ExtResource("9_96039")
+intent = SubResource("Intent_6")
+sound = ExtResource("11_13982")
+type = 1
+chance_weight = 2.0
+block = 12

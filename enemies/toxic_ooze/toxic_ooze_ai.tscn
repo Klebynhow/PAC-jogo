@@ -1,0 +1,58 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://enemies/common/attack_action.gd" id="1_63526"]
+[ext_resource type="Texture2D" path="res://art/debbuf_attack_icon.png" id="2_02797"]
+[ext_resource type="AudioStream" path="res://art/squelch_sound.ogg" id="3_58289"]
+[ext_resource type="Resource" path="res://statuses/poison.tres" id="4_20886"]
+[ext_resource type="Script" path="res://enemies/common/apply_status_action.gd" id="5_59660"]
+[ext_resource type="Texture2D" path="res://art/poison_icon.png" id="6_16573"]
+[ext_resource type="Script" path="res://enemies/common/block_action.gd" id="7_96039"]
+[ext_resource type="Texture2D" path="res://art/shield_icon.png" id="8_40263"]
+[ext_resource type="AudioStream" path="res://art/block.ogg" id="9_13982"]
+[ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="10_25927"]
+[ext_resource type="Script" path="res://custom_resources/intent.gd" id="11_79143"]
+
+[sub_resource type="Resource" id="Intent_1"]
+script = ExtResource("11_79143")
+icon = ExtResource("2_02797")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[sub_resource type="Resource" id="Intent_2"]
+script = ExtResource("11_79143")
+icon = ExtResource("6_16573")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[sub_resource type="Resource" id="Intent_3"]
+script = ExtResource("11_79143")
+icon = ExtResource("8_40263")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[node name="ToxicOozeAI" type="Node"]
+script = ExtResource("10_25927")
+
+[node name="ToxicSpitAction" type="Node" parent="."]
+script = ExtResource("1_63526")
+intent = SubResource("Intent_1")
+sound = ExtResource("3_58289")
+type = 1
+chance_weight = 3.0
+damage = 4
+status_to_apply = ExtResource("4_20886")
+status_amount = 3
+
+[node name="PoisonBathAction" type="Node" parent="."]
+script = ExtResource("5_59660")
+intent = SubResource("Intent_2")
+sound = ExtResource("3_58289")
+type = 1
+chance_weight = 1.5
+status_a = ExtResource("4_20886")
+amount_a = 4
+
+[node name="StickyShellAction" type="Node" parent="."]
+script = ExtResource("7_96039")
+intent = SubResource("Intent_3")
+sound = ExtResource("9_13982")
+type = 1
+chance_weight = 1.5
+block = 7

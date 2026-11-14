@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EnemyStats" format=3]
+
+[ext_resource type="Script" path="res://custom_resources/enemy_stats.gd" id="1_stats"]
+[ext_resource type="PackedScene" path="res://enemies/drowsy_reader/drowsy_reader_ai.tscn" id="2_ai"]
+[ext_resource type="Texture2D" path="res://art/drowsy_reader.png" id="3_art"]
+
+[resource]
+script = ExtResource("1_stats")
+ai = ExtResource("2_ai")
+max_health = 24
+art = ExtResource("3_art")
+metadata/_custom_type_script = "uid://qgbimnh54mvb"

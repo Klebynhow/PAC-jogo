@@ -1,0 +1,58 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://enemies/common/attack_action.gd" id="1_63526"]
+[ext_resource type="Texture2D" path="res://art/debbuf_attack_icon.png" id="2_02797"]
+[ext_resource type="AudioStream" path="res://art/ph_slash.wav" id="3_52501"]
+[ext_resource type="Resource" path="res://statuses/weak.tres" id="4_67471"]
+[ext_resource type="Script" path="res://enemies/common/apply_status_action.gd" id="5_59660"]
+[ext_resource type="Texture2D" path="res://art/exposed_icon.png" id="6_46929"]
+[ext_resource type="AudioStream" path="res://art/833031__zeltbolt__apply_buff.wav" id="7_51992"]
+[ext_resource type="Resource" path="res://statuses/exposed.tres" id="8_80563"]
+[ext_resource type="Texture2D" path="res://art/ph_slash_attack.png" id="9_93696"]
+[ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="10_25927"]
+[ext_resource type="Script" path="res://custom_resources/intent.gd" id="11_79143"]
+
+[sub_resource type="Resource" id="Intent_1"]
+script = ExtResource("11_79143")
+icon = ExtResource("2_02797")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[sub_resource type="Resource" id="Intent_2"]
+script = ExtResource("11_79143")
+icon = ExtResource("6_46929")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[sub_resource type="Resource" id="Intent_3"]
+script = ExtResource("11_79143")
+icon = ExtResource("9_93696")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[node name="AcidCriticAI" type="Node"]
+script = ExtResource("10_25927")
+
+[node name="CruelReviewAction" type="Node" parent="."]
+script = ExtResource("1_63526")
+intent = SubResource("Intent_1")
+sound = ExtResource("3_52501")
+type = 1
+chance_weight = 3.0
+damage = 4
+status_to_apply = ExtResource("4_67471")
+status_amount = 2
+
+[node name="ZeroScoreAction" type="Node" parent="."]
+script = ExtResource("5_59660")
+intent = SubResource("Intent_2")
+sound = ExtResource("7_51992")
+type = 1
+chance_weight = 1.5
+status_a = ExtResource("8_80563")
+amount_a = 2
+
+[node name="ScribbleAction" type="Node" parent="."]
+script = ExtResource("1_63526")
+intent = SubResource("Intent_3")
+sound = ExtResource("3_52501")
+type = 1
+chance_weight = 2.0
+damage = 6

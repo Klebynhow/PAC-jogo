@@ -20,7 +20,15 @@
 [ext_resource type="Resource" path="res://battles/tier_3_dark_editor.tres" id="21_elite"]
 [ext_resource type="Resource" path="res://battles/tier_3_tome_stamper.tres" id="22_elite"]
 
+[ext_resource type="Resource" path="res://battles/tier_0_drowsy_reader.tres" id="30_status"]
+[ext_resource type="Resource" path="res://battles/tier_0_critic_moth.tres" id="31_status"]
+[ext_resource type="Resource" path="res://battles/tier_1_toxic_ooze.tres" id="32_status"]
+[ext_resource type="Resource" path="res://battles/tier_1_critic_drowsy.tres" id="33_status"]
+[ext_resource type="Resource" path="res://battles/tier_1_ooze_drowsy.tres" id="34_status"]
+[ext_resource type="Resource" path="res://battles/tier_2_the_censor.tres" id="35_status"]
+[ext_resource type="Resource" path="res://battles/tier_2_dark_inkwell.tres" id="36_status"]
+
 [resource]
 script = ExtResource("2_42yw1")
-pool = Array[ExtResource("1_c4ej1")]([ExtResource("2_lrvlq"), ExtResource("3_s5wuo"), ExtResource("4_7ckf5"), ExtResource("5_hpysq"), ExtResource("6_s5wuo"), ExtResource("10_new"), ExtResource("11_new"), ExtResource("12_new"), ExtResource("13_new"), ExtResource("14_new"), ExtResource("15_new"), ExtResource("16_new"), ExtResource("20_elite"), ExtResource("21_elite"), ExtResource("22_elite")])
+pool = Array[ExtResource("1_c4ej1")]([ExtResource("2_lrvlq"), ExtResource("3_s5wuo"), ExtResource("4_7ckf5"), ExtResource("5_hpysq"), ExtResource("6_s5wuo"), ExtResource("10_new"), ExtResource("11_new"), ExtResource("12_new"), ExtResource("13_new"), ExtResource("14_new"), ExtResource("15_new"), ExtResource("16_new"), ExtResource("20_elite"), ExtResource("21_elite"), ExtResource("22_elite"), ExtResource("30_status"), ExtResource("31_status"), ExtResource("32_status"), ExtResource("33_status"), ExtResource("34_status"), ExtResource("35_status"), ExtResource("36_status")])
 metadata/_custom_type_script = "uid://b7bohumkx4bum"
