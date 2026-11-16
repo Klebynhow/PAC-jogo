@@ -24,7 +24,7 @@ script = ExtResource("7_81713")
 
 [node name="StampAction" type="Node" parent="." unique_id=787178559]
 script = ExtResource("1_90847")
-damage = 8
+damage = 7
 intent = SubResource("Intent_1")
 sound = ExtResource("3_92611")
 type = 1

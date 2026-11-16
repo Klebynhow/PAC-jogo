@@ -1,0 +1,153 @@
+[gd_scene format=3 uid="uid://c3qt0uy7cyka4"]
+
+[ext_resource type="Script" uid="uid://cnxhek00frs7l" path="res://enemies/common/apply_status_action.gd" id="1_16773"]
+[ext_resource type="Texture2D" uid="uid://vekvq0c7me1e" path="res://art/exposed_icon.png" id="2_69834"]
+[ext_resource type="AudioStream" uid="uid://cxpmfj3m8rdao" path="res://art/833031__zeltbolt__apply_buff.wav" id="3_81662"]
+[ext_resource type="Resource" uid="uid://dbtgc6ur8je8m" path="res://statuses/exposed.tres" id="4_53936"]
+[ext_resource type="Resource" path="res://statuses/weak.tres" id="5_11412"]
+[ext_resource type="Script" uid="uid://0dlaqfqot320" path="res://enemies/mimic_tome/mimic_tome_close_action.gd" id="6_11812"]
+[ext_resource type="Texture2D" uid="uid://bjui3utspcbiy" path="res://art/mega_block_icon.png" id="7_65882"]
+[ext_resource type="AudioStream" uid="uid://qjtaob7w4340" path="res://art/block.ogg" id="8_33886"]
+[ext_resource type="Texture2D" uid="uid://beespjbpl54h5" path="res://art/poison_icon.png" id="9_09869"]
+[ext_resource type="AudioStream" uid="uid://dbt7pe0eihej2" path="res://art/squelch_sound.ogg" id="10_53805"]
+[ext_resource type="Resource" path="res://statuses/poison.tres" id="11_47151"]
+[ext_resource type="Resource" path="res://statuses/drained.tres" id="12_65629"]
+[ext_resource type="Script" uid="uid://corghf114cuwk" path="res://enemies/common/attack_action.gd" id="13_32134"]
+[ext_resource type="Texture2D" uid="uid://1qhsgrbhbrc0" path="res://art/ph_slash_attack.png" id="14_11456"]
+[ext_resource type="AudioStream" uid="uid://gcadlgif4qju" path="res://art/ph_slash.wav" id="15_66335"]
+[ext_resource type="Texture2D" uid="uid://b6kk58n68o30t" path="res://art/debbuf_attack_icon.png" id="16_38741"]
+[ext_resource type="AudioStream" uid="uid://bbf37uxe8mxfu" path="res://art/paper_rip.wav" id="17_18922"]
+[ext_resource type="Resource" uid="uid://bqq8ja3aff8a7" path="res://common_cards/ripped_page.tres" id="18_07959"]
+[ext_resource type="Texture2D" uid="uid://iyyg6dstlwoo" path="res://art/ph_bite_attack.png" id="19_77665"]
+[ext_resource type="AudioStream" uid="uid://bkoe45adqg1ec" path="res://art/bite.ogg" id="20_73318"]
+[ext_resource type="Script" uid="uid://djydudir0qdoe" path="res://enemies/common/block_action.gd" id="21_71160"]
+[ext_resource type="Texture2D" uid="uid://gko2ggjryke" path="res://art/shield_icon.png" id="22_72152"]
+[ext_resource type="Texture2D" uid="uid://bng7uyjlykvq5" path="res://art/weak_icon.png" id="23_53692"]
+[ext_resource type="Script" uid="uid://cc1vyw63xwprt" path="res://scenes/enemy/enemy_action_picker.gd" id="24_54045"]
+[ext_resource type="Script" uid="uid://chopbebvi1op0" path="res://custom_resources/intent.gd" id="25_36821"]
+
+[sub_resource type="Resource" id="Intent_1"]
+script = ExtResource("25_36821")
+icon = ExtResource("2_69834")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[sub_resource type="Resource" id="Intent_2"]
+script = ExtResource("25_36821")
+icon = ExtResource("7_65882")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[sub_resource type="Resource" id="Intent_3"]
+script = ExtResource("25_36821")
+icon = ExtResource("9_09869")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[sub_resource type="Resource" id="Intent_4"]
+script = ExtResource("25_36821")
+icon = ExtResource("14_11456")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[sub_resource type="Resource" id="Intent_5"]
+script = ExtResource("25_36821")
+icon = ExtResource("16_38741")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[sub_resource type="Resource" id="Intent_6"]
+script = ExtResource("25_36821")
+icon = ExtResource("16_38741")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[sub_resource type="Resource" id="Intent_7"]
+script = ExtResource("25_36821")
+icon = ExtResource("19_77665")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[sub_resource type="Resource" id="Intent_8"]
+script = ExtResource("25_36821")
+icon = ExtResource("22_72152")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[sub_resource type="Resource" id="Intent_9"]
+script = ExtResource("25_36821")
+icon = ExtResource("23_53692")
+metadata/_custom_type_script = "uid://chopbebvi1op0"
+
+[node name="ShadowAuthorAI" type="Node" unique_id=908454095]
+script = ExtResource("24_54045")
+
+[node name="OpenGrimoireAction" type="Node" parent="." unique_id=1993064238]
+script = ExtResource("1_16773")
+status_a = ExtResource("4_53936")
+status_b = ExtResource("5_11412")
+once_per_battle = true
+intent = SubResource("Intent_1")
+sound = ExtResource("3_81662")
+
+[node name="RewriteDestinyAction" type="Node" parent="." unique_id=293034577]
+script = ExtResource("6_11812")
+block = 16
+hp_threshold = 100
+intent = SubResource("Intent_2")
+sound = ExtResource("8_33886")
+
+[node name="ForbiddenFinaleAction" type="Node" parent="." unique_id=1187253781]
+script = ExtResource("1_16773")
+status_a = ExtResource("11_47151")
+amount_a = 5
+status_b = ExtResource("12_65629")
+amount_b = 3
+hp_threshold = 55
+intent = SubResource("Intent_3")
+sound = ExtResource("10_53805")
+
+[node name="ShadowWordAction" type="Node" parent="." unique_id=1880867500]
+script = ExtResource("13_32134")
+damage = 10
+intent = SubResource("Intent_4")
+sound = ExtResource("15_66335")
+type = 1
+chance_weight = 3.0
+
+[node name="InkedChapterAction" type="Node" parent="." unique_id=1385015998]
+script = ExtResource("13_32134")
+damage = 6
+status_to_apply = ExtResource("11_47151")
+status_amount = 3
+intent = SubResource("Intent_5")
+sound = ExtResource("10_53805")
+type = 1
+chance_weight = 3.0
+
+[node name="TearPagesAction" type="Node" parent="." unique_id=2040958422]
+script = ExtResource("13_32134")
+debuff_card = ExtResource("18_07959")
+debuff_card_count = 2
+intent = SubResource("Intent_6")
+sound = ExtResource("17_18922")
+type = 1
+chance_weight = 2.0
+
+[node name="DevourAction" type="Node" parent="." unique_id=1315749925]
+script = ExtResource("13_32134")
+damage = 4
+hits = 3
+intent = SubResource("Intent_7")
+sound = ExtResource("20_73318")
+type = 1
+chance_weight = 2.0
+
+[node name="SmokeCloakAction" type="Node" parent="." unique_id=689055375]
+script = ExtResource("21_71160")
+block = 14
+intent = SubResource("Intent_8")
+sound = ExtResource("8_33886")
+type = 1
+chance_weight = 2.0
+
+[node name="CurseAction" type="Node" parent="." unique_id=1394820678]
+script = ExtResource("1_16773")
+status_a = ExtResource("5_11412")
+status_b = ExtResource("12_65629")
+intent = SubResource("Intent_9")
+sound = ExtResource("3_81662")
+type = 1
+chance_weight = 1.0
