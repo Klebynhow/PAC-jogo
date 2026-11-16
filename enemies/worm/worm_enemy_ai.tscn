@@ -34,6 +34,7 @@ script = ExtResource("1_kic1x")
 
 [node name="AttackAction" type="Node" parent="." unique_id=92230433]
 script = ExtResource("2_j8376")
+damage = 6
 intent = SubResource("Resource_urmxx")
 sound = ExtResource("5_dwcwc")
 type = 1

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ciexoolla51rg"]
 
 [ext_resource type="Script" uid="uid://dcyxr6kkstyty" path="res://scenes/ui/intro.gd" id="1_script"]
-[ext_resource type="VideoStream" uid="uid://dihuw2x68hq42" path="res://art/bookworm_intro_scene.ogv" id="2_video"]
+[ext_resource type="VideoStream" uid="uid://c8ek2x0x7min0" path="res://art/bookworm_full_intro-v2.ogv" id="3_j6b1i"]
 [ext_resource type="Theme" uid="uid://b54n13fqlduvn" path="res://main_theme.tres" id="3_theme"]
 
 [node name="Intro" type="Control" unique_id=766706771]
@@ -31,7 +31,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-stream = ExtResource("2_video")
+stream = ExtResource("3_j6b1i")
 volume_db = -24.65
 autoplay = true
 expand = true
