@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bnalw87a0i7fg" path="res://art/treasure_chest_open_icon.png" id="7_mn6fe"]
 [ext_resource type="Resource" uid="uid://kjhmschp4hkk" path="res://relics/vampire_fang.tres" id="8_odogb"]
 [ext_resource type="Resource" uid="uid://c8af7fts21y5m" path="res://relics/whetstone.tres" id="9_2i7av"]
-[ext_resource type="Texture2D" uid="uid://bs6sbhfeui0nf" path="res://art/treasure_room_background.png" id="10_ab3yx"]
+[ext_resource type="Texture2D" uid="uid://gbmw68n3ydhb" path="res://art/treasure_room_background_new.png" id="10_ab3yx"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1466h"]
 font_size = 13
@@ -172,6 +172,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="BackgroundDimmer" type="ColorRect" parent="." unique_id=1837779973]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
