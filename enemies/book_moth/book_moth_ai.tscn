@@ -23,7 +23,7 @@ script = ExtResource("6_81713")
 
 [node name="BiteAction" type="Node" parent="." unique_id=2137578976]
 script = ExtResource("1_90847")
-damage = 6
+damage = 4
 intent = SubResource("Intent_1")
 sound = ExtResource("3_22459")
 type = 1
