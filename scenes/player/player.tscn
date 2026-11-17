@@ -83,10 +83,15 @@ offset_top = 9.0
 offset_bottom = 25.0
 
 [node name="StatusHandler" type="GridContainer" parent="." unique_id=1352439375 node_paths=PackedStringArray("status_owner")]
+custom_minimum_size = Vector2(15, 12)
 offset_left = -16.0
 offset_top = 26.0
 offset_right = -16.0
 offset_bottom = 26.0
+mouse_filter = 0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 6
 script = ExtResource("6_75vfm")
 status_owner = NodePath("..")
 metadata/_custom_type_script = "uid://e37k4r40i602"

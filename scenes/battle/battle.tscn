@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://b5v3n42818fak" path="res://art/discardIcon.png" id="18_sgdsx"]
 [ext_resource type="PackedScene" uid="uid://cahghvf68rkg0" path="res://scenes/ui/card_pile_view.tscn" id="21_sgdsx"]
 [ext_resource type="PackedScene" uid="uid://daad1lrdnjspx" path="res://scenes/ui/status_view.tscn" id="22_5moxy"]
+[ext_resource type="Script" uid="uid://b2wkxha5jsfay" path="res://scenes/battle/background_animation.gd" id="99_bganim"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7gynk"]
 size = Vector2(256, 100)
@@ -37,6 +38,9 @@ modulate = Color(0.601223, 0.601223, 0.60122293, 1)
 texture = ExtResource("3_6ofp8")
 centered = false
 metadata/_edit_lock_ = true
+
+[node name="BackgroundAnimation" type="Node2D" parent="." unique_id=239483290]
+script = ExtResource("99_bganim")
 
 [node name="cardDropArea" type="Area2D" parent="." unique_id=1086293074]
 collision_layer = 2
