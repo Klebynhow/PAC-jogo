@@ -1,8 +1,8 @@
-[gd_resource type="Resource" format=3]
+[gd_resource type="Resource" format=3 uid="uid://bjbvqcj0v0ifc"]
 
-[ext_resource type="Texture2D" path="res://art/weak_icon.png" id="1_icon"]
-[ext_resource type="Script" path="res://characters/vanessa/cards/vanessa_weaken.gd" id="2_script"]
-[ext_resource type="AudioStream" path="res://art/block.ogg" id="3_sound"]
+[ext_resource type="Texture2D" uid="uid://bng7uyjlykvq5" path="res://art/weak_icon.png" id="1_icon"]
+[ext_resource type="Script" uid="uid://ccg20pi6qr7au" path="res://characters/vanessa/cards/vanessa_weaken.gd" id="2_script"]
+[ext_resource type="AudioStream" uid="uid://qjtaob7w4340" path="res://art/block.ogg" id="3_sound"]
 
 [resource]
 script = ExtResource("2_script")

@@ -1,8 +1,8 @@
-[gd_resource type="Resource" format=3]
+[gd_resource type="Resource" format=3 uid="uid://bdqxplxjg6ldf"]
 
-[ext_resource type="Texture2D" path="res://art/opportune_strike_icon.png" id="1_icon"]
-[ext_resource type="Script" path="res://characters/vanessa/cards/vanessa_opportune_strike.gd" id="2_script"]
-[ext_resource type="AudioStream" path="res://art/sword sound.wav" id="3_sound"]
+[ext_resource type="Texture2D" uid="uid://528tglgc4uvp" path="res://art/opportune_strike_icon.png" id="1_icon"]
+[ext_resource type="Script" uid="uid://fc8dvnn0rppj" path="res://characters/vanessa/cards/vanessa_opportune_strike.gd" id="2_script"]
+[ext_resource type="AudioStream" uid="uid://cq8wnie61sa4j" path="res://art/sword sound.wav" id="3_sound"]
 
 [resource]
 script = ExtResource("2_script")

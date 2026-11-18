@@ -1,15 +1,15 @@
-[gd_resource type="Resource" format=3]
+[gd_resource type="Resource" format=3 uid="uid://dwqvbu47ptlvr"]
 
-[ext_resource type="Texture2D" path="res://art/poison_icon.png" id="1_icon"]
-[ext_resource type="Script" path="res://characters/vanessa/cards/vanessa_poison_dart.gd" id="2_script"]
-[ext_resource type="AudioStream" path="res://art/sword sound.wav" id="3_sound"]
+[ext_resource type="Texture2D" uid="uid://b6c5vh0qfogpt" path="res://art/poisondart_icon.png" id="1_jwqrr"]
+[ext_resource type="Script" uid="uid://dl5hufjflnb7b" path="res://characters/vanessa/cards/vanessa_poison_dart.gd" id="2_script"]
+[ext_resource type="AudioStream" uid="uid://cq8wnie61sa4j" path="res://art/sword sound.wav" id="3_sound"]
 
 [resource]
 script = ExtResource("2_script")
 id = "vanessa_poison_dart"
 target = 1
 cost = 1
-icon = ExtResource("1_icon")
+icon = ExtResource("1_jwqrr")
 tooltip_text = "[center]Causa [color=\"ff0000\"]%s[/color] de dano e aplica [color=\"5fd34a\"]%s[/color] de Veneno.[/center]"
 sound = ExtResource("3_sound")
 metadata/_custom_type_script = "uid://ctg5l1ui52cf8"

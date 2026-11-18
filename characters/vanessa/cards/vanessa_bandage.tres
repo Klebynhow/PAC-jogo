@@ -1,8 +1,8 @@
-[gd_resource type="Resource" format=3]
+[gd_resource type="Resource" format=3 uid="uid://b2owmo2hg3ngg"]
 
-[ext_resource type="Texture2D" path="res://art/healingPotion_relic_icon.png" id="1_icon"]
-[ext_resource type="Script" path="res://characters/vanessa/cards/vanessa_bandage.gd" id="2_script"]
-[ext_resource type="AudioStream" path="res://art/833031__zeltbolt__apply_buff.wav" id="3_sound"]
+[ext_resource type="Texture2D" uid="uid://c0vpt0yjggedj" path="res://art/bandage_icon.png" id="1_p2rtr"]
+[ext_resource type="Script" uid="uid://druwof4mw7fc1" path="res://characters/vanessa/cards/vanessa_bandage.gd" id="2_script"]
+[ext_resource type="AudioStream" uid="uid://cxpmfj3m8rdao" path="res://art/833031__zeltbolt__apply_buff.wav" id="3_sound"]
 
 [resource]
 script = ExtResource("2_script")
@@ -11,7 +11,7 @@ type = 1
 rarity = 1
 cost = 2
 exhausts = true
-icon = ExtResource("1_icon")
+icon = ExtResource("1_p2rtr")
 tooltip_text = "[center]Cura [color=\"3ccf3c\"]%s[/color] de vida. Exaure.[/center]"
 sound = ExtResource("3_sound")
 metadata/_custom_type_script = "uid://ctg5l1ui52cf8"

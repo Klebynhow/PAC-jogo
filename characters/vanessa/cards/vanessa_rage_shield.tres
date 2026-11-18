@@ -1,8 +1,8 @@
-[gd_resource type="Resource" format=3]
+[gd_resource type="Resource" format=3 uid="uid://pctrp2pl2f68"]
 
-[ext_resource type="Texture2D" path="res://art/rage_shield_icon.png" id="1_icon"]
-[ext_resource type="Script" path="res://characters/vanessa/cards/vanessa_rage_shield.gd" id="2_script"]
-[ext_resource type="AudioStream" path="res://art/block.ogg" id="3_sound"]
+[ext_resource type="Texture2D" uid="uid://cstc0ehaxdwbb" path="res://art/rage_shield_icon.png" id="1_icon"]
+[ext_resource type="Script" uid="uid://dh54yp3m3gup1" path="res://characters/vanessa/cards/vanessa_rage_shield.gd" id="2_script"]
+[ext_resource type="AudioStream" uid="uid://qjtaob7w4340" path="res://art/block.ogg" id="3_sound"]
 
 [resource]
 script = ExtResource("2_script")
