@@ -1,0 +1,17 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Texture2D" path="res://art/toxic_cloud_icon.png" id="1_icon"]
+[ext_resource type="Script" path="res://characters/vanessa/cards/vanessa_toxic_cloud.gd" id="2_script"]
+[ext_resource type="AudioStream" path="res://art/squelch_sound.ogg" id="3_sound"]
+
+[resource]
+script = ExtResource("2_script")
+id = "vanessa_toxic_cloud"
+type = 1
+rarity = 1
+target = 2
+cost = 2
+icon = ExtResource("1_icon")
+tooltip_text = "[center]Aplica [color=\"5fd34a\"]%s[/color] de Veneno em todos os inimigos.[/center]"
+sound = ExtResource("3_sound")
+metadata/_custom_type_script = "uid://ctg5l1ui52cf8"

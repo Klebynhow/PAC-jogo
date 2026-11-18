@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Texture2D" path="res://art/poison_icon.png" id="1_icon"]
+[ext_resource type="Script" path="res://characters/vanessa/cards/vanessa_poison_dart.gd" id="2_script"]
+[ext_resource type="AudioStream" path="res://art/sword sound.wav" id="3_sound"]
+
+[resource]
+script = ExtResource("2_script")
+id = "vanessa_poison_dart"
+target = 1
+cost = 1
+icon = ExtResource("1_icon")
+tooltip_text = "[center]Causa [color=\"ff0000\"]%s[/color] de dano e aplica [color=\"5fd34a\"]%s[/color] de Veneno.[/center]"
+sound = ExtResource("3_sound")
+metadata/_custom_type_script = "uid://ctg5l1ui52cf8"

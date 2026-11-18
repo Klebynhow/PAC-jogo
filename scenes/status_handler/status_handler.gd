@@ -58,6 +58,13 @@ func _get_status(id: String) -> Status:
 			return status_ui.status
 	return null
 
+# versoes publicas (usadas por cartas que dependem de um status do alvo)
+func has_status(id: String) -> bool:
+	return _has_status(id)
+
+func get_status(id: String) -> Status:
+	return _get_status(id)
+
 func _get_all_statuses() -> Array[Status]:
 	var statuses: Array[Status] = []
 	for status_ui: StatusUI in get_children():

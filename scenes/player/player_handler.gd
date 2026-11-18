@@ -13,6 +13,7 @@ var turn_ending := false
 
 func _ready() -> void:
 	Events.card_played.connect(_on_card_played)
+	Events.draw_cards_requested.connect(draw_cards)
 
 func start_battle(char_stats: CharacterStats) -> void:
 	character = char_stats
@@ -36,8 +37,12 @@ func end_turn() -> void:
 	relics.activate_relics_by_type(Relic.Type.END_OF_TURN)
 
 func draw_card() -> void:
+	if turn_ending:
+		return # nao compra carta depois de encerrar o turno
 	reshuffle_deck_from_discard()
-	hand.add_card(character.draw_pile.draw_card())
+	var card := character.draw_pile.draw_card()
+	if card: # sem cartas em nenhuma pilha: nao compra
+		hand.add_card(card)
 	reshuffle_deck_from_discard()
 
 func draw_cards(amount: int) -> void:

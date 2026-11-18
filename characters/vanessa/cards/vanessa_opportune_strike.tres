@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Texture2D" path="res://art/opportune_strike_icon.png" id="1_icon"]
+[ext_resource type="Script" path="res://characters/vanessa/cards/vanessa_opportune_strike.gd" id="2_script"]
+[ext_resource type="AudioStream" path="res://art/sword sound.wav" id="3_sound"]
+
+[resource]
+script = ExtResource("2_script")
+id = "vanessa_opportune_strike"
+target = 1
+cost = 1
+icon = ExtResource("1_icon")
+tooltip_text = "[center]Causa [color=\"ff0000\"]%s[/color] de dano. Se o alvo estiver [color=\"ffdf00\"]Exposto[/color], causa [color=\"ff0000\"]%s[/color].[/center]"
+sound = ExtResource("3_sound")
+metadata/_custom_type_script = "uid://ctg5l1ui52cf8"

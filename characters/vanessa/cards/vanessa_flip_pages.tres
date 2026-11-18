@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Texture2D" path="res://art/drawIcon.png" id="1_icon"]
+[ext_resource type="Script" path="res://characters/vanessa/cards/vanessa_flip_pages.gd" id="2_script"]
+[ext_resource type="AudioStream" path="res://art/paper_rip.wav" id="3_sound"]
+
+[resource]
+script = ExtResource("2_script")
+id = "vanessa_flip_pages"
+type = 1
+cost = 1
+icon = ExtResource("1_icon")
+tooltip_text = "[center]Compre [color=\"ffdf00\"]%s[/color] cartas.[/center]"
+sound = ExtResource("3_sound")
+metadata/_custom_type_script = "uid://ctg5l1ui52cf8"

@@ -38,16 +38,28 @@ func start_turn() -> void:
 
 func _start_next_enemy_turn() -> void:
 	if acting_enemies.is_empty():
-		Events.enemy_turn_ended.emit()
+		# se o ultimo inimigo morreu no proprio turno (ex.: veneno), a batalha acabou
+		if _has_living_enemies():
+			Events.enemy_turn_ended.emit()
 		return
 	acting_enemies[0].status_handler.apply_status_by_type(Status.Type.START_OF_TURN)
 
 func _on_enemy_statuses_applied(type: Status.Type, enemy: Enemy) -> void:
 	match type:
-		Status.Type.START_OF_TURN: enemy.do_turn()
+		Status.Type.START_OF_TURN:
+			# morreu de veneno no inicio do turno: _on_enemy_died ja passa a vez
+			if not is_instance_valid(enemy) or enemy.stats.health <= 0:
+				return
+			enemy.do_turn()
 		Status.Type.END_OF_TURN:
 			acting_enemies.erase(enemy)
 			_start_next_enemy_turn()
+
+func _has_living_enemies() -> bool:
+	for enemy: Enemy in get_children():
+		if enemy.stats.health > 0:
+			return true
+	return false
 
 func _on_enemy_died(enemy: Enemy) -> void:
 	var is_enemy_turn := acting_enemies.size() > 0
