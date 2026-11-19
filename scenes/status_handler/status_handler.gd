@@ -28,6 +28,10 @@ func apply_status_by_type(type: Status.Type) -> void:
 	tween.finished.connect(func(): statuses_applied.emit(type))
 
 func add_status(status: Status) -> void:
+	_add_status(status)
+	Events.statuses_changed.emit()
+
+func _add_status(status: Status) -> void:
 	var stackable := status.stack_type != Status.StackType.NONE
 	if not _has_status(status.id):
 		var new_status_ui := STATUS_UI.instantiate() as StatusUI

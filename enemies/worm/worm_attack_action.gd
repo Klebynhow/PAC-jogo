@@ -11,7 +11,7 @@ func perform_action() -> void:
 	var end := target.global_position + Vector2.RIGHT * 32
 	var damage_effect := DamageEffect.new()
 	var target_array: Array[Node] = [target]
-	damage_effect.amount = damage
+	damage_effect.amount = enemy.modifier_handler.get_modified_value(damage, Modifier.Type.DMG_DEALT)
 	damage_effect.sound = sound
 	
 	tween.tween_property(enemy, "global_position", end, 0.4)
@@ -25,5 +25,7 @@ func update_intent_text() -> void:
 	var player := target as Player
 	if not player: return
 	
-	var modified_dmg := player.modifier_handler.get_modified_value(damage, Modifier.Type.DMG_TAKEN)
-	intent.current_text = intent.base_text % modified_dmg
+	# mesma ordem do dano real: primeiro o que o inimigo causa (Forca, Fraco), depois o que o jogador recebe (Exposto)
+	var dealt_dmg := enemy.modifier_handler.get_modified_value(damage, Modifier.Type.DMG_DEALT)
+	var final_dmg := player.modifier_handler.get_modified_value(dealt_dmg, Modifier.Type.DMG_TAKEN)
+	intent.current_text = intent.base_text % final_dmg

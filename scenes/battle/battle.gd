@@ -19,6 +19,10 @@ func _ready() -> void:
 	Events.player_died.connect(_on_player_died)
 	
 
+# a musica de batalha so toca dentro da batalha: ao sair dela (mapa, menu, derrota...) ela some
+func _exit_tree() -> void:
+	MusicPlayer.fade_out()
+
 func start_battle() -> void:
 	get_tree().paused = false
 	MusicPlayer.play(music, true)

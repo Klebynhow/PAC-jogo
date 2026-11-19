@@ -7,6 +7,7 @@ func _ready() -> void:
 	Events.enemy_died.connect(_on_enemy_died)
 	Events.enemy_action_completed.connect(_on_enemy_action_completed)
 	Events.player_hand_drawn.connect(_on_player_hand_drawn)
+	Events.statuses_changed.connect(_on_statuses_changed)
 
 func setup_enemies(battle_stats: BattleStats) -> void:
 	if not battle_stats:
@@ -54,6 +55,12 @@ func _on_enemy_statuses_applied(type: Status.Type, enemy: Enemy) -> void:
 		Status.Type.END_OF_TURN:
 			acting_enemies.erase(enemy)
 			_start_next_enemy_turn()
+
+# um status mudou (ex.: Fraco em um inimigo): refaz o numero da intencao de cada inimigo
+func _on_statuses_changed() -> void:
+	for enemy: Enemy in get_children():
+		if is_instance_valid(enemy) and enemy.is_node_ready():
+			enemy.update_intent()
 
 func _has_living_enemies() -> bool:
 	for enemy: Enemy in get_children():
