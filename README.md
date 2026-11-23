@@ -270,8 +270,8 @@ Confira aqui: [GDD](GDD/)
 
 - **Autor:** Vinicius Batista Condes, Engenharia de Software.
 - **Inspirações:** *Slay the Spire* (Mega Crit), *Phoenotopia Awakening* (Cape Cosmic) e *Avonbourough* (D&D), *Deadlock* (Valve).
-- **Música:** criada com assistência de IA (combate no BandLab; menu: `New_Age_Whale (Bright)`).
-- **Vídeo de abertura:** produzido com assistência de IA.
+- **Música:** criada com assistência de IA (BandLab para combate e menu; Música do menu: `New_Age_Whale (Bright)`).
+- **Vídeo de abertura:** produzido com assistência de IA (Google Flow e CapCut, editado com Claude AI).
 - **Efeitos sonoros:** de origem open source, sem necessidade de licença ou menção.
 - **Engine:** [Godot Engine](https://godotengine.org/).
 
