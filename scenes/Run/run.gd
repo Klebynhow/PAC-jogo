@@ -34,6 +34,8 @@ var save_data: SaveGame
 func _ready() -> void:
 	if not run_startup:
 		return
+	# a musica do menu para quando a tentativa comeca (a de batalha so toca dentro das batalhas)
+	MusicPlayer.fade_out()
 	pause_menu.save_and_quit.connect(
 		func(): get_tree().change_scene_to_file(MAIN_MENU_PATH)
 	)

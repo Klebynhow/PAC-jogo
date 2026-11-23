@@ -2,6 +2,7 @@ extends Control
 
 const CHAR_SELECTOR_SCENE := preload("res://scenes/ui/character_selector.tscn")
 const RUN_SCENE = preload("res://scenes/Run/run.tscn")
+var MENU_MUSIC := preload("res://art/New_Age_Whale__Bright__Nov_19_2026_1121_AM.mp3")
 
 @onready var continue_button: Button = %Continue
 @onready var tutorial: Tutorial = %Tutorial
@@ -12,6 +13,10 @@ const RUN_SCENE = preload("res://scenes/Run/run.tscn")
 func _ready() -> void:
 	get_tree().paused = false
 	continue_button.disabled = SaveGame.load_data() == null
+	# musica do menu: toca em loop ate uma tentativa comecar (veja Run._ready)
+	if MENU_MUSIC is AudioStreamMP3:
+		MENU_MUSIC.loop = true
+	MusicPlayer.play(MENU_MUSIC, true)
 
 func _on_continue_pressed() -> void:
 	run_startup.type = RunStartup.Type.CONTINUED_RUN
