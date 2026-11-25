@@ -242,14 +242,12 @@ Ter a vida reduzida a **zero** em qualquer combate. Aparece a tela **"Fim de Jog
 ## 7. Limitações conhecidas e funcionalidades não implementadas
 
 - **Um personagem jogável** (Vanessa).
-- **Arte provisória:** os sprites dos inimigos mais novos (a partir da Traça, incluindo subchefes e chefes) são variações de cor dos sprites existentes.
 - **Somente mouse:** não há suporte a teclado (além de `Esc`, e das setas no guia) nem a controle.
 - **Sem tela de opções completa:** há ajuste de volume (música e efeitos), mas não de resolução, tela cheia ou controles.
 - **Exportação configurada apenas para Windows.** Não há preset de exportação para Web, Linux ou macOS.
 - **Idioma:** textos apenas em português do Brasil. A fonte do jogo não tem acentos, então os textos dentro do jogo são escritos sem acento.
 - **Balanceamento:** dano, custos, preços e dificuldade podem ser ajustados em futuras versões.
-- **Funcionalidades previstas:** mais personagens, cartas, batalhas e status, novas operações no tema educativo (divisão, frações) e arte e animações definitivas.
-- Se encontrar algum **bug**, abra uma *issue* no repositório descrevendo o que aconteceu.
+- **Funcionalidades previstas:** mais cartas, batalhas e status.
 
 ---
 
