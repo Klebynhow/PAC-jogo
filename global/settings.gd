@@ -12,6 +12,9 @@ signal volume_changed(channel: String, value: float)
 const SETTINGS_PATH := "user://settings.cfg"
 const BUSES := {"music": "Music", "sfx": "SFX"}
 
+# o jogador pode pular o tutorial guiado do primeiro combate ("Pular"): guarda a escolha
+var combat_tutorial_skipped := false
+
 var _volumes := {"music": 1.0, "sfx": 1.0}  # 0.0 (mudo) a 1.0
 var _base_db := {}                            # volume original de cada bus
 
@@ -34,16 +37,22 @@ func set_volume(channel: String, value: float) -> void:
 	_apply(channel)
 	volume_changed.emit(channel, _volumes[channel])
 
+func set_combat_tutorial_skipped(value: bool) -> void:
+	combat_tutorial_skipped = value
+	save()
+
 func save() -> void:
 	var config := ConfigFile.new()
 	for channel in BUSES:
 		config.set_value("audio", channel + "_volume", _volumes[channel])
+	config.set_value("tutorial", "combat_skipped", combat_tutorial_skipped)
 	config.save(SETTINGS_PATH)
 
 func _load() -> void:
 	var config := ConfigFile.new()
 	if config.load(SETTINGS_PATH) != OK:
 		return
+	combat_tutorial_skipped = bool(config.get_value("tutorial", "combat_skipped", false))
 	# versao antiga do jogo salvava um unico "master_volume": usa como valor inicial
 	var legacy := float(config.get_value("audio", "master_volume", 1.0))
 	for channel in BUSES:

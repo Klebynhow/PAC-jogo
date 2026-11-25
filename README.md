@@ -108,7 +108,7 @@ No Windows (PowerShell), por exemplo:
 O jogo guarda dois arquivos na pasta de dados do usuário:
 
 - `savegame.tres`: a tentativa em andamento.
-- `settings.cfg`: o volume de música e de efeitos.
+- `settings.cfg`: o volume de música e de efeitos, e se o tutorial do primeiro combate foi pulado.
 
 | Sistema | Pasta |
 |---|---|
@@ -116,7 +116,7 @@ O jogo guarda dois arquivos na pasta de dados do usuário:
 | Linux | `~/.local/share/godot/app_userdata/Bookworm/` |
 | macOS | `~/Library/Application Support/Godot/app_userdata/Bookworm/` |
 
-Para "zerar" o progresso, apague o `savegame.tres`. Para voltar o volume ao padrão, apague o `settings.cfg`.
+Para "zerar" o progresso, apague o `savegame.tres`. Para voltar o volume ao padrão (e rever o tutorial do primeiro combate, caso tenha clicado em **Pular**), apague o `settings.cfg`.
 
 ---
 
@@ -175,7 +175,20 @@ Ao abrir o jogo toca um **vídeo de abertura**. Ele pode ser pulado com **qualqu
 
 Quando a pilha de compra acaba, o descarte é embaralhado e vira a nova pilha de compra.
 
-### 5.5 Tipos de sala do mapa
+### 5.5 Tutorial do primeiro combate
+
+O primeiro combate de **cada tentativa** (a sala de combate do andar 1) é um **tutorial guiado**: o inimigo é sempre o mesmo morcego, que abre com o ataque `2x4`, e as primeiras cartas da mão são sempre 2 Ataques e 2 Defesas. O jogo espera você fazer cada ação de verdade:
+
+| Passo | O que ensina |
+|---|---|
+| **1/4 Intenção** | O que o inimigo vai fazer e o que o número significa: `2x4` = 2 golpes de 4 = **8** de dano. |
+| **2/4 Arrastar** | Cartas sem alvo (Defesa): clicar, arrastar para cima da mão e soltar. Depois mostra a conta do escudo: intenção **8** − escudo **5** = **3** de dano na vida. |
+| **3/4 Mirar** | Cartas de ataque: a carta vira uma seta, que se aponta para o inimigo. **Enquanto se mira, a caixa mostra a previsão do dano**, passo a passo: dano base → modificadores (o inimigo começa **Exposto**, +50%) → escudo do inimigo → vida perdida. Depois do golpe, compara a previsão com o resultado real. |
+| **4/4 Fim do turno** | Mostra a previsão de quanta vida você vai perder e, depois do turno do inimigo, confere se a conta bateu. O botão **Fim** só libera neste passo. |
+
+Os botões **Continuar** avançam as explicações e **Pular** encerra o tutorial (e ele não aparece mais nas próximas tentativas). A conta mostrada usa os mesmos modificadores e a mesma ordem do cálculo real de dano, então sempre bate com o que acontece. O guia **Como Jogar** também tem uma página com essa conta ("A conta do dano").
+
+### 5.6 Tipos de sala do mapa
 
 | Sala | O que acontece |
 |---|---|
@@ -248,7 +261,7 @@ Ter a vida reduzida a **zero** em qualquer combate. Aparece a tela **"Fim de Jog
 ├── GDD                  # pasta com o arquivo .pdf do GDD atual
 ├── main_menu.gd         # script do menu principal
 ├── art/                 # sprites, ícones, sons, músicas e vídeos
-├── battles/             # batalhas (cena + peso + ouro) e o pool por tier
+├── battles/             # batalhas (cena + peso + ouro) e o pool por tier (inclui a batalha fixa do tutorial)
 ├── characters/vanessa/  # stats, baralho inicial e cartas da Vanessa
 ├── common_cards/        # cartas de debuff (Página Rasgada etc.)
 ├── custom_resources/    # recursos: Card, Relic, Status, EnemyStats, BattleStats...

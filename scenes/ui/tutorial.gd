@@ -102,6 +102,19 @@ const PAGES := [
 		],
 	},
 	{
+		"title": "A CONTA DO DANO",
+		"lines": [
+			"Todo dano segue a mesma conta, nesta ordem:",
+			"1. " + Y + "Dano base" + END + " da carta (Ataque = 6).",
+			"2. " + Y + "Modificadores" + END + ": Forca soma, Fraco tira 25%, Exposto soma 50%.",
+			"3. " + SHIELD + " " + Y + "Escudo" + END + " absorve o que puder.",
+			"4. O que sobrar tira " + HEART + " vida.",
+			"",
+			"Seu ataque (6) em um inimigo Exposto causa 9. Se ele tem 3 de escudo, perde 6 de vida.",
+			"Se o inimigo anuncia 2x4 = 8 e voce tem 5 de escudo, perde 3 de vida.",
+		],
+	},
+	{
 		"title": "STATUS",
 		"lines": [
 			"Clique no icone de um status (abaixo da vida) para ler a descricao.",

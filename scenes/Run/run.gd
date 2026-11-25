@@ -8,6 +8,8 @@ const SHOP_SCENE := preload("res://scenes/shop/shop.tscn")
 const TREASURE_SCENE := preload("res://scenes/treasure/treasure.tscn")
 const WIN_SCREEN_SCENE := preload("res://scenes/win_screen/win_screen.tscn")
 const MAIN_MENU_PATH := "res://scenes/ui/main_menu.tscn"
+# primeiro combate de cada tentativa: batalha fixa + tutorial guiado (batalha fora do pool normal)
+const TUTORIAL_BATTLE := preload("res://battles/tutorial_bat.tres")
 
 @export var run_startup: RunStartup
 @export var elite_relic_pool: Array[Relic]
@@ -152,10 +154,16 @@ func _get_elite_relic_reward() -> Relic:
 
 func _on_battle_room_entered(room: Room) -> void:
 	var battle_scene: Battle = _change_view(BATTLE_SCENE) as Battle
+	var show_tutorial := _is_tutorial_battle(room)
 	battle_scene.char_stats = character
-	battle_scene.battle_stats = room.battle_stats
+	battle_scene.battle_stats = TUTORIAL_BATTLE if show_tutorial else room.battle_stats
+	battle_scene.tutorial_enabled = show_tutorial
 	battle_scene.relics = relic_handler
 	battle_scene.start_battle()
+
+# o tutorial aparece no combate comum do primeiro andar, a menos que o jogador tenha escolhido "Pular"
+func _is_tutorial_battle(room: Room) -> bool:
+	return room.type == Room.Type.MONSTER and room.row == 0 and not Settings.combat_tutorial_skipped
 
 func _on_campfire_room_entered() -> void:
 	var campfire := _change_view(CAMPFIRE_SCENE) as Campfire

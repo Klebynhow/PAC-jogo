@@ -6,6 +6,11 @@ extends Node2D
 @export var music: AudioStream
 @export var relics: RelicHandler
 
+# tutorial guiado do primeiro combate (ligado pela Run): ver scenes/ui/combat_tutorial.gd
+var tutorial_enabled := false
+# maos iniciais do tutorial: garante 2 Ataques e 2 Defesas nas primeiras cartas compradas
+const TUTORIAL_OPENING_HAND: Array[String] = ["normal_attack", "normal_block", "normal_attack", "normal_block"]
+
 @onready var battle_ui: BattleUI = $battleUI
 @onready var player_handler: PlayerHandler = $PlayerHandler
 @onready var enemy_handler: EnemyHandler = $EnemyHandler
@@ -31,8 +36,16 @@ func start_battle() -> void:
 	player_handler.relics = relics
 	enemy_handler.setup_enemies(battle_stats)
 	enemy_handler.reset_enemy_actions()
+	if tutorial_enabled:
+		_start_combat_tutorial()
 	relics.relics_activated.connect(_on_relics_activated)
 	relics.activate_relics_by_type(Relic.Type.START_OF_COMBAT)
+
+func _start_combat_tutorial() -> void:
+	player_handler.opening_hand_ids = TUTORIAL_OPENING_HAND
+	var tutorial := CombatTutorial.new()
+	add_child(tutorial)
+	tutorial.setup(self)
 
 func _on_enemies_child_order_changed() -> void:
 	if enemy_handler.get_child_count() == 0 and is_instance_valid(relics):

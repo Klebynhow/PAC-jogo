@@ -10,6 +10,8 @@ const HAND_DISCARD_INTERVAL := 0.25
 
 var character: CharacterStats
 var turn_ending := false
+# ids de cartas que devem sair primeiro na compra inicial (usado no tutorial do primeiro combate)
+var opening_hand_ids: Array[String] = []
 
 func _ready() -> void:
 	Events.card_played.connect(_on_card_played)
@@ -19,10 +21,26 @@ func start_battle(char_stats: CharacterStats) -> void:
 	character = char_stats
 	character.draw_pile = character.deck.custom_duplicate()
 	character.draw_pile.shuffle()
+	_stack_opening_hand()
 	character.discard = CardPile.new()
 	relics.relics_activated.connect(_on_relics_activated)
 	player.status_handler.statuses_applied.connect(_on_statuses_applied)
 	start_turn()
+
+# poe no topo da pilha as cartas pedidas em opening_hand_ids (uma de cada id listado, na ordem)
+func _stack_opening_hand() -> void:
+	if opening_hand_ids.is_empty():
+		return
+	var cards := character.draw_pile.cards
+	var picked: Array[Card] = []
+	for id in opening_hand_ids:
+		for i in cards.size():
+			if cards[i].id == id:
+				picked.append(cards[i])
+				cards.remove_at(i)
+				break
+	for i in range(picked.size() - 1, -1, -1):
+		cards.push_front(picked[i])
 
 func start_turn() -> void:
 	turn_ending = false

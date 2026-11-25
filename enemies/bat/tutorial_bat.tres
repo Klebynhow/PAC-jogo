@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EnemyStats" format=3]
+
+[ext_resource type="Texture2D" uid="uid://bfx1ob7td2cai" path="res://art/ph_worm2.png" id="1_art"]
+[ext_resource type="PackedScene" path="res://enemies/bat/tutorial_bat_ai.tscn" id="2_ai"]
+[ext_resource type="Script" uid="uid://qgbimnh54mvb" path="res://custom_resources/enemy_stats.gd" id="3_stats"]
+
+[resource]
+script = ExtResource("3_stats")
+ai = ExtResource("2_ai")
+max_health = 30
+art = ExtResource("1_art")
+metadata/_custom_type_script = "uid://qgbimnh54mvb"

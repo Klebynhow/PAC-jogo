@@ -11,6 +11,6 @@ type = 1
 rarity = 1
 cost = 1
 icon = ExtResource("1_icon")
-tooltip_text = "[center]Ganha [color=\"0044ff\"]%s[/color] de escudo: 3 vezes a sua Forca (minimo 4).[/center]"
+tooltip_text = "[center]Ganha [color=\"0044ff\"]%s[/color] escudo igual a 3 vezes a Forca atual.[/center]"
 sound = ExtResource("3_sound")
 metadata/_custom_type_script = "uid://ctg5l1ui52cf8"
