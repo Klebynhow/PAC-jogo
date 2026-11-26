@@ -22,6 +22,10 @@ func _ready() -> void:
 	Events.player_turn_ended.connect(player_handler.end_turn)
 	Events.player_hand_discarded.connect(enemy_handler.start_turn)
 	Events.player_died.connect(_on_player_died)
+	# modo "Mostrar contas": painel com a conta de cada dano/escudo (so aparece se a opcao estiver ligada)
+	var math_log := CombatMathLog.new()
+	add_child(math_log)
+	move_child(math_log, battle_ui.get_index())
 	
 
 # a musica de batalha so toca dentro da batalha: ao sair dela (mapa, menu, derrota...) ela some

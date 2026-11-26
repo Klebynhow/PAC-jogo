@@ -18,7 +18,7 @@ func apply_effects(_targets: Array[Node], _modifiers: ModifierHandler) -> void:
 	var players := _targets[0].get_tree().get_nodes_in_group("player")
 
 	var damage_effect := DamageEffect.new()
-	damage_effect.amount = _modifiers.get_modified_value(base_damage, Modifier.Type.DMG_DEALT)
+	damage_effect.set_from_base(base_damage, _modifiers)
 	damage_effect.sound = sound
 	damage_effect.execute(_targets)
 

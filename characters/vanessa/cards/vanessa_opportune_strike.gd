@@ -18,7 +18,7 @@ func apply_effects(_targets: Array[Node], _modifiers: ModifierHandler) -> void:
 		return
 	var damage := exposed_damage if _is_exposed(_targets[0]) else base_damage
 	var damage_effect := DamageEffect.new()
-	damage_effect.amount = _modifiers.get_modified_value(damage, Modifier.Type.DMG_DEALT)
+	damage_effect.set_from_base(damage, _modifiers)
 	damage_effect.sound = sound
 	damage_effect.execute(_targets)
 

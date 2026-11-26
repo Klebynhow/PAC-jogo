@@ -14,6 +14,7 @@ func apply_effects(_targets: Array[Node], _modifiers: ModifierHandler) -> void:
 		return
 	var block_value := player.stats.block
 	var damage_effect := DamageEffect.new()
-	damage_effect.amount = _modifiers.get_modified_value(block_value, Modifier.Type.DMG_DEALT) if block_value > 0 else 0
+	if block_value > 0:
+		damage_effect.set_from_base(block_value, _modifiers)
 	damage_effect.sound = sound
 	damage_effect.execute(_targets)

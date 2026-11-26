@@ -11,6 +11,7 @@ func get_tooltip() -> String:
 func apply_status(_target: Node) -> void:
 	var damage_effect := DamageEffect.new()
 	damage_effect.amount = stacks
+	damage_effect.label = "Veneno"
 	damage_effect.receiver_modifier_type = Modifier.Type.NO_MODIFIER
 	var targets: Array[Node] = [_target]
 	damage_effect.execute(targets)

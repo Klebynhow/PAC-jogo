@@ -11,6 +11,7 @@ func get_updated_tooltip(_player_modifiers: ModifierHandler, _enemy_modifiers: M
 func apply_effects(_targets: Array[Node], _modifiers: ModifierHandler) -> void:
 	var damage_effect := DamageEffect.new()
 	damage_effect.amount = self_damage
+	damage_effect.label = "Tinta"
 	damage_effect.receiver_modifier_type = Modifier.Type.NO_MODIFIER
 	damage_effect.sound = sound
 	damage_effect.execute(_targets)

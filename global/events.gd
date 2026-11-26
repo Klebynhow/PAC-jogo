@@ -27,6 +27,7 @@ signal enemy_died(enemy: Enemy)
 signal battle_over_screen_requested(text: String, type: BattleOverPanel.Type)
 signal battle_won
 signal status_tooltip_requested(statuses: Array[Status])
+signal combat_math_logged(lines: PackedStringArray) # modo "Mostrar contas": linhas BBCode da conta
 
 #eventos de mapa
 signal map_exited(room: Room)

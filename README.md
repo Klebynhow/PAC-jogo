@@ -147,7 +147,7 @@ Ao abrir o jogo toca um **vídeo de abertura**. Ele pode ser pulado com **qualqu
 | Encerrar o turno | Botão **Fim** (canto inferior direito) |
 | Rolar o mapa | **Roda do mouse** |
 | Pausar / retomar | **`Esc`** |
-| Ajustar o volume | Engrenagem no menu principal, ou **`Esc`** (menu de pausa) durante o jogo |
+| Ajustar o volume e ligar **Mostrar contas** | Engrenagem no menu principal, ou **`Esc`** (menu de pausa) durante o jogo |
 | Ver a descrição de uma carta | Passe o mouse sobre ela |
 | Ver a descrição de um status (Exposto, Força, Veneno…) | Clique no ícone do status, abaixo da barra de vida |
 | Ver a descrição de um artefato | Clique no ícone do artefato, na barra superior |
@@ -156,7 +156,9 @@ Ao abrir o jogo toca um **vídeo de abertura**. Ele pode ser pulado com **qualqu
 | Fechar janelas de cartas e descrições | Botão **Fechar** ou `Esc` |
 | Trocar de página no guia **Como Jogar** | Botões **Anterior / Proxima** ou setas do teclado |
 
-**Menu de pausa (`Esc`):** tem as barras de **Música** e **Efeitos**, o botão **Voltar** (retoma o jogo) e o botão **Menu Principal**. O progresso é salvo automaticamente ao entrar em cada sala, então **Continuar** retoma do último ponto salvo. Se você sair no meio de um combate, ao continuar essa sala é reiniciada.
+**Mostrar contas:** opção (desligada por padrão) que explica a matemática do combate. Com ela ligada, um painel no canto superior esquerdo mostra, a cada golpe, a conta passo a passo (dano base → Força/Fraco → Exposto → escudo → vida, por exemplo `6 - 5 escudo = 1` e `Vida 20 - 1 = 19`) e cada ganho de escudo; a intenção dos inimigos também mostra a conta (`2x4=8`, `6+2=8`). A escolha é salva em `settings.cfg`.
+
+**Menu de pausa (`Esc`):** tem as barras de **Música** e **Efeitos**, o botão **Mostrar contas**, o botão **Voltar** (retoma o jogo) e o botão **Menu Principal**. O progresso é salvo automaticamente ao entrar em cada sala, então **Continuar** retoma do último ponto salvo. Se você sair no meio de um combate, ao continuar essa sala é reiniciada.
 
 ### 5.3 Entendendo a tela de combate
 

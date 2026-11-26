@@ -8,6 +8,7 @@ func _ready() -> void:
 	Events.enemy_action_completed.connect(_on_enemy_action_completed)
 	Events.player_hand_drawn.connect(_on_player_hand_drawn)
 	Events.statuses_changed.connect(_on_statuses_changed)
+	Settings.show_math_changed.connect(_on_show_math_changed)
 
 func setup_enemies(battle_stats: BattleStats) -> void:
 	if not battle_stats:
@@ -16,8 +17,14 @@ func setup_enemies(battle_stats: BattleStats) -> void:
 		enemy.queue_free()
 	
 	var all_new_enemies := battle_stats.enemies.instantiate()
+	var slot := 1
+	var total := all_new_enemies.get_child_count()
 	for new_enemy: Node2D in all_new_enemies.get_children():
 		var new_enemy_child := new_enemy.duplicate() as Enemy
+		# numero do inimigo no log de "Mostrar contas" (Inimigo 1, 2, 3...)
+		new_enemy_child.set_meta("slot", slot)
+		new_enemy_child.set_meta("slot_total", total)
+		slot += 1
 		add_child(new_enemy_child)
 		new_enemy_child.status_handler.statuses_applied.connect(_on_enemy_statuses_applied.bind(new_enemy_child))
 	all_new_enemies.queue_free()
@@ -61,6 +68,10 @@ func _on_statuses_changed() -> void:
 	for enemy: Enemy in get_children():
 		if is_instance_valid(enemy) and enemy.is_node_ready():
 			enemy.update_intent()
+
+# a opcao "Mostrar contas" foi ligada/desligada: refaz o texto da intencao
+func _on_show_math_changed(_value: bool) -> void:
+	_on_statuses_changed()
 
 func _has_living_enemies() -> bool:
 	for enemy: Enemy in get_children():

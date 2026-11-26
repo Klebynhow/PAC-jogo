@@ -1,0 +1,12 @@
+[gd_scene format=3]
+
+[ext_resource type="Theme" uid="uid://b54n13fqlduvn" path="res://main_theme.tres" id="1_theme"]
+[ext_resource type="Script" path="res://scenes/ui/math_toggle.gd" id="2_script"]
+
+[node name="MathToggle" type="Button"]
+custom_minimum_size = Vector2(0, 12)
+focus_mode = 0
+theme = ExtResource("1_theme")
+toggle_mode = true
+text = "Mostrar contas: NAO"
+script = ExtResource("2_script")

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/ui/volume_slider.gd" id="1_script"]
 [ext_resource type="PackedScene" path="res://scenes/ui/volume_row.tscn" id="2_row"]
+[ext_resource type="PackedScene" path="res://scenes/ui/math_toggle.tscn" id="3_toggle"]
 
 [node name="VolumeSlider" type="VBoxContainer"]
 theme_override_constants/separation = 4
@@ -14,3 +15,6 @@ channel = "music"
 [node name="SfxRow" parent="." instance=ExtResource("2_row")]
 layout_mode = 2
 channel = "sfx"
+
+[node name="MathToggle" parent="." instance=ExtResource("3_toggle")]
+layout_mode = 2

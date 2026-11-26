@@ -42,14 +42,18 @@ func update_player() -> void:
 func update_stats() -> void:
 	stats_ui.update_stats(stats)
 
-func take_damage(damage: int, modifier_type: Modifier.Type) -> void:
+func take_damage(damage: int, modifier_type: Modifier.Type, context: Dictionary = {}) -> void:
 	if stats.health <= 0:
 		return
 	sprite_2d.material = WHITE_SPRITE_MATERIAL
 	var modifier_damage := modifier_handler.get_modified_value(damage, modifier_type)
+	# modo "Mostrar contas": guarda a conta dos modificadores de quem recebe (nao muda o dano)
+	var receiver_breakdown := {}
+	if Settings.show_math and not context.is_empty():
+		receiver_breakdown = modifier_handler.get_breakdown(damage, modifier_type)
 	var tween := create_tween()
 	tween.tween_callback(Shaker.shake.bind(self, 16, 0.15))
-	tween.tween_callback(stats.take_damage.bind(modifier_damage))
+	tween.tween_callback(_apply_damage.bind(modifier_damage, receiver_breakdown, context))
 	tween.tween_interval(0.17)
 	tween.finished.connect(func(): 
 		sprite_2d.material = null
@@ -58,6 +62,12 @@ func take_damage(damage: int, modifier_type: Modifier.Type) -> void:
 			queue_free()
 		)
 	
+# aplica o dano de verdade (escudo e vida); com "Mostrar contas" tambem registra a conta
+func _apply_damage(amount: int, receiver_breakdown: Dictionary, context: Dictionary) -> void:
+	var result := stats.take_damage(amount)
+	if Settings.show_math and not context.is_empty():
+		Events.combat_math_logged.emit(CombatMath.damage_lines(context, receiver_breakdown, result, self))
+
 func _on_card_played(card) -> void:
 	player_animation.stop()
 	vanessa_attack_animation.show()

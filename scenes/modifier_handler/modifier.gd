@@ -37,4 +37,32 @@ func get_modified_value(base: int) -> int:
 		if value.type == ModifierValue.Type.PERCENT_BASED:
 			percent_result += value.percent_value
 	return floori(flat_result * percent_result)
+
+# Mesma conta de get_modified_value, mas explicada (modo "Mostrar contas").
+# Primeiro os valores fixos (flat), depois a soma dos percentuais vira um multiplicador.
+func get_breakdown(base: int) -> Dictionary:
+	var flat_parts: Array = []
+	var percent_parts: Array = []
+	var flat_result: int = base
+	var percent_result: float = 1.0
+	for value: ModifierValue in get_children():
+		if value.type == ModifierValue.Type.FLAT:
+			flat_result += value.flat_value
+			if value.flat_value != 0:
+				flat_parts.append({"source": value.source, "value": value.flat_value})
+	for value: ModifierValue in get_children():
+		if value.type == ModifierValue.Type.PERCENT_BASED:
+			percent_result += value.percent_value
+			if not is_zero_approx(value.percent_value):
+				percent_parts.append({"source": value.source, "value": value.percent_value})
+	var raw: float = flat_result * percent_result
+	return {
+		"base": base,
+		"flat": flat_parts,
+		"flat_total": flat_result,
+		"percent": percent_parts,
+		"multiplier": percent_result,
+		"raw": raw,
+		"result": floori(raw),
+	}
 	

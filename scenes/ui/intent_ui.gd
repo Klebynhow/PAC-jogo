@@ -10,6 +10,9 @@ func update_intent(intent: Intent) -> void:
 		return
 	icon.texture = intent.icon
 	icon.visible = icon.texture != null
-	label.text = str(intent.current_text)
-	label.visible = intent.current_text.length() > 0
+	var text := str(intent.current_text)
+	if Settings.show_math and not intent.math_text.is_empty():
+		text = intent.math_text
+	label.text = text
+	label.visible = text.length() > 0
 	show()
