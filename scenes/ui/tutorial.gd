@@ -2,8 +2,7 @@ class_name Tutorial
 extends Control
 
 # Guia de como jogar. Abre como uma tela por cima do menu principal.
-# Textos SEM acentos de proposito: a fonte pixel_rpg.ttf nao tem esses glifos.
-# Para adicionar ou editar paginas, mexa apenas na lista PAGES.
+# Para adicionar ou editar páginas, mexa apenas na lista PAGES.
 
 signal closed
 
@@ -32,36 +31,36 @@ const PAGES := [
 	{
 		"title": "OBJETIVO",
 		"lines": [
-			"Guie " + Y + "Vanessa" + END + " por " + Y + "15 andares" + END + " ate o chefe final.",
+			"Guie " + Y + "Vanessa" + END + " por " + Y + "15 andares" + END + " até o chefe final.",
 			"",
 			"Cada sala do mapa pode ser combate, loja, fogueira ou tesouro.",
 			"",
 			COIN + " Vencer combates rende ouro, cartas e artefatos para fortalecer seu baralho.",
 			"",
-			HEART + " Se sua vida chegar a zero, a tentativa acaba. Derrote o chefe do ultimo andar para vencer o jogo.",
+			HEART + " Se sua vida chegar a zero, a tentativa acaba. Derrote o chefe do último andar para vencer o jogo.",
 		],
 	},
 	{
 		"title": "CONTROLES",
 		"lines": [
-			Y + "Botao esquerdo:" + END + " clicar, jogar cartas e escolher salas.",
-			Y + "Botao direito:" + END + " cancelar a carta que esta segurando.",
+			Y + "Botão esquerdo:" + END + " clicar, jogar cartas e escolher salas.",
+			Y + "Botão direito:" + END + " cancelar a carta que está segurando.",
 			Y + "Roda do mouse:" + END + " rolar o mapa.",
 			Y + "Esc:" + END + " pausar o jogo (neste guia, fecha o guia).",
-			Y + "Setas esquerda/direita:" + END + " trocar de pagina deste guia.",
+			Y + "Setas esquerda/direita:" + END + " trocar de página deste guia.",
 		],
 	},
 	{
 		"title": "JOGANDO CARTAS",
 		"lines": [
 			Y + "Cartas sem alvo" + END + " (Defesa, poderes):",
-			"- arraste a carta para cima da mao e solte.",
+			"- arraste a carta para cima da mão e solte.",
 			"",
 			Y + "Cartas com alvo" + END + " (ataques):",
-			"- arraste a carta para cima da mao. Ela vira uma seta de mira.",
+			"- arraste a carta para cima da mão. Ela vira uma seta de mira.",
 			"- aponte a seta para o inimigo e clique.",
 			"",
-			Y + "Cancelar:" + END + " botao direito, ou leve o mouse para a parte de baixo da tela.",
+			Y + "Cancelar:" + END + " botão direito, ou leve o mouse para a parte de baixo da tela.",
 		],
 	},
 	{
@@ -70,8 +69,8 @@ const PAGES := [
 			COIN + " Ouro: canto superior esquerdo.",
 			HEART + " Vida: perto da Vanessa. " + SHIELD + " Escudo: absorve dano.",
 			"Mana (3/3): canto inferior esquerdo. Cartas gastam mana.",
-			"Cartas: embaixo. O numero da carta e o custo de mana.",
-			"Botao " + Y + "Fim" + END + ": encerra seu turno.",
+			"Cartas: embaixo. O número da carta é o custo de mana.",
+			"Botão " + Y + "Fim" + END + ": encerra seu turno.",
 			DECK + " Baralho: canto superior direito.",
 			DRAW + " Pilha de compra e " + DISCARD + " descarte: cantos de baixo.",
 		],
@@ -79,24 +78,24 @@ const PAGES := [
 	{
 		"title": "O TURNO",
 		"lines": [
-			"1. Voce compra 5 cartas e a mana volta ao maximo.",
+			"1. Você compra 5 cartas e a mana volta ao máximo.",
 			"2. Jogue cartas enquanto tiver mana.",
-			"3. Clique em Fim: a mao vai para o descarte.",
+			"3. Clique em Fim: a mão vai para o descarte.",
 			"4. Os inimigos executam o que anunciaram.",
-			"5. Um novo turno comeca.",
+			"5. Um novo turno começa.",
 			"",
-			SHIELD + " O escudo some quando seu turno comeca: jogue defesas antes do Fim.",
-			"Cartas com " + Y + "Exaurir" + END + " saem do baralho ate o fim do combate.",
+			SHIELD + " O escudo some quando seu turno começa: jogue defesas antes do Fim.",
+			"Cartas com " + Y + "Exaurir" + END + " saem do baralho até o fim do combate.",
 		],
 	},
 	{
-		"title": "INTENCOES DOS INIMIGOS",
+		"title": "INTENÇÕES DOS INIMIGOS",
 		"lines": [
-			"Acima de cada inimigo aparece o que ele fara no proximo turno.",
-			"O icone mostra o tipo (ataque, defesa, buff, debuff) e o numero mostra o valor.",
+			"Acima de cada inimigo aparece o que ele fará no próximo turno.",
+			"O ícone mostra o tipo (ataque, defesa, buff, debuff) e o número mostra o valor.",
 			"",
 			Y + "2x4" + END + " = 2 golpes de 4 de dano (8 no total).",
-			"O numero ja inclui status como Exposto e Forca.",
+			"O número já inclui status como Exposto e Força.",
 			"",
 			"Some o dano dos inimigos para saber quanto vai receber e decida se vale atacar ou defender.",
 		],
@@ -106,56 +105,56 @@ const PAGES := [
 		"lines": [
 			"Todo dano segue a mesma conta, nesta ordem:",
 			"1. " + Y + "Dano base" + END + " da carta (Ataque = 6).",
-			"2. " + Y + "Modificadores" + END + ": Forca soma, Fraco tira 25%, Exposto soma 50%.",
+			"2. " + Y + "Modificadores" + END + ": Força soma, Fraco tira 25%, Exposto soma 50%.",
 			"3. " + SHIELD + " " + Y + "Escudo" + END + " absorve o que puder.",
 			"4. O que sobrar tira " + HEART + " vida.",
 			"",
 			"Seu ataque (6) em um inimigo Exposto causa 9. Se ele tem 3 de escudo, perde 6 de vida.",
-			"Se o inimigo anuncia 2x4 = 8 e voce tem 5 de escudo, perde 3 de vida.",
+			"Se o inimigo anuncia 2x4 = 8 e você tem 5 de escudo, perde 3 de vida.",
 		],
 	},
 	{
 		"title": "STATUS",
 		"lines": [
-			"Clique no icone de um status (abaixo da vida) para ler a descricao.",
+			"Clique no ícone de um status (abaixo da vida) para ler a descrição.",
 			EXPOSED + " " + Y + "Exposto" + END + ": sofre 50% mais dano.",
-			STRENGTH + " " + Y + "Forca" + END + ": ataques causam mais dano.",
+			STRENGTH + " " + Y + "Força" + END + ": ataques causam mais dano.",
 			WEAK + " " + Y + "Fraco" + END + ": causa 25% menos dano.",
-			POISON + " " + Y + "Veneno" + END + ": perde vida no comeco do turno.",
-			DRAINED + " " + Y + "Cansaco" + END + ": perde 1 de mana por turno.",
-			"Forca e Veneno se acumulam. Os outros duram alguns turnos.",
+			POISON + " " + Y + "Veneno" + END + ": perde vida no começo do turno.",
+			DRAINED + " " + Y + "Cansaço" + END + ": perde 1 de mana por turno.",
+			"Força e Veneno se acumulam. Os outros duram alguns turnos.",
 		],
 	},
 	{
 		"title": "CARTAS RUINS",
 		"lines": [
-			RIPPED + " " + Y + "Cartas de debuff" + END + " (ex.: Pagina Rasgada) sao colocadas no seu baralho por alguns inimigos.",
+			RIPPED + " " + Y + "Cartas de debuff" + END + " (ex.: Página Rasgada) são colocadas no seu baralho por alguns inimigos.",
 			"",
-			"Elas atrapalham sua mao e somem quando o combate acaba.",
+			"Elas atrapalham sua mão e somem quando o combate acaba.",
 			"",
-			"Algumas custam mana, outras machucam quando jogadas. Veja a descricao antes de usar.",
+			"Algumas custam mana, outras machucam quando jogadas. Veja a descrição antes de usar.",
 		],
 	},
 	{
 		"title": "O MAPA",
 		"lines": [
-			"Escolha uma sala ligada a sua posicao. Role o mapa com a roda do mouse.",
+			"Escolha uma sala ligada à sua posição. Role o mapa com a roda do mouse.",
 			COMBAT + " Combate: ganhe ouro e escolha 1 entre 3 cartas (ou pule).",
 			ELITE + " Subchefe: inimigo forte. Vencer rende um artefato!",
 			SHOP + " Loja: compre cartas e artefatos.",
 			CAMPFIRE + " Fogueira: recupere 30% da vida.",
-			CHEST + " Tesouro: receba um artefato aleatorio.",
-			BOSS + " Chefe: ultimo andar. Derrote-o para vencer.",
+			CHEST + " Tesouro: receba um artefato aleatório.",
+			BOSS + " Chefe: último andar. Derrote-o para vencer.",
 		],
 	},
 	{
 		"title": "ARTEFATOS E DICAS",
 		"lines": [
-			Y + "Artefatos" + END + " sao itens passivos no topo da tela. Clique em um para ler o efeito.",
+			Y + "Artefatos" + END + " são itens passivos no topo da tela. Clique em um para ler o efeito.",
 			"",
 			Y + "Dicas" + END,
-			"- Leia as intencoes antes de jogar.",
-			"- Nem toda carta nova ajuda: voce pode pular a recompensa.",
+			"- Leia as intenções antes de jogar.",
+			"- Nem toda carta nova ajuda: você pode pular a recompensa.",
 			"- Descanse na fogueira quando a vida estiver baixa.",
 			"- O jogo salva ao entrar em cada sala: use Continuar no menu.",
 		],

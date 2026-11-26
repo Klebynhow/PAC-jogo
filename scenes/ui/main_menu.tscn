@@ -7,10 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://b4tmo27et60oo" path="res://art/main-menu-new_foreground.png" id="4_uhagc"]
 [ext_resource type="Texture2D" uid="uid://wilsbnkvuikn" path="res://art/bookWorm-LOGO.png" id="5_btxxm"]
 [ext_resource type="Texture2D" uid="uid://dharaqc05naxd" path="res://art/new_bookWorm-LOGO.png" id="6_btxxm"]
-[ext_resource type="Texture2D" path="res://art/gear_icon.png" id="90_gear"]
-[ext_resource type="Texture2D" path="res://art/gear_icon_hover.png" id="91_gearhover"]
+[ext_resource type="Texture2D" uid="uid://f2uee4lnvbu7" path="res://art/gear_icon.png" id="90_gear"]
+[ext_resource type="Texture2D" uid="uid://bhf32kgdrfu1v" path="res://art/gear_icon_hover.png" id="91_gearhover"]
 [ext_resource type="PackedScene" path="res://scenes/ui/volume_slider.tscn" id="92_volslider"]
-[ext_resource type="Script" path="res://scenes/ui/menu_animation.gd" id="95_menuanim"]
+[ext_resource type="Script" uid="uid://crrpf3hbosatx" path="res://scenes/ui/menu_animation.gd" id="95_menuanim"]
 
 [sub_resource type="Gradient" id="Gradient_wu84c"]
 colors = PackedColorArray(0.29798043, 0.001434519, 0.04073544, 1, 0.085036315, 0, 0.0024677885, 1)
@@ -104,7 +104,7 @@ label_settings = SubResource("LabelSettings_rtw2f")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MenuAnimation" type="Node" parent="."]
+[node name="MenuAnimation" type="Node" parent="." unique_id=1733846867]
 script = ExtResource("95_menuanim")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1994511593]
@@ -148,7 +148,7 @@ theme_override_font_sizes/font_size = 7
 text = "Sair :(
 "
 
-[node name="SettingsButton" type="TextureButton" parent="."]
+[node name="SettingsButton" type="TextureButton" parent="." unique_id=693550113]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 1
@@ -163,7 +163,7 @@ texture_normal = ExtResource("90_gear")
 texture_pressed = ExtResource("91_gearhover")
 texture_hover = ExtResource("91_gearhover")
 
-[node name="SettingsPanel" type="PanelContainer" parent="."]
+[node name="SettingsPanel" type="PanelContainer" parent="." unique_id=1285721943]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
@@ -176,14 +176,14 @@ offset_right = -6.0
 offset_bottom = 46.0
 grow_horizontal = 0
 
-[node name="Margin" type="MarginContainer" parent="SettingsPanel"]
+[node name="Margin" type="MarginContainer" parent="SettingsPanel" unique_id=653331518]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 4
 
-[node name="VolumeSlider" parent="SettingsPanel/Margin" instance=ExtResource("92_volslider")]
+[node name="VolumeSlider" parent="SettingsPanel/Margin" unique_id=773491958 instance=ExtResource("92_volslider")]
 layout_mode = 2
 
 [node name="Tutorial" parent="." unique_id=972364350 instance=ExtResource("4_tutorial")]
@@ -194,5 +194,5 @@ layout_mode = 1
 [connection signal="pressed" from="VBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="VBoxContainer/NewRun" to="." method="_on_new_run_pressed"]
 [connection signal="pressed" from="VBoxContainer/HowToPlay" to="." method="_on_how_to_play_pressed"]
-[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
